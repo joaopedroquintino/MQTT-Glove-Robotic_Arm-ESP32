@@ -1,0 +1,1456 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0000000066842310, pid=25536, tid=0x0000000000004418
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_161-b12) (build 1.8.0_161-b12)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.161-b12 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [opencv_ffmpeg248_64.dll+0x2310]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000192a7800):  JavaThread "Thread-5" [_thread_in_native, id=17432, stack(0x0000000063fd0000,0x00000000640d0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000008
+
+Registers:
+RAX=0x0000000000000000, RBX=0x000000000091c2c0, RCX=0x0000000000910000, RDX=0x000000001ad22d60
+RSP=0x00000000640ced40, RBP=0x8000000000000000, RSI=0x000000000091c558, RDI=0x0000000000000000
+R8 =0x00000000640ced6c, R9 =0x000000000091c558, R10=0x0000000000000000, R11=0x00000000640ce830
+R12=0x0000000000000000, R13=0x00000000640cf000, R14=0x00000000640ceed0, R15=0x00000000192a7800
+RIP=0x0000000066842310, EFLAGS=0x0000000000010246
+
+Top of Stack: (sp=0x00000000640ced40)
+0x00000000640ced40:   00000000640ceee0 000000006684346a
+0x00000000640ced50:   00004852f07d106a 0000000002877109
+0x00000000640ced60:   00004852f07d104a 00000000640ceed0
+0x00000000640ced70:   0000000000000193 0000000082a0ead0
+0x00000000640ced80:   0000000063c37eb0 00000000640ceee0
+0x00000000640ced90:   0000000000000000 0000000066843429
+0x00000000640ceda0:   0000000000000031 00000000192a7800
+0x00000000640cedb0:   00000000192a7800 000000007236de8c
+0x00000000640cedc0:   0000000100064e10 00007ffed5423323
+0x00000000640cedd0:   00000000d6574590 00000000723a8690
+0x00000000640cede0:   00000000192a7800 000000007239ed79
+0x00000000640cedf0:   00000000d6574590 00007ffed54210e1
+0x00000000640cee00:   00000000192a79f8 00000000192a7800
+0x00000000640cee10:   00000000192a7800 0000000000000000
+0x00000000640cee20:   0000000000000000 00000000192a79f8
+0x00000000640cee30:   0000000018d24590 00007fff04df756b 
+
+Instructions: (pc=0x0000000066842310)
+0x00000000668422f0:   e0 48 83 c4 30 5b 5e 5f 5d 41 5c c3 0f 1f 40 00
+0x0000000066842300:   48 8b 43 18 48 8b 53 20 4c 8d 44 24 2c 49 89 f1
+0x0000000066842310:   48 8b 48 08 e8 c7 c5 0e 00 44 8b 64 24 2c 45 85
+0x0000000066842320:   e4 74 1d 48 39 ab 90 02 00 00 74 64 48 83 83 18 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x000000000091c2c0 is an unknown value
+RCX=0x0000000000910000 is an unknown value
+RDX=0x000000001ad22d60 is an unknown value
+RSP=0x00000000640ced40 is pointing into the stack for thread: 0x00000000192a7800
+RBP=0x8000000000000000 is an unknown value
+RSI=0x000000000091c558 is an unknown value
+RDI=0x0000000000000000 is an unknown value
+R8 =0x00000000640ced6c is pointing into the stack for thread: 0x00000000192a7800
+R9 =0x000000000091c558 is an unknown value
+R10=0x0000000000000000 is an unknown value
+R11=0x00000000640ce830 is pointing into the stack for thread: 0x00000000192a7800
+R12=0x0000000000000000 is an unknown value
+R13=0x00000000640cf000 is pointing into the stack for thread: 0x00000000192a7800
+R14=0x00000000640ceed0 is pointing into the stack for thread: 0x00000000192a7800
+R15=0x00000000192a7800 is a thread
+
+
+Stack: [0x0000000063fd0000,0x00000000640d0000],  sp=0x00000000640ced40,  free space=1019k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [opencv_ffmpeg248_64.dll+0x2310]
+C  [opencv_ffmpeg248_64.dll+0x3429]
+C  [opencv_highgui248.dll+0x3323]
+C  [opencv_highgui248.dll+0x10e1]
+C  [jniopencv_highgui.dll+0x756b]
+C  0x0000000002cc1614
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 2593  com.googlecode.javacv.cpp.opencv_highgui.cvGrabFrame(Lcom/googlecode/javacv/cpp/opencv_highgui$CvCapture;)I (0 bytes) @ 0x0000000002cc1592 [0x0000000002cc1540+0x52]
+J 2601 C1 com.googlecode.javacv.OpenCVFrameGrabber.grab()Lcom/googlecode/javacv/cpp/opencv_core$IplImage; (177 bytes) @ 0x0000000002cbb33c [0x0000000002cbb1c0+0x17c]
+j  serial.CameraHandler.run()V+19
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000078d01000 JavaThread "Thread-0" daemon [_thread_in_native, id=4756, stack(0x00000001ac100000,0x00000001ac200000)]
+  0x0000000078cf9800 JavaThread "J3D-InputDeviceScheduler-114" [_thread_blocked, id=18132, stack(0x00000001abe00000,0x00000001abf00000)]
+  0x0000000078cfe800 JavaThread "J3D-SoundSchedulerUpdateThread-114" [_thread_blocked, id=16000, stack(0x00000001abd00000,0x00000001abe00000)]
+  0x0000000078cfc800 JavaThread "J3D-RenderStructureUpdateThread-114" [_thread_blocked, id=17940, stack(0x00000001abc00000,0x00000001abd00000)]
+  0x0000000078cfb800 JavaThread "J3D-BehaviorScheduler-114" [_thread_blocked, id=6520, stack(0x00000001abb00000,0x00000001abc00000)]
+  0x0000000078cf8800 JavaThread "J3D-TransformStructureUpdateThread-114" [_thread_blocked, id=8972, stack(0x00000001aba00000,0x00000001abb00000)]
+  0x0000000078cfe000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-114" [_thread_blocked, id=8908, stack(0x00000001ab900000,0x00000001aba00000)]
+  0x0000000078cff800 JavaThread "J3D-SoundStructureUpdateThread-114" [_thread_blocked, id=2152, stack(0x00000001ab800000,0x00000001ab900000)]
+  0x0000000078cfd000 JavaThread "J3D-GeometryStructureUpdateThread-114" [_thread_blocked, id=17648, stack(0x00000001ab700000,0x00000001ab800000)]
+  0x0000000078cfb000 JavaThread "J3D-BehaviorStructureUpdateThread-114" [_thread_blocked, id=1144, stack(0x00000001ab600000,0x00000001ab700000)]
+  0x0000000078cfa000 JavaThread "J3D-InputDeviceScheduler-113" [_thread_blocked, id=18276, stack(0x00000001ab400000,0x00000001ab500000)]
+  0x000000001e27e800 JavaThread "J3D-SoundSchedulerUpdateThread-113" [_thread_blocked, id=11612, stack(0x00000001ab300000,0x00000001ab400000)]
+  0x000000001e280000 JavaThread "J3D-RenderStructureUpdateThread-113" [_thread_blocked, id=17584, stack(0x00000001ab200000,0x00000001ab300000)]
+  0x000000001e27f000 JavaThread "J3D-BehaviorScheduler-113" [_thread_blocked, id=17184, stack(0x00000001ab100000,0x00000001ab200000)]
+  0x000000001e27d800 JavaThread "J3D-TransformStructureUpdateThread-113" [_thread_blocked, id=3424, stack(0x00000001ab000000,0x00000001ab100000)]
+  0x000000001e281800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-113" [_thread_blocked, id=14556, stack(0x00000001aaf00000,0x00000001ab000000)]
+  0x000000001e280800 JavaThread "J3D-SoundStructureUpdateThread-113" [_thread_blocked, id=14248, stack(0x00000001aae00000,0x00000001aaf00000)]
+  0x000000001e27d000 JavaThread "J3D-GeometryStructureUpdateThread-113" [_thread_blocked, id=6276, stack(0x00000001aad00000,0x00000001aae00000)]
+  0x000000001e27c000 JavaThread "J3D-BehaviorStructureUpdateThread-113" [_thread_blocked, id=10044, stack(0x00000001aac00000,0x00000001aad00000)]
+  0x000000001e27b800 JavaThread "J3D-InputDeviceScheduler-112" [_thread_blocked, id=12644, stack(0x00000001aab00000,0x00000001aac00000)]
+  0x000000001e274000 JavaThread "J3D-SoundSchedulerUpdateThread-112" [_thread_blocked, id=13028, stack(0x00000001aaa00000,0x00000001aab00000)]
+  0x000000001e277000 JavaThread "J3D-RenderStructureUpdateThread-112" [_thread_blocked, id=6708, stack(0x00000001aa900000,0x00000001aaa00000)]
+  0x000000001e27a800 JavaThread "J3D-BehaviorScheduler-112" [_thread_blocked, id=4484, stack(0x00000001aa800000,0x00000001aa900000)]
+  0x000000001e27a000 JavaThread "J3D-TransformStructureUpdateThread-112" [_thread_blocked, id=11780, stack(0x00000001aa700000,0x00000001aa800000)]
+  0x000000001e274800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-112" [_thread_blocked, id=896, stack(0x00000001aa600000,0x00000001aa700000)]
+  0x000000001e272800 JavaThread "J3D-SoundStructureUpdateThread-112" [_thread_blocked, id=3356, stack(0x00000001aa500000,0x00000001aa600000)]
+  0x000000001e275800 JavaThread "J3D-GeometryStructureUpdateThread-112" [_thread_blocked, id=15148, stack(0x00000001aa400000,0x00000001aa500000)]
+  0x000000001e276000 JavaThread "J3D-BehaviorStructureUpdateThread-112" [_thread_blocked, id=14628, stack(0x00000001aa300000,0x00000001aa400000)]
+  0x000000001e273000 JavaThread "J3D-InputDeviceScheduler-111" [_thread_blocked, id=12328, stack(0x00000001aa200000,0x00000001aa300000)]
+  0x000000001e279000 JavaThread "J3D-SoundSchedulerUpdateThread-111" [_thread_blocked, id=12732, stack(0x00000001aa100000,0x00000001aa200000)]
+  0x000000001e271800 JavaThread "J3D-RenderStructureUpdateThread-111" [_thread_blocked, id=14516, stack(0x00000001aa000000,0x00000001aa100000)]
+  0x000000001e278800 JavaThread "J3D-BehaviorScheduler-111" [_thread_blocked, id=12532, stack(0x00000001a9f00000,0x00000001aa000000)]
+  0x000000001e277800 JavaThread "J3D-TransformStructureUpdateThread-111" [_thread_blocked, id=11400, stack(0x00000001a9e00000,0x00000001a9f00000)]
+  0x000000001e26b800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-111" [_thread_blocked, id=14112, stack(0x00000001a9d00000,0x00000001a9e00000)]
+  0x000000001e26a000 JavaThread "J3D-SoundStructureUpdateThread-111" [_thread_blocked, id=9608, stack(0x00000001a9c00000,0x00000001a9d00000)]
+  0x000000001e270000 JavaThread "J3D-GeometryStructureUpdateThread-111" [_thread_blocked, id=16752, stack(0x00000001a9b00000,0x00000001a9c00000)]
+  0x000000001e271000 JavaThread "J3D-BehaviorStructureUpdateThread-111" [_thread_blocked, id=17728, stack(0x00000001a9a00000,0x00000001a9b00000)]
+  0x000000001e26b000 JavaThread "J3D-InputDeviceScheduler-110" [_thread_blocked, id=11260, stack(0x00000001a9800000,0x00000001a9900000)]
+  0x000000001e26d000 JavaThread "J3D-SoundSchedulerUpdateThread-110" [_thread_blocked, id=9968, stack(0x00000001a9700000,0x00000001a9800000)]
+  0x000000001e26e000 JavaThread "J3D-RenderStructureUpdateThread-110" [_thread_blocked, id=16520, stack(0x00000001a9600000,0x00000001a9700000)]
+  0x000000001e268800 JavaThread "J3D-BehaviorScheduler-110" [_thread_blocked, id=7076, stack(0x00000001a9500000,0x00000001a9600000)]
+  0x000000001e26e800 JavaThread "J3D-TransformStructureUpdateThread-110" [_thread_blocked, id=204, stack(0x00000001a9400000,0x00000001a9500000)]
+  0x000000001e269800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-110" [_thread_blocked, id=14440, stack(0x00000001a9300000,0x00000001a9400000)]
+  0x000000001e26f800 JavaThread "J3D-SoundStructureUpdateThread-110" [_thread_blocked, id=11532, stack(0x00000001a9200000,0x00000001a9300000)]
+  0x000000001e26c800 JavaThread "J3D-GeometryStructureUpdateThread-110" [_thread_blocked, id=11368, stack(0x00000001a9100000,0x00000001a9200000)]
+  0x000000001e261000 JavaThread "J3D-BehaviorStructureUpdateThread-110" [_thread_blocked, id=10876, stack(0x00000001a9000000,0x00000001a9100000)]
+  0x000000001e268000 JavaThread "J3D-InputDeviceScheduler-109" [_thread_blocked, id=492, stack(0x00000001a8e00000,0x00000001a8f00000)]
+  0x000000001e260800 JavaThread "J3D-SoundSchedulerUpdateThread-109" [_thread_blocked, id=12724, stack(0x00000001a8b00000,0x00000001a8c00000)]
+  0x000000001e267000 JavaThread "J3D-RenderStructureUpdateThread-109" [_thread_blocked, id=11488, stack(0x00000001a8a00000,0x00000001a8b00000)]
+  0x000000001e25f800 JavaThread "J3D-BehaviorScheduler-109" [_thread_blocked, id=15336, stack(0x00000001a8900000,0x00000001a8a00000)]
+  0x000000001e266800 JavaThread "J3D-TransformStructureUpdateThread-109" [_thread_blocked, id=3432, stack(0x00000001a8800000,0x00000001a8900000)]
+  0x000000001e25f000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-109" [_thread_blocked, id=14344, stack(0x00000001a8700000,0x00000001a8800000)]
+  0x000000001e265800 JavaThread "J3D-SoundStructureUpdateThread-109" [_thread_blocked, id=13636, stack(0x00000001a8600000,0x00000001a8700000)]
+  0x000000001e263800 JavaThread "J3D-GeometryStructureUpdateThread-109" [_thread_blocked, id=1032, stack(0x00000001a8500000,0x00000001a8600000)]
+  0x000000001e262800 JavaThread "J3D-BehaviorStructureUpdateThread-109" [_thread_blocked, id=8300, stack(0x00000001a8400000,0x00000001a8500000)]
+  0x000000001e265000 JavaThread "J3D-InputDeviceScheduler-108" [_thread_blocked, id=18232, stack(0x00000001a8200000,0x00000001a8300000)]
+  0x000000001e264000 JavaThread "J3D-SoundSchedulerUpdateThread-108" [_thread_blocked, id=16100, stack(0x00000001a8100000,0x00000001a8200000)]
+  0x000000001e262000 JavaThread "J3D-RenderStructureUpdateThread-108" [_thread_blocked, id=7764, stack(0x00000001a8000000,0x00000001a8100000)]
+  0x000000001e258000 JavaThread "J3D-BehaviorScheduler-108" [_thread_blocked, id=17848, stack(0x00000001a7f00000,0x00000001a8000000)]
+  0x000000001e25c800 JavaThread "J3D-TransformStructureUpdateThread-108" [_thread_blocked, id=16444, stack(0x00000001a7e00000,0x00000001a7f00000)]
+  0x000000001e25e000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-108" [_thread_blocked, id=17948, stack(0x00000001a7d00000,0x00000001a7e00000)]
+  0x000000001e25c000 JavaThread "J3D-SoundStructureUpdateThread-108" [_thread_blocked, id=6140, stack(0x00000001a7c00000,0x00000001a7d00000)]
+  0x000000001e258800 JavaThread "J3D-GeometryStructureUpdateThread-108" [_thread_blocked, id=18240, stack(0x00000001a7b00000,0x00000001a7c00000)]
+  0x000000001e25d800 JavaThread "J3D-BehaviorStructureUpdateThread-108" [_thread_blocked, id=13176, stack(0x00000001a7a00000,0x00000001a7b00000)]
+  0x000000001e25b000 JavaThread "J3D-InputDeviceScheduler-107" [_thread_blocked, id=8780, stack(0x00000001a7900000,0x00000001a7a00000)]
+  0x000000001e259800 JavaThread "J3D-SoundSchedulerUpdateThread-107" [_thread_blocked, id=12308, stack(0x00000001a7800000,0x00000001a7900000)]
+  0x000000001e25a800 JavaThread "J3D-RenderStructureUpdateThread-107" [_thread_blocked, id=5308, stack(0x00000001a7700000,0x00000001a7800000)]
+  0x000000001e250800 JavaThread "J3D-BehaviorScheduler-107" [_thread_blocked, id=10344, stack(0x00000001a7600000,0x00000001a7700000)]
+  0x000000001e257000 JavaThread "J3D-TransformStructureUpdateThread-107" [_thread_blocked, id=9772, stack(0x00000001a7500000,0x00000001a7600000)]
+  0x000000001e24f800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-107" [_thread_blocked, id=16056, stack(0x00000001a7400000,0x00000001a7500000)]
+  0x000000001e256800 JavaThread "J3D-SoundStructureUpdateThread-107" [_thread_blocked, id=2576, stack(0x00000001a7300000,0x00000001a7400000)]
+  0x000000001e255000 JavaThread "J3D-GeometryStructureUpdateThread-107" [_thread_blocked, id=10148, stack(0x00000001a7200000,0x00000001a7300000)]
+  0x000000001e254000 JavaThread "J3D-BehaviorStructureUpdateThread-107" [_thread_blocked, id=10512, stack(0x00000001a7100000,0x00000001a7200000)]
+  0x000000001e24f000 JavaThread "J3D-InputDeviceScheduler-106" [_thread_blocked, id=15696, stack(0x00000001a7000000,0x00000001a7100000)]
+  0x000000001e253800 JavaThread "J3D-SoundSchedulerUpdateThread-106" [_thread_blocked, id=14960, stack(0x00000001a6f00000,0x00000001a7000000)]
+  0x000000001e255800 JavaThread "J3D-RenderStructureUpdateThread-106" [_thread_blocked, id=2036, stack(0x00000001a6e00000,0x00000001a6f00000)]
+  0x000000001e24e000 JavaThread "J3D-BehaviorScheduler-106" [_thread_blocked, id=8848, stack(0x00000001a6d00000,0x00000001a6e00000)]
+  0x000000001e252800 JavaThread "J3D-TransformStructureUpdateThread-106" [_thread_blocked, id=13492, stack(0x00000001a6c00000,0x00000001a6d00000)]
+  0x000000001e24c000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-106" [_thread_blocked, id=8420, stack(0x00000001a6b00000,0x00000001a6c00000)]
+  0x000000001e24d800 JavaThread "J3D-SoundStructureUpdateThread-106" [_thread_blocked, id=15560, stack(0x00000001a6a00000,0x00000001a6b00000)]
+  0x000000001e251000 JavaThread "J3D-GeometryStructureUpdateThread-106" [_thread_blocked, id=15372, stack(0x00000001a6900000,0x00000001a6a00000)]
+  0x000000001e24b000 JavaThread "J3D-BehaviorStructureUpdateThread-106" [_thread_blocked, id=16908, stack(0x00000001a6800000,0x00000001a6900000)]
+  0x000000001e252000 JavaThread "J3D-InputDeviceScheduler-105" [_thread_blocked, id=16744, stack(0x00000001a6600000,0x00000001a6700000)]
+  0x000000001e24c800 JavaThread "J3D-SoundSchedulerUpdateThread-105" [_thread_blocked, id=5848, stack(0x00000001a6500000,0x00000001a6600000)]
+  0x000000001e243800 JavaThread "J3D-RenderStructureUpdateThread-105" [_thread_blocked, id=3352, stack(0x00000001a6400000,0x00000001a6500000)]
+  0x000000001e249800 JavaThread "J3D-BehaviorScheduler-105" [_thread_blocked, id=18064, stack(0x00000001a6300000,0x00000001a6400000)]
+  0x000000001e24a800 JavaThread "J3D-TransformStructureUpdateThread-105" [_thread_blocked, id=9668, stack(0x00000001a6200000,0x00000001a6300000)]
+  0x000000001e242000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-105" [_thread_blocked, id=4104, stack(0x00000001a6100000,0x00000001a6200000)]
+  0x000000001e249000 JavaThread "J3D-SoundStructureUpdateThread-105" [_thread_blocked, id=18008, stack(0x00000001a6000000,0x00000001a6100000)]
+  0x000000001e245000 JavaThread "J3D-GeometryStructureUpdateThread-105" [_thread_blocked, id=18224, stack(0x00000001a5f00000,0x00000001a6000000)]
+  0x000000001e243000 JavaThread "J3D-BehaviorStructureUpdateThread-105" [_thread_blocked, id=15880, stack(0x00000001a5e00000,0x00000001a5f00000)]
+  0x000000001e246800 JavaThread "J3D-InputDeviceScheduler-104" [_thread_blocked, id=11564, stack(0x00000001a5d00000,0x00000001a5e00000)]
+  0x000000001e248000 JavaThread "J3D-SoundSchedulerUpdateThread-104" [_thread_blocked, id=12884, stack(0x00000001a5c00000,0x00000001a5d00000)]
+  0x000000001e241800 JavaThread "J3D-RenderStructureUpdateThread-104" [_thread_blocked, id=1612, stack(0x00000001a5b00000,0x00000001a5c00000)]
+  0x000000001e247800 JavaThread "J3D-BehaviorScheduler-104" [_thread_blocked, id=2524, stack(0x00000001a5a00000,0x00000001a5b00000)]
+  0x000000001e246000 JavaThread "J3D-TransformStructureUpdateThread-104" [_thread_blocked, id=14464, stack(0x00000001a5900000,0x00000001a5a00000)]
+  0x000000001e244800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-104" [_thread_blocked, id=9568, stack(0x00000001a5800000,0x00000001a5900000)]
+  0x000000001e173000 JavaThread "J3D-SoundStructureUpdateThread-104" [_thread_blocked, id=9636, stack(0x00000001a5700000,0x00000001a5800000)]
+  0x000000001e172000 JavaThread "J3D-GeometryStructureUpdateThread-104" [_thread_blocked, id=6932, stack(0x00000001a5600000,0x00000001a5700000)]
+  0x000000001e170800 JavaThread "J3D-BehaviorStructureUpdateThread-104" [_thread_blocked, id=13208, stack(0x00000001a5500000,0x00000001a5600000)]
+  0x000000001e170000 JavaThread "J3D-InputDeviceScheduler-103" [_thread_blocked, id=15800, stack(0x00000001a5300000,0x00000001a5400000)]
+  0x000000001e175000 JavaThread "J3D-SoundSchedulerUpdateThread-103" [_thread_blocked, id=6200, stack(0x00000001a5200000,0x00000001a5300000)]
+  0x000000001e174800 JavaThread "J3D-RenderStructureUpdateThread-103" [_thread_blocked, id=17024, stack(0x00000001a5100000,0x00000001a5200000)]
+  0x000000001e171800 JavaThread "J3D-BehaviorScheduler-103" [_thread_blocked, id=7568, stack(0x00000001a5000000,0x00000001a5100000)]
+  0x000000001e16f000 JavaThread "J3D-TransformStructureUpdateThread-103" [_thread_blocked, id=8328, stack(0x00000001a4f00000,0x00000001a5000000)]
+  0x000000001e16e000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-103" [_thread_blocked, id=11044, stack(0x00000001a4e00000,0x00000001a4f00000)]
+  0x000000001e173800 JavaThread "J3D-SoundStructureUpdateThread-103" [_thread_blocked, id=13068, stack(0x00000001a4d00000,0x00000001a4e00000)]
+  0x000000001e166800 JavaThread "J3D-GeometryStructureUpdateThread-103" [_thread_blocked, id=2536, stack(0x00000001a4c00000,0x00000001a4d00000)]
+  0x000000001e16d800 JavaThread "J3D-BehaviorStructureUpdateThread-103" [_thread_blocked, id=8384, stack(0x00000001a4b00000,0x00000001a4c00000)]
+  0x000000001e166000 JavaThread "J3D-InputDeviceScheduler-102" [_thread_blocked, id=6456, stack(0x00000001a4900000,0x00000001a4a00000)]
+  0x000000001e168000 JavaThread "J3D-SoundSchedulerUpdateThread-102" [_thread_blocked, id=15400, stack(0x00000001a4800000,0x00000001a4900000)]
+  0x000000001e16c800 JavaThread "J3D-RenderStructureUpdateThread-102" [_thread_blocked, id=4784, stack(0x00000001a4700000,0x00000001a4800000)]
+  0x000000001e16c000 JavaThread "J3D-BehaviorScheduler-102" [_thread_blocked, id=4640, stack(0x00000001a4600000,0x00000001a4700000)]
+  0x000000001e16b000 JavaThread "J3D-TransformStructureUpdateThread-102" [_thread_blocked, id=7536, stack(0x00000001a4500000,0x00000001a4600000)]
+  0x000000001e169800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-102" [_thread_blocked, id=14356, stack(0x00000001a4400000,0x00000001a4500000)]
+  0x000000001e169000 JavaThread "J3D-SoundStructureUpdateThread-102" [_thread_blocked, id=12504, stack(0x00000001a4300000,0x00000001a4400000)]
+  0x000000001e167800 JavaThread "J3D-GeometryStructureUpdateThread-102" [_thread_blocked, id=9620, stack(0x00000001a4200000,0x00000001a4300000)]
+  0x000000001e16a800 JavaThread "J3D-BehaviorStructureUpdateThread-102" [_thread_blocked, id=12184, stack(0x00000001a4100000,0x00000001a4200000)]
+  0x000000001e15e800 JavaThread "J3D-InputDeviceScheduler-101" [_thread_blocked, id=3064, stack(0x00000001a4000000,0x00000001a4100000)]
+  0x000000001e165000 JavaThread "J3D-SoundSchedulerUpdateThread-101" [_thread_blocked, id=11104, stack(0x00000001a3f00000,0x00000001a4000000)]
+  0x000000001e164800 JavaThread "J3D-RenderStructureUpdateThread-101" [_thread_blocked, id=1780, stack(0x00000001a3e00000,0x00000001a3f00000)]
+  0x000000001e163800 JavaThread "J3D-BehaviorScheduler-101" [_thread_blocked, id=17540, stack(0x00000001a3d00000,0x00000001a3e00000)]
+  0x000000001e163000 JavaThread "J3D-TransformStructureUpdateThread-101" [_thread_blocked, id=10164, stack(0x00000001a3c00000,0x00000001a3d00000)]
+  0x000000001e15f000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-101" [_thread_blocked, id=1356, stack(0x00000001a3b00000,0x00000001a3c00000)]
+  0x000000001e160800 JavaThread "J3D-SoundStructureUpdateThread-101" [_thread_blocked, id=15004, stack(0x00000001a3a00000,0x00000001a3b00000)]
+  0x000000001e162000 JavaThread "J3D-GeometryStructureUpdateThread-101" [_thread_blocked, id=7856, stack(0x00000001a3900000,0x00000001a3a00000)]
+  0x000000001e161800 JavaThread "J3D-BehaviorStructureUpdateThread-101" [_thread_blocked, id=16760, stack(0x00000001a3800000,0x00000001a3900000)]
+  0x000000001e160000 JavaThread "J3D-InputDeviceScheduler-100" [_thread_blocked, id=10352, stack(0x00000001a3600000,0x00000001a3700000)]
+  0x000000001e157000 JavaThread "J3D-SoundSchedulerUpdateThread-100" [_thread_blocked, id=5060, stack(0x00000001a3500000,0x00000001a3600000)]
+  0x000000001e15d800 JavaThread "J3D-RenderStructureUpdateThread-100" [_thread_blocked, id=5392, stack(0x00000001a3400000,0x00000001a3500000)]
+  0x000000001e156000 JavaThread "J3D-BehaviorScheduler-100" [_thread_blocked, id=7464, stack(0x00000001a3300000,0x00000001a3400000)]
+  0x000000001e159000 JavaThread "J3D-TransformStructureUpdateThread-100" [_thread_blocked, id=11880, stack(0x00000001a3200000,0x00000001a3300000)]
+  0x000000001e15a800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-100" [_thread_blocked, id=15512, stack(0x00000001a3100000,0x00000001a3200000)]
+  0x000000001e157800 JavaThread "J3D-SoundStructureUpdateThread-100" [_thread_blocked, id=18344, stack(0x00000001a3000000,0x00000001a3100000)]
+  0x000000001e15d000 JavaThread "J3D-GeometryStructureUpdateThread-100" [_thread_blocked, id=8476, stack(0x00000001a2f00000,0x00000001a3000000)]
+  0x000000001e155800 JavaThread "J3D-BehaviorStructureUpdateThread-100" [_thread_blocked, id=15748, stack(0x00000001a2e00000,0x00000001a2f00000)]
+  0x000000001e15a000 JavaThread "J3D-InputDeviceScheduler-99" [_thread_blocked, id=7160, stack(0x00000001a2d00000,0x00000001a2e00000)]
+  0x000000001e15c000 JavaThread "J3D-SoundSchedulerUpdateThread-99" [_thread_blocked, id=7040, stack(0x00000001a2c00000,0x00000001a2d00000)]
+  0x000000001e154800 JavaThread "J3D-RenderStructureUpdateThread-99" [_thread_blocked, id=16904, stack(0x00000001a2b00000,0x00000001a2c00000)]
+  0x000000001e158800 JavaThread "J3D-BehaviorScheduler-99" [_thread_blocked, id=8212, stack(0x00000001a2a00000,0x00000001a2b00000)]
+  0x000000001e15b800 JavaThread "J3D-TransformStructureUpdateThread-99" [_thread_blocked, id=18072, stack(0x00000001a2900000,0x00000001a2a00000)]
+  0x000000001e14d000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-99" [_thread_blocked, id=1260, stack(0x00000001a2800000,0x00000001a2900000)]
+  0x000000001e154000 JavaThread "J3D-SoundStructureUpdateThread-99" [_thread_blocked, id=17700, stack(0x00000001a2700000,0x00000001a2800000)]
+  0x000000001e14c800 JavaThread "J3D-GeometryStructureUpdateThread-99" [_thread_blocked, id=11536, stack(0x00000001a2600000,0x00000001a2700000)]
+  0x000000001e153000 JavaThread "J3D-BehaviorStructureUpdateThread-99" [_thread_blocked, id=7584, stack(0x00000001a2500000,0x00000001a2600000)]
+  0x000000001e152800 JavaThread "J3D-InputDeviceScheduler-98" [_thread_blocked, id=14460, stack(0x00000001a2300000,0x00000001a2400000)]
+  0x000000001e151800 JavaThread "J3D-SoundSchedulerUpdateThread-98" [_thread_blocked, id=15664, stack(0x00000001a2200000,0x00000001a2300000)]
+  0x000000001e14a000 JavaThread "J3D-RenderStructureUpdateThread-98" [_thread_blocked, id=16048, stack(0x00000001a2100000,0x00000001a2200000)]
+  0x000000001e151000 JavaThread "J3D-BehaviorScheduler-98" [_thread_blocked, id=9404, stack(0x00000001a2000000,0x00000001a2100000)]
+  0x000000001e14f800 JavaThread "J3D-TransformStructureUpdateThread-98" [_thread_blocked, id=5556, stack(0x00000001a1f00000,0x00000001a2000000)]
+  0x000000001e149800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-98" [_thread_blocked, id=2896, stack(0x00000001a1e00000,0x00000001a1f00000)]
+  0x000000001e14e800 JavaThread "J3D-SoundStructureUpdateThread-98" [_thread_blocked, id=8248, stack(0x00000001a1d00000,0x00000001a1e00000)]
+  0x000000001e14e000 JavaThread "J3D-GeometryStructureUpdateThread-98" [_thread_blocked, id=2940, stack(0x00000001a1c00000,0x00000001a1d00000)]
+  0x000000001e14b800 JavaThread "J3D-BehaviorStructureUpdateThread-98" [_thread_blocked, id=15516, stack(0x00000001a1b00000,0x00000001a1c00000)]
+  0x000000001e14b000 JavaThread "J3D-InputDeviceScheduler-97" [_thread_blocked, id=14100, stack(0x00000001a1900000,0x00000001a1a00000)]
+  0x000000001e150000 JavaThread "J3D-SoundSchedulerUpdateThread-97" [_thread_blocked, id=17572, stack(0x00000001a1800000,0x00000001a1900000)]
+  0x000000001e142000 JavaThread "J3D-RenderStructureUpdateThread-97" [_thread_blocked, id=5432, stack(0x00000001a1700000,0x00000001a1800000)]
+  0x000000001e148800 JavaThread "J3D-BehaviorScheduler-97" [_thread_blocked, id=12024, stack(0x00000001a1600000,0x00000001a1700000)]
+  0x000000001e141000 JavaThread "J3D-TransformStructureUpdateThread-97" [_thread_blocked, id=14484, stack(0x00000001a1500000,0x00000001a1600000)]
+  0x000000001e148000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-97" [_thread_blocked, id=3652, stack(0x00000001a1400000,0x00000001a1500000)]
+  0x000000001e147000 JavaThread "J3D-SoundStructureUpdateThread-97" [_thread_blocked, id=14876, stack(0x00000001a1300000,0x00000001a1400000)]
+  0x000000001e13f800 JavaThread "J3D-GeometryStructureUpdateThread-97" [_thread_blocked, id=14936, stack(0x00000001a1200000,0x00000001a1300000)]
+  0x000000001e145000 JavaThread "J3D-BehaviorStructureUpdateThread-97" [_thread_blocked, id=7924, stack(0x00000001a1100000,0x00000001a1200000)]
+  0x000000001e144000 JavaThread "J3D-InputDeviceScheduler-96" [_thread_blocked, id=4500, stack(0x00000001a0f00000,0x00000001a1000000)]
+  0x000000001e146800 JavaThread "J3D-SoundSchedulerUpdateThread-96" [_thread_blocked, id=14072, stack(0x00000001a0e00000,0x00000001a0f00000)]
+  0x000000001e143800 JavaThread "J3D-RenderStructureUpdateThread-96" [_thread_blocked, id=13528, stack(0x00000001a0d00000,0x00000001a0e00000)]
+  0x000000001e142800 JavaThread "J3D-BehaviorScheduler-96" [_thread_blocked, id=10736, stack(0x00000001a0c00000,0x00000001a0d00000)]
+  0x000000001e13f000 JavaThread "J3D-TransformStructureUpdateThread-96" [_thread_blocked, id=15012, stack(0x00000001a0b00000,0x00000001a0c00000)]
+  0x000000001e140800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-96" [_thread_blocked, id=6720, stack(0x00000001a0a00000,0x00000001a0b00000)]
+  0x000000001e145800 JavaThread "J3D-SoundStructureUpdateThread-96" [_thread_blocked, id=14964, stack(0x00000001a0900000,0x00000001a0a00000)]
+  0x000000001e137000 JavaThread "J3D-GeometryStructureUpdateThread-96" [_thread_blocked, id=12104, stack(0x00000001a0800000,0x00000001a0900000)]
+  0x000000001e13b000 JavaThread "J3D-BehaviorStructureUpdateThread-96" [_thread_blocked, id=17116, stack(0x00000001a0700000,0x00000001a0800000)]
+  0x000000001e13e000 JavaThread "J3D-InputDeviceScheduler-95" [_thread_blocked, id=9112, stack(0x00000001a0500000,0x00000001a0600000)]
+  0x000000001e136800 JavaThread "J3D-SoundSchedulerUpdateThread-95" [_thread_blocked, id=1992, stack(0x00000001a0400000,0x00000001a0500000)]
+  0x000000001e13a000 JavaThread "J3D-RenderStructureUpdateThread-95" [_thread_blocked, id=10364, stack(0x00000001a0300000,0x00000001a0400000)]
+  0x000000001e13b800 JavaThread "J3D-BehaviorScheduler-95" [_thread_blocked, id=16960, stack(0x00000001a0200000,0x00000001a0300000)]
+  0x000000001e13c800 JavaThread "J3D-TransformStructureUpdateThread-95" [_thread_blocked, id=3292, stack(0x00000001a0100000,0x00000001a0200000)]
+  0x000000001e139800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-95" [_thread_blocked, id=14008, stack(0x00000001a0000000,0x00000001a0100000)]
+  0x000000001e138800 JavaThread "J3D-SoundStructureUpdateThread-95" [_thread_blocked, id=7732, stack(0x000000019ff00000,0x00000001a0000000)]
+  0x000000001e13d000 JavaThread "J3D-GeometryStructureUpdateThread-95" [_thread_blocked, id=13960, stack(0x000000019fe00000,0x000000019ff00000)]
+  0x000000001e138000 JavaThread "J3D-BehaviorStructureUpdateThread-95" [_thread_blocked, id=4340, stack(0x000000019fd00000,0x000000019fe00000)]
+  0x000000001e135800 JavaThread "J3D-InputDeviceScheduler-94" [_thread_blocked, id=13768, stack(0x000000019fb00000,0x000000019fc00000)]
+  0x0000000078ea4800 JavaThread "J3D-SoundSchedulerUpdateThread-94" [_thread_blocked, id=3696, stack(0x000000019fa00000,0x000000019fb00000)]
+  0x0000000078ea3800 JavaThread "J3D-RenderStructureUpdateThread-94" [_thread_blocked, id=16372, stack(0x000000019f900000,0x000000019fa00000)]
+  0x0000000078ea3000 JavaThread "J3D-BehaviorScheduler-94" [_thread_blocked, id=4548, stack(0x000000019f800000,0x000000019f900000)]
+  0x0000000078ea1800 JavaThread "J3D-TransformStructureUpdateThread-94" [_thread_blocked, id=15684, stack(0x000000019f700000,0x000000019f800000)]
+  0x0000000078ea2000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-94" [_thread_blocked, id=6972, stack(0x000000019f600000,0x000000019f700000)]
+  0x0000000078ea0000 JavaThread "J3D-SoundStructureUpdateThread-94" [_thread_blocked, id=18052, stack(0x000000019f500000,0x000000019f600000)]
+  0x0000000078e9e800 JavaThread "J3D-GeometryStructureUpdateThread-94" [_thread_blocked, id=5036, stack(0x000000019f400000,0x000000019f500000)]
+  0x0000000078e9f000 JavaThread "J3D-BehaviorStructureUpdateThread-94" [_thread_blocked, id=10160, stack(0x000000019f300000,0x000000019f400000)]
+  0x0000000078ea0800 JavaThread "J3D-InputDeviceScheduler-93" [_thread_blocked, id=12716, stack(0x000000019f200000,0x000000019f300000)]
+  0x0000000078e97000 JavaThread "J3D-SoundSchedulerUpdateThread-93" [_thread_blocked, id=5132, stack(0x000000019f100000,0x000000019f200000)]
+  0x0000000078e9d800 JavaThread "J3D-RenderStructureUpdateThread-93" [_thread_blocked, id=12400, stack(0x000000019f000000,0x000000019f100000)]
+  0x0000000078e96000 JavaThread "J3D-BehaviorScheduler-93" [_thread_blocked, id=1496, stack(0x000000019ef00000,0x000000019f000000)]
+  0x0000000078e9a000 JavaThread "J3D-TransformStructureUpdateThread-93" [_thread_blocked, id=17396, stack(0x000000019ee00000,0x000000019ef00000)]
+  0x0000000078e9a800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-93" [_thread_blocked, id=6184, stack(0x000000019ed00000,0x000000019ee00000)]
+  0x0000000078e9d000 JavaThread "J3D-SoundStructureUpdateThread-93" [_thread_blocked, id=8976, stack(0x000000019ec00000,0x000000019ed00000)]
+  0x0000000078e99000 JavaThread "J3D-GeometryStructureUpdateThread-93" [_thread_blocked, id=920, stack(0x000000019eb00000,0x000000019ec00000)]
+  0x0000000078e95800 JavaThread "J3D-BehaviorStructureUpdateThread-93" [_thread_blocked, id=18396, stack(0x000000019ea00000,0x000000019eb00000)]
+  0x0000000078e98800 JavaThread "J3D-InputDeviceScheduler-92" [_thread_blocked, id=8288, stack(0x000000019e800000,0x000000019e900000)]
+  0x0000000078e9c000 JavaThread "J3D-SoundSchedulerUpdateThread-92" [_thread_blocked, id=4280, stack(0x000000019e700000,0x000000019e800000)]
+  0x0000000078e9b800 JavaThread "J3D-RenderStructureUpdateThread-92" [_thread_blocked, id=11336, stack(0x000000019e600000,0x000000019e700000)]
+  0x0000000078e97800 JavaThread "J3D-BehaviorScheduler-92" [_thread_blocked, id=6124, stack(0x000000019e500000,0x000000019e600000)]
+  0x0000000078e94800 JavaThread "J3D-TransformStructureUpdateThread-92" [_thread_blocked, id=7748, stack(0x000000019e400000,0x000000019e500000)]
+  0x0000000078e8e800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-92" [_thread_blocked, id=8008, stack(0x000000019e300000,0x000000019e400000)]
+  0x0000000078e8e000 JavaThread "J3D-SoundStructureUpdateThread-92" [_thread_blocked, id=16560, stack(0x000000019e200000,0x000000019e300000)]
+  0x0000000078e8d000 JavaThread "J3D-GeometryStructureUpdateThread-92" [_thread_blocked, id=10836, stack(0x000000019e100000,0x000000019e200000)]
+  0x0000000078e92800 JavaThread "J3D-BehaviorStructureUpdateThread-92" [_thread_blocked, id=9172, stack(0x000000019e000000,0x000000019e100000)]
+  0x0000000078e91800 JavaThread "J3D-InputDeviceScheduler-91" [_thread_blocked, id=14104, stack(0x000000019dd00000,0x000000019de00000)]
+  0x0000000078e8f800 JavaThread "J3D-SoundSchedulerUpdateThread-91" [_thread_blocked, id=7860, stack(0x000000019dc00000,0x000000019dd00000)]
+  0x0000000078e91000 JavaThread "J3D-RenderStructureUpdateThread-91" [_thread_blocked, id=1172, stack(0x000000019db00000,0x000000019dc00000)]
+  0x0000000078e93000 JavaThread "J3D-BehaviorScheduler-91" [_thread_blocked, id=9264, stack(0x000000019da00000,0x000000019db00000)]
+  0x0000000078e94000 JavaThread "J3D-TransformStructureUpdateThread-91" [_thread_blocked, id=16472, stack(0x000000019d900000,0x000000019da00000)]
+  0x0000000078e90000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-91" [_thread_blocked, id=11912, stack(0x000000019d800000,0x000000019d900000)]
+  0x0000000078e85800 JavaThread "J3D-SoundStructureUpdateThread-91" [_thread_blocked, id=18400, stack(0x000000019d700000,0x000000019d800000)]
+  0x0000000078e8c800 JavaThread "J3D-GeometryStructureUpdateThread-91" [_thread_blocked, id=16820, stack(0x000000019d600000,0x000000019d700000)]
+  0x0000000078e86800 JavaThread "J3D-BehaviorStructureUpdateThread-91" [_thread_blocked, id=17944, stack(0x000000019d500000,0x000000019d600000)]
+  0x0000000078e8b800 JavaThread "J3D-InputDeviceScheduler-90" [_thread_blocked, id=17000, stack(0x000000019d300000,0x000000019d400000)]
+  0x0000000078e8b000 JavaThread "J3D-SoundSchedulerUpdateThread-90" [_thread_blocked, id=9576, stack(0x000000019d200000,0x000000019d300000)]
+  0x0000000078e8a000 JavaThread "J3D-RenderStructureUpdateThread-90" [_thread_blocked, id=4524, stack(0x000000019d100000,0x000000019d200000)]
+  0x0000000078e89800 JavaThread "J3D-BehaviorScheduler-90" [_thread_blocked, id=11620, stack(0x000000019d000000,0x000000019d100000)]
+  0x0000000078e88800 JavaThread "J3D-TransformStructureUpdateThread-90" [_thread_blocked, id=11560, stack(0x000000019cf00000,0x000000019d000000)]
+  0x0000000078e81000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-90" [_thread_blocked, id=5456, stack(0x000000019ce00000,0x000000019cf00000)]
+  0x0000000078e84000 JavaThread "J3D-SoundStructureUpdateThread-90" [_thread_blocked, id=4700, stack(0x000000019cd00000,0x000000019ce00000)]
+  0x0000000078e83800 JavaThread "J3D-GeometryStructureUpdateThread-90" [_thread_blocked, id=14564, stack(0x000000019cc00000,0x000000019cd00000)]
+  0x0000000078e88000 JavaThread "J3D-BehaviorStructureUpdateThread-90" [_thread_blocked, id=17424, stack(0x000000019cb00000,0x000000019cc00000)]
+  0x0000000078e82800 JavaThread "J3D-InputDeviceScheduler-89" [_thread_blocked, id=13256, stack(0x000000019ca00000,0x000000019cb00000)]
+  0x0000000078e87000 JavaThread "J3D-SoundSchedulerUpdateThread-89" [_thread_blocked, id=15176, stack(0x000000019c900000,0x000000019ca00000)]
+  0x0000000078e85000 JavaThread "J3D-RenderStructureUpdateThread-89" [_thread_blocked, id=12656, stack(0x000000019c800000,0x000000019c900000)]
+  0x0000000078e82000 JavaThread "J3D-BehaviorScheduler-89" [_thread_blocked, id=17548, stack(0x000000019c700000,0x000000019c800000)]
+  0x0000000078e79800 JavaThread "J3D-TransformStructureUpdateThread-89" [_thread_blocked, id=15604, stack(0x000000019c600000,0x000000019c700000)]
+  0x0000000078e80800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-89" [_thread_blocked, id=7604, stack(0x000000019c500000,0x000000019c600000)]
+  0x0000000078e79000 JavaThread "J3D-SoundStructureUpdateThread-89" [_thread_blocked, id=8036, stack(0x000000019c400000,0x000000019c500000)]
+  0x0000000078e7e000 JavaThread "J3D-GeometryStructureUpdateThread-89" [_thread_blocked, id=8672, stack(0x000000019c300000,0x000000019c400000)]
+  0x0000000078e7d800 JavaThread "J3D-BehaviorStructureUpdateThread-89" [_thread_blocked, id=8556, stack(0x000000019c200000,0x000000019c300000)]
+  0x0000000078e7f000 JavaThread "J3D-InputDeviceScheduler-88" [_thread_blocked, id=7240, stack(0x000000019c100000,0x000000019c200000)]
+  0x0000000078e7c000 JavaThread "J3D-SoundSchedulerUpdateThread-88" [_thread_blocked, id=14668, stack(0x000000019c000000,0x000000019c100000)]
+  0x0000000078e7f800 JavaThread "J3D-RenderStructureUpdateThread-88" [_thread_blocked, id=11208, stack(0x000000019bf00000,0x000000019c000000)]
+  0x0000000078e7b000 JavaThread "J3D-BehaviorScheduler-88" [_thread_blocked, id=4612, stack(0x000000019be00000,0x000000019bf00000)]
+  0x0000000078e7c800 JavaThread "J3D-TransformStructureUpdateThread-88" [_thread_blocked, id=14548, stack(0x000000019bd00000,0x000000019be00000)]
+  0x0000000078e7a800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-88" [_thread_blocked, id=15352, stack(0x000000019bc00000,0x000000019bd00000)]
+  0x0000000078e78000 JavaThread "J3D-SoundStructureUpdateThread-88" [_thread_blocked, id=5688, stack(0x000000019bb00000,0x000000019bc00000)]
+  0x0000000078e70800 JavaThread "J3D-GeometryStructureUpdateThread-88" [_thread_blocked, id=13004, stack(0x000000019ba00000,0x000000019bb00000)]
+  0x0000000078e77000 JavaThread "J3D-BehaviorStructureUpdateThread-88" [_thread_blocked, id=17560, stack(0x000000019b900000,0x000000019ba00000)]
+  0x0000000078e75000 JavaThread "J3D-InputDeviceScheduler-87" [_thread_blocked, id=17420, stack(0x000000019b700000,0x000000019b800000)]
+  0x0000000078e76800 JavaThread "J3D-SoundSchedulerUpdateThread-87" [_thread_blocked, id=5220, stack(0x000000019b600000,0x000000019b700000)]
+  0x0000000078e72800 JavaThread "J3D-RenderStructureUpdateThread-87" [_thread_blocked, id=8460, stack(0x000000019b500000,0x000000019b600000)]
+  0x0000000078e75800 JavaThread "J3D-BehaviorScheduler-87" [_thread_blocked, id=16580, stack(0x000000019b400000,0x000000019b500000)]
+  0x0000000078e6d800 JavaThread "J3D-TransformStructureUpdateThread-87" [_thread_blocked, id=5224, stack(0x000000019b300000,0x000000019b400000)]
+  0x0000000078e73800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-87" [_thread_blocked, id=8832, stack(0x000000019b200000,0x000000019b300000)]
+  0x0000000078e6e000 JavaThread "J3D-SoundStructureUpdateThread-87" [_thread_blocked, id=5940, stack(0x000000019b100000,0x000000019b200000)]
+  0x0000000078e6f000 JavaThread "J3D-GeometryStructureUpdateThread-87" [_thread_blocked, id=8768, stack(0x000000019b000000,0x000000019b100000)]
+  0x0000000078e6f800 JavaThread "J3D-BehaviorStructureUpdateThread-87" [_thread_blocked, id=7520, stack(0x000000019af00000,0x000000019b000000)]
+  0x0000000078e71000 JavaThread "J3D-InputDeviceScheduler-86" [_thread_blocked, id=16236, stack(0x000000019ad00000,0x000000019ae00000)]
+  0x0000000078e74000 JavaThread "J3D-SoundSchedulerUpdateThread-86" [_thread_blocked, id=4336, stack(0x000000019ac00000,0x000000019ad00000)]
+  0x0000000078e72000 JavaThread "J3D-RenderStructureUpdateThread-86" [_thread_blocked, id=18148, stack(0x000000019ab00000,0x000000019ac00000)]
+  0x0000000078e66000 JavaThread "J3D-BehaviorScheduler-86" [_thread_blocked, id=1128, stack(0x000000019aa00000,0x000000019ab00000)]
+  0x0000000078e67800 JavaThread "J3D-TransformStructureUpdateThread-86" [_thread_blocked, id=8144, stack(0x000000019a900000,0x000000019aa00000)]
+  0x0000000078e6c800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-86" [_thread_blocked, id=5996, stack(0x000000019a800000,0x000000019a900000)]
+  0x0000000078e6c000 JavaThread "J3D-SoundStructureUpdateThread-86" [_thread_blocked, id=13424, stack(0x000000019a700000,0x000000019a800000)]
+  0x0000000078e64800 JavaThread "J3D-GeometryStructureUpdateThread-86" [_thread_blocked, id=2668, stack(0x000000019a600000,0x000000019a700000)]
+  0x0000000078e6a800 JavaThread "J3D-BehaviorStructureUpdateThread-86" [_thread_blocked, id=8864, stack(0x000000019a500000,0x000000019a600000)]
+  0x0000000078e68000 JavaThread "J3D-InputDeviceScheduler-85" [_thread_blocked, id=8372, stack(0x000000019a300000,0x000000019a400000)]
+  0x0000000078e65000 JavaThread "J3D-SoundSchedulerUpdateThread-85" [_thread_blocked, id=6504, stack(0x000000019a200000,0x000000019a300000)]
+  0x0000000078e69000 JavaThread "J3D-RenderStructureUpdateThread-85" [_thread_blocked, id=18416, stack(0x000000019a100000,0x000000019a200000)]
+  0x0000000078e6b000 JavaThread "J3D-BehaviorScheduler-85" [_thread_blocked, id=15636, stack(0x000000019a000000,0x000000019a100000)]
+  0x0000000078e66800 JavaThread "J3D-TransformStructureUpdateThread-85" [_thread_blocked, id=12520, stack(0x0000000199f00000,0x000000019a000000)]
+  0x0000000078e69800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-85" [_thread_blocked, id=5068, stack(0x0000000199e00000,0x0000000199f00000)]
+  0x000000001d81b800 JavaThread "J3D-SoundStructureUpdateThread-85" [_thread_blocked, id=17500, stack(0x0000000199d00000,0x0000000199e00000)]
+  0x000000001d81a800 JavaThread "J3D-GeometryStructureUpdateThread-85" [_thread_blocked, id=5268, stack(0x0000000199c00000,0x0000000199d00000)]
+  0x000000001d817800 JavaThread "J3D-BehaviorStructureUpdateThread-85" [_thread_blocked, id=4284, stack(0x0000000199b00000,0x0000000199c00000)]
+  0x000000001d81d000 JavaThread "J3D-InputDeviceScheduler-84" [_thread_blocked, id=3508, stack(0x0000000199a00000,0x0000000199b00000)]
+  0x000000001d817000 JavaThread "J3D-SoundSchedulerUpdateThread-84" [_thread_blocked, id=14232, stack(0x0000000199900000,0x0000000199a00000)]
+  0x000000001d816000 JavaThread "J3D-RenderStructureUpdateThread-84" [_thread_blocked, id=10920, stack(0x0000000199800000,0x0000000199900000)]
+  0x000000001d819000 JavaThread "J3D-BehaviorScheduler-84" [_thread_blocked, id=2608, stack(0x0000000199700000,0x0000000199800000)]
+  0x000000001d81c000 JavaThread "J3D-TransformStructureUpdateThread-84" [_thread_blocked, id=8256, stack(0x0000000199600000,0x0000000199700000)]
+  0x000000001d818800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-84" [_thread_blocked, id=12072, stack(0x0000000199500000,0x0000000199600000)]
+  0x000000001d81a000 JavaThread "J3D-SoundStructureUpdateThread-84" [_thread_blocked, id=396, stack(0x0000000199400000,0x0000000199500000)]
+  0x000000001d810000 JavaThread "J3D-GeometryStructureUpdateThread-84" [_thread_blocked, id=11968, stack(0x0000000199300000,0x0000000199400000)]
+  0x000000001d80e800 JavaThread "J3D-BehaviorStructureUpdateThread-84" [_thread_blocked, id=8564, stack(0x0000000199200000,0x0000000199300000)]
+  0x000000001d814000 JavaThread "J3D-InputDeviceScheduler-83" [_thread_blocked, id=17064, stack(0x0000000199000000,0x0000000199100000)]
+  0x000000001d813000 JavaThread "J3D-SoundSchedulerUpdateThread-83" [_thread_blocked, id=9032, stack(0x0000000198f00000,0x0000000199000000)]
+  0x000000001d812800 JavaThread "J3D-RenderStructureUpdateThread-83" [_thread_blocked, id=17256, stack(0x0000000198e00000,0x0000000198f00000)]
+  0x000000001d814800 JavaThread "J3D-BehaviorScheduler-83" [_thread_blocked, id=2332, stack(0x0000000198d00000,0x0000000198e00000)]
+  0x000000001d811800 JavaThread "J3D-TransformStructureUpdateThread-83" [_thread_blocked, id=8132, stack(0x0000000198c00000,0x0000000198d00000)]
+  0x000000001d811000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-83" [_thread_blocked, id=5056, stack(0x0000000198b00000,0x0000000198c00000)]
+  0x000000001d80f800 JavaThread "J3D-SoundStructureUpdateThread-83" [_thread_blocked, id=4168, stack(0x0000000198a00000,0x0000000198b00000)]
+  0x000000001d815800 JavaThread "J3D-GeometryStructureUpdateThread-83" [_thread_blocked, id=13780, stack(0x0000000198900000,0x0000000198a00000)]
+  0x000000001d80e000 JavaThread "J3D-BehaviorStructureUpdateThread-83" [_thread_blocked, id=18028, stack(0x0000000198800000,0x0000000198900000)]
+  0x000000001d80a000 JavaThread "J3D-InputDeviceScheduler-82" [_thread_blocked, id=8016, stack(0x0000000198600000,0x0000000198700000)]
+  0x000000001d809000 JavaThread "J3D-SoundSchedulerUpdateThread-82" [_thread_blocked, id=13944, stack(0x0000000198500000,0x0000000198600000)]
+  0x000000001d807800 JavaThread "J3D-RenderStructureUpdateThread-82" [_thread_blocked, id=664, stack(0x0000000198400000,0x0000000198500000)]
+  0x000000001d80c000 JavaThread "J3D-BehaviorScheduler-82" [_thread_blocked, id=18196, stack(0x0000000198300000,0x0000000198400000)]
+  0x000000001d807000 JavaThread "J3D-TransformStructureUpdateThread-82" [_thread_blocked, id=12260, stack(0x0000000198200000,0x0000000198300000)]
+  0x000000001d808800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-82" [_thread_blocked, id=9300, stack(0x0000000198100000,0x0000000198200000)]
+  0x000000001d806000 JavaThread "J3D-SoundStructureUpdateThread-82" [_thread_blocked, id=10808, stack(0x0000000198000000,0x0000000198100000)]
+  0x000000001d80a800 JavaThread "J3D-GeometryStructureUpdateThread-82" [_thread_blocked, id=5580, stack(0x0000000197f00000,0x0000000198000000)]
+  0x000000001d80d000 JavaThread "J3D-BehaviorStructureUpdateThread-82" [_thread_blocked, id=15860, stack(0x0000000197e00000,0x0000000197f00000)]
+  0x000000001d805800 JavaThread "J3D-InputDeviceScheduler-81" [_thread_blocked, id=14612, stack(0x0000000197c00000,0x0000000197d00000)]
+  0x000000001d80b800 JavaThread "J3D-SoundSchedulerUpdateThread-81" [_thread_blocked, id=15812, stack(0x0000000197b00000,0x0000000197c00000)]
+  0x000000001d7fe000 JavaThread "J3D-RenderStructureUpdateThread-81" [_thread_blocked, id=2404, stack(0x0000000197a00000,0x0000000197b00000)]
+  0x000000001d804800 JavaThread "J3D-BehaviorScheduler-81" [_thread_blocked, id=10784, stack(0x00000001976d0000,0x00000001977d0000)]
+  0x000000001d804000 JavaThread "J3D-TransformStructureUpdateThread-81" [_thread_blocked, id=3028, stack(0x00000001975d0000,0x00000001976d0000)]
+  0x000000001d801800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-81" [_thread_blocked, id=9444, stack(0x00000001974d0000,0x00000001975d0000)]
+  0x000000001d801000 JavaThread "J3D-SoundStructureUpdateThread-81" [_thread_blocked, id=14092, stack(0x00000001973d0000,0x00000001974d0000)]
+  0x000000001d7ff800 JavaThread "J3D-GeometryStructureUpdateThread-81" [_thread_blocked, id=9532, stack(0x00000001972d0000,0x00000001973d0000)]
+  0x000000001d7fe800 JavaThread "J3D-BehaviorStructureUpdateThread-81" [_thread_blocked, id=10168, stack(0x00000001971d0000,0x00000001972d0000)]
+  0x000000001d803000 JavaThread "J3D-InputDeviceScheduler-80" [_thread_blocked, id=7720, stack(0x0000000196fd0000,0x00000001970d0000)]
+  0x000000001d800000 JavaThread "J3D-SoundSchedulerUpdateThread-80" [_thread_blocked, id=13976, stack(0x0000000196ed0000,0x0000000196fd0000)]
+  0x000000001d802800 JavaThread "J3D-RenderStructureUpdateThread-80" [_thread_blocked, id=16296, stack(0x0000000196dd0000,0x0000000196ed0000)]
+  0x000000001d7f6800 JavaThread "J3D-BehaviorScheduler-80" [_thread_blocked, id=10744, stack(0x0000000196cd0000,0x0000000196dd0000)]
+  0x000000001d7fc800 JavaThread "J3D-TransformStructureUpdateThread-80" [_thread_blocked, id=9176, stack(0x0000000196bd0000,0x0000000196cd0000)]
+  0x000000001d7fb800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-80" [_thread_blocked, id=10892, stack(0x0000000196ad0000,0x0000000196bd0000)]
+  0x000000001d7fb000 JavaThread "J3D-SoundStructureUpdateThread-80" [_thread_blocked, id=11888, stack(0x00000001969d0000,0x0000000196ad0000)]
+  0x000000001d7f9800 JavaThread "J3D-GeometryStructureUpdateThread-80" [_thread_blocked, id=15332, stack(0x00000001968d0000,0x00000001969d0000)]
+  0x000000001d7fd000 JavaThread "J3D-BehaviorStructureUpdateThread-80" [_thread_blocked, id=14216, stack(0x00000001967d0000,0x00000001968d0000)]
+  0x000000001d7f7000 JavaThread "J3D-InputDeviceScheduler-79" [_thread_blocked, id=13740, stack(0x00000001965d0000,0x00000001966d0000)]
+  0x000000001d7f3800 JavaThread "J3D-SoundSchedulerUpdateThread-79" [_thread_blocked, id=17924, stack(0x00000001964d0000,0x00000001965d0000)]
+  0x000000001d7fa000 JavaThread "J3D-RenderStructureUpdateThread-79" [_thread_blocked, id=17172, stack(0x00000001963d0000,0x00000001964d0000)]
+  0x000000001d7f5000 JavaThread "J3D-BehaviorScheduler-79" [_thread_blocked, id=17860, stack(0x00000001962d0000,0x00000001963d0000)]
+  0x000000001d7f8800 JavaThread "J3D-TransformStructureUpdateThread-79" [_thread_blocked, id=15088, stack(0x00000001961d0000,0x00000001962d0000)]
+  0x000000001d7f1000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-79" [_thread_blocked, id=10460, stack(0x00000001960d0000,0x00000001961d0000)]
+  0x000000001d7f8000 JavaThread "J3D-SoundStructureUpdateThread-79" [_thread_blocked, id=11452, stack(0x0000000195fd0000,0x00000001960d0000)]
+  0x000000001d7f5800 JavaThread "J3D-GeometryStructureUpdateThread-79" [_thread_blocked, id=7400, stack(0x0000000195ed0000,0x0000000195fd0000)]
+  0x000000001d7f4000 JavaThread "J3D-BehaviorStructureUpdateThread-79" [_thread_blocked, id=7180, stack(0x0000000195dd0000,0x0000000195ed0000)]
+  0x000000001d7f2000 JavaThread "J3D-InputDeviceScheduler-78" [_thread_blocked, id=13396, stack(0x0000000195bd0000,0x0000000195cd0000)]
+  0x000000001d7f2800 JavaThread "J3D-SoundSchedulerUpdateThread-78" [_thread_blocked, id=5512, stack(0x0000000195ad0000,0x0000000195bd0000)]
+  0x000000001d7e9800 JavaThread "J3D-RenderStructureUpdateThread-78" [_thread_blocked, id=17600, stack(0x00000001959d0000,0x0000000195ad0000)]
+  0x000000001d7ed800 JavaThread "J3D-BehaviorScheduler-78" [_thread_blocked, id=16748, stack(0x00000001958d0000,0x00000001959d0000)]
+  0x000000001d7f0800 JavaThread "J3D-TransformStructureUpdateThread-78" [_thread_blocked, id=5064, stack(0x00000001957d0000,0x00000001958d0000)]
+  0x000000001d7ec000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-78" [_thread_blocked, id=14680, stack(0x00000001956d0000,0x00000001957d0000)]
+  0x000000001d7ef000 JavaThread "J3D-SoundStructureUpdateThread-78" [_thread_blocked, id=15672, stack(0x00000001955d0000,0x00000001956d0000)]
+  0x000000001d7ec800 JavaThread "J3D-GeometryStructureUpdateThread-78" [_thread_blocked, id=2264, stack(0x00000001954d0000,0x00000001955d0000)]
+  0x000000001d7ee000 JavaThread "J3D-BehaviorStructureUpdateThread-78" [_thread_blocked, id=2792, stack(0x00000001953d0000,0x00000001954d0000)]
+  0x000000001d7e9000 JavaThread "J3D-InputDeviceScheduler-77" [_thread_blocked, id=9716, stack(0x00000001951d0000,0x00000001952d0000)]
+  0x000000001d7eb000 JavaThread "J3D-SoundSchedulerUpdateThread-77" [_thread_blocked, id=15040, stack(0x00000001950d0000,0x00000001951d0000)]
+  0x000000001d7ea800 JavaThread "J3D-RenderStructureUpdateThread-77" [_thread_blocked, id=6840, stack(0x0000000194fd0000,0x00000001950d0000)]
+  0x000000001d7ef800 JavaThread "J3D-BehaviorScheduler-77" [_thread_blocked, id=14060, stack(0x0000000194ed0000,0x0000000194fd0000)]
+  0x000000001d7e1800 JavaThread "J3D-TransformStructureUpdateThread-77" [_thread_blocked, id=17792, stack(0x0000000194dd0000,0x0000000194ed0000)]
+  0x000000001d7e8000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-77" [_thread_blocked, id=6216, stack(0x0000000194cd0000,0x0000000194dd0000)]
+  0x000000001d7e6800 JavaThread "J3D-SoundStructureUpdateThread-77" [_thread_blocked, id=17920, stack(0x0000000194bd0000,0x0000000194cd0000)]
+  0x000000001d7e7800 JavaThread "J3D-GeometryStructureUpdateThread-77" [_thread_blocked, id=14352, stack(0x0000000194ad0000,0x0000000194bd0000)]
+  0x000000001d7e3000 JavaThread "J3D-BehaviorStructureUpdateThread-77" [_thread_blocked, id=7996, stack(0x00000001949d0000,0x0000000194ad0000)]
+  0x000000001d7e4800 JavaThread "J3D-InputDeviceScheduler-76" [_thread_blocked, id=10332, stack(0x00000001947d0000,0x00000001948d0000)]
+  0x000000001d7e6000 JavaThread "J3D-SoundSchedulerUpdateThread-76" [_thread_blocked, id=17872, stack(0x00000001946d0000,0x00000001947d0000)]
+  0x000000001d7de800 JavaThread "J3D-RenderStructureUpdateThread-76" [_thread_blocked, id=3924, stack(0x00000001945d0000,0x00000001946d0000)]
+  0x000000001d7e2000 JavaThread "J3D-BehaviorScheduler-76" [_thread_blocked, id=9392, stack(0x00000001944d0000,0x00000001945d0000)]
+  0x000000001d7e0800 JavaThread "J3D-TransformStructureUpdateThread-76" [_thread_blocked, id=13736, stack(0x00000001943d0000,0x00000001944d0000)]
+  0x000000001d7e3800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-76" [_thread_blocked, id=9628, stack(0x00000001942d0000,0x00000001943d0000)]
+  0x000000001d7e0000 JavaThread "J3D-SoundStructureUpdateThread-76" [_thread_blocked, id=13472, stack(0x00000001941d0000,0x00000001942d0000)]
+  0x000000001d7e5000 JavaThread "J3D-GeometryStructureUpdateThread-76" [_thread_blocked, id=3648, stack(0x00000001940d0000,0x00000001941d0000)]
+  0x000000001d7df000 JavaThread "J3D-BehaviorStructureUpdateThread-76" [_thread_blocked, id=11676, stack(0x0000000193fd0000,0x00000001940d0000)]
+  0x000000001deeb800 JavaThread "J3D-InputDeviceScheduler-75" [_thread_blocked, id=7056, stack(0x0000000193dd0000,0x0000000193ed0000)]
+  0x000000001deea800 JavaThread "J3D-SoundSchedulerUpdateThread-75" [_thread_blocked, id=9004, stack(0x0000000193cd0000,0x0000000193dd0000)]
+  0x000000001deef000 JavaThread "J3D-RenderStructureUpdateThread-75" [_thread_blocked, id=16828, stack(0x0000000193bd0000,0x0000000193cd0000)]
+  0x000000001deee800 JavaThread "J3D-BehaviorScheduler-75" [_thread_blocked, id=9476, stack(0x0000000193ad0000,0x0000000193bd0000)]
+  0x000000001deed000 JavaThread "J3D-TransformStructureUpdateThread-75" [_thread_blocked, id=6432, stack(0x00000001939d0000,0x0000000193ad0000)]
+  0x000000001deea000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-75" [_thread_blocked, id=17264, stack(0x00000001938d0000,0x00000001939d0000)]
+  0x000000001deed800 JavaThread "J3D-SoundStructureUpdateThread-75" [_thread_blocked, id=5044, stack(0x00000001937d0000,0x00000001938d0000)]
+  0x000000001dee8800 JavaThread "J3D-GeometryStructureUpdateThread-75" [_thread_blocked, id=13964, stack(0x00000001936d0000,0x00000001937d0000)]
+  0x000000001deec000 JavaThread "J3D-BehaviorStructureUpdateThread-75" [_thread_blocked, id=17868, stack(0x00000001935d0000,0x00000001936d0000)]
+  0x000000001dee9000 JavaThread "J3D-InputDeviceScheduler-74" [_thread_blocked, id=7876, stack(0x00000001933d0000,0x00000001934d0000)]
+  0x000000001dee1000 JavaThread "J3D-SoundSchedulerUpdateThread-74" [_thread_blocked, id=16488, stack(0x00000001932d0000,0x00000001933d0000)]
+  0x000000001dee7800 JavaThread "J3D-RenderStructureUpdateThread-74" [_thread_blocked, id=17880, stack(0x00000001931d0000,0x00000001932d0000)]
+  0x000000001dee7000 JavaThread "J3D-BehaviorScheduler-74" [_thread_blocked, id=16088, stack(0x00000001930d0000,0x00000001931d0000)]
+  0x000000001dee6000 JavaThread "J3D-TransformStructureUpdateThread-74" [_thread_blocked, id=8276, stack(0x0000000192fd0000,0x00000001930d0000)]
+  0x000000001dee5800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-74" [_thread_blocked, id=9244, stack(0x0000000192ed0000,0x0000000192fd0000)]
+  0x000000001dee4000 JavaThread "J3D-SoundStructureUpdateThread-74" [_thread_blocked, id=6868, stack(0x0000000192dd0000,0x0000000192ed0000)]
+  0x000000001dee4800 JavaThread "J3D-GeometryStructureUpdateThread-74" [_thread_blocked, id=16436, stack(0x0000000192cd0000,0x0000000192dd0000)]
+  0x000000001dede000 JavaThread "J3D-BehaviorStructureUpdateThread-74" [_thread_blocked, id=7676, stack(0x0000000192bd0000,0x0000000192cd0000)]
+  0x000000001dedc800 JavaThread "J3D-InputDeviceScheduler-73" [_thread_blocked, id=7576, stack(0x00000001929d0000,0x0000000192ad0000)]
+  0x000000001dee3000 JavaThread "J3D-SoundSchedulerUpdateThread-73" [_thread_blocked, id=5260, stack(0x00000001928d0000,0x00000001929d0000)]
+  0x000000001dee0000 JavaThread "J3D-RenderStructureUpdateThread-73" [_thread_blocked, id=16412, stack(0x00000001927d0000,0x00000001928d0000)]
+  0x000000001dedf800 JavaThread "J3D-BehaviorScheduler-73" [_thread_blocked, id=11156, stack(0x00000001926d0000,0x00000001927d0000)]
+  0x000000001dedd000 JavaThread "J3D-TransformStructureUpdateThread-73" [_thread_blocked, id=9588, stack(0x00000001925d0000,0x00000001926d0000)]
+  0x000000001dee2800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-73" [_thread_blocked, id=620, stack(0x00000001924d0000,0x00000001925d0000)]
+  0x000000001dede800 JavaThread "J3D-SoundStructureUpdateThread-73" [_thread_blocked, id=18256, stack(0x00000001923d0000,0x00000001924d0000)]
+  0x000000001dee1800 JavaThread "J3D-GeometryStructureUpdateThread-73" [_thread_blocked, id=7348, stack(0x00000001922d0000,0x00000001923d0000)]
+  0x000000001ded5000 JavaThread "J3D-BehaviorStructureUpdateThread-73" [_thread_blocked, id=10064, stack(0x00000001921d0000,0x00000001922d0000)]
+  0x000000001ded6800 JavaThread "J3D-InputDeviceScheduler-72" [_thread_blocked, id=15500, stack(0x0000000191fd0000,0x00000001920d0000)]
+  0x000000001ded7000 JavaThread "J3D-SoundSchedulerUpdateThread-72" [_thread_blocked, id=17048, stack(0x0000000191ed0000,0x0000000191fd0000)]
+  0x000000001ded8800 JavaThread "J3D-RenderStructureUpdateThread-72" [_thread_blocked, id=8684, stack(0x0000000191dd0000,0x0000000191ed0000)]
+  0x000000001dedb800 JavaThread "J3D-BehaviorScheduler-72" [_thread_blocked, id=14020, stack(0x0000000191cd0000,0x0000000191dd0000)]
+  0x000000001ded4000 JavaThread "J3D-TransformStructureUpdateThread-72" [_thread_blocked, id=16128, stack(0x0000000191bd0000,0x0000000191cd0000)]
+  0x000000001ded9800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-72" [_thread_blocked, id=17624, stack(0x0000000191ad0000,0x0000000191bd0000)]
+  0x000000001ded8000 JavaThread "J3D-SoundStructureUpdateThread-72" [_thread_blocked, id=11668, stack(0x00000001919d0000,0x0000000191ad0000)]
+  0x000000001ded5800 JavaThread "J3D-GeometryStructureUpdateThread-72" [_thread_blocked, id=18188, stack(0x00000001918d0000,0x00000001919d0000)]
+  0x000000001deda000 JavaThread "J3D-BehaviorStructureUpdateThread-72" [_thread_blocked, id=5168, stack(0x00000001917d0000,0x00000001918d0000)]
+  0x000000001dedb000 JavaThread "J3D-InputDeviceScheduler-71" [_thread_blocked, id=15740, stack(0x00000001915d0000,0x00000001916d0000)]
+  0x000000001decd800 JavaThread "J3D-SoundSchedulerUpdateThread-71" [_thread_blocked, id=16548, stack(0x00000001914d0000,0x00000001915d0000)]
+  0x000000001decc800 JavaThread "J3D-RenderStructureUpdateThread-71" [_thread_blocked, id=17132, stack(0x00000001913d0000,0x00000001914d0000)]
+  0x000000001decf000 JavaThread "J3D-BehaviorScheduler-71" [_thread_blocked, id=9028, stack(0x00000001912d0000,0x00000001913d0000)]
+  0x000000001dece000 JavaThread "J3D-TransformStructureUpdateThread-71" [_thread_blocked, id=16668, stack(0x00000001911d0000,0x00000001912d0000)]
+  0x000000001ded3800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-71" [_thread_blocked, id=16628, stack(0x00000001910d0000,0x00000001911d0000)]
+  0x000000001ded2000 JavaThread "J3D-SoundStructureUpdateThread-71" [_thread_blocked, id=14368, stack(0x0000000190fd0000,0x00000001910d0000)]
+  0x000000001decc000 JavaThread "J3D-GeometryStructureUpdateThread-71" [_thread_blocked, id=16768, stack(0x0000000190ed0000,0x0000000190fd0000)]
+  0x000000001ded0800 JavaThread "J3D-BehaviorStructureUpdateThread-71" [_thread_blocked, id=6420, stack(0x0000000190dd0000,0x0000000190ed0000)]
+  0x000000001ded2800 JavaThread "J3D-InputDeviceScheduler-70" [_thread_blocked, id=17580, stack(0x0000000190bd0000,0x0000000190cd0000)]
+  0x000000001ded1000 JavaThread "J3D-SoundSchedulerUpdateThread-70" [_thread_blocked, id=8428, stack(0x0000000190ad0000,0x0000000190bd0000)]
+  0x000000001decf800 JavaThread "J3D-RenderStructureUpdateThread-70" [_thread_blocked, id=4464, stack(0x00000001909d0000,0x0000000190ad0000)]
+  0x000000001dec9000 JavaThread "J3D-BehaviorScheduler-70" [_thread_blocked, id=8692, stack(0x00000001908d0000,0x00000001909d0000)]
+  0x000000001deca800 JavaThread "J3D-TransformStructureUpdateThread-70" [_thread_blocked, id=3896, stack(0x00000001907d0000,0x00000001908d0000)]
+  0x000000001decb000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-70" [_thread_blocked, id=10652, stack(0x00000001906d0000,0x00000001907d0000)]
+  0x000000001dec9800 JavaThread "J3D-SoundStructureUpdateThread-70" [_thread_blocked, id=11816, stack(0x00000001905d0000,0x00000001906d0000)]
+  0x000000001dec1000 JavaThread "J3D-GeometryStructureUpdateThread-70" [_thread_blocked, id=12524, stack(0x00000001904d0000,0x00000001905d0000)]
+  0x000000001dec8000 JavaThread "J3D-BehaviorStructureUpdateThread-70" [_thread_blocked, id=16196, stack(0x00000001903d0000,0x00000001904d0000)]
+  0x000000001dec3800 JavaThread "J3D-InputDeviceScheduler-69" [_thread_blocked, id=13836, stack(0x00000001901d0000,0x00000001902d0000)]
+  0x000000001dec2800 JavaThread "J3D-SoundSchedulerUpdateThread-69" [_thread_blocked, id=4080, stack(0x00000001900d0000,0x00000001901d0000)]
+  0x000000001dec2000 JavaThread "J3D-RenderStructureUpdateThread-69" [_thread_blocked, id=12640, stack(0x000000018ffd0000,0x00000001900d0000)]
+  0x000000001dec7800 JavaThread "J3D-BehaviorScheduler-69" [_thread_blocked, id=1232, stack(0x000000018fed0000,0x000000018ffd0000)]
+  0x000000001debf800 JavaThread "J3D-TransformStructureUpdateThread-69" [_thread_blocked, id=12056, stack(0x000000018fdd0000,0x000000018fed0000)]
+  0x000000001dec6800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-69" [_thread_blocked, id=9660, stack(0x000000018fcd0000,0x000000018fdd0000)]
+  0x000000001dec5000 JavaThread "J3D-SoundStructureUpdateThread-69" [_thread_blocked, id=11384, stack(0x000000018fbd0000,0x000000018fcd0000)]
+  0x000000001dec4000 JavaThread "J3D-GeometryStructureUpdateThread-69" [_thread_blocked, id=18104, stack(0x000000018fad0000,0x000000018fbd0000)]
+  0x000000001dec6000 JavaThread "J3D-BehaviorStructureUpdateThread-69" [_thread_blocked, id=15520, stack(0x000000018f9d0000,0x000000018fad0000)]
+  0x000000001defa000 JavaThread "J3D-InputDeviceScheduler-68" [_thread_blocked, id=3320, stack(0x000000018f7d0000,0x000000018f8d0000)]
+  0x000000001def9000 JavaThread "J3D-SoundSchedulerUpdateThread-68" [_thread_blocked, id=7484, stack(0x000000018f6d0000,0x000000018f7d0000)]
+  0x000000001deff000 JavaThread "J3D-RenderStructureUpdateThread-68" [_thread_blocked, id=8560, stack(0x000000018f5d0000,0x000000018f6d0000)]
+  0x000000001defa800 JavaThread "J3D-BehaviorScheduler-68" [_thread_blocked, id=16632, stack(0x000000018f4d0000,0x000000018f5d0000)]
+  0x000000001def7800 JavaThread "J3D-TransformStructureUpdateThread-68" [_thread_blocked, id=5800, stack(0x000000018f3d0000,0x000000018f4d0000)]
+  0x000000001def8800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-68" [_thread_blocked, id=13936, stack(0x000000018f2d0000,0x000000018f3d0000)]
+  0x000000001defe800 JavaThread "J3D-SoundStructureUpdateThread-68" [_thread_blocked, id=600, stack(0x000000018f1d0000,0x000000018f2d0000)]
+  0x000000001defc000 JavaThread "J3D-GeometryStructureUpdateThread-68" [_thread_blocked, id=8272, stack(0x000000018f0d0000,0x000000018f1d0000)]
+  0x000000001defd800 JavaThread "J3D-BehaviorStructureUpdateThread-68" [_thread_blocked, id=4288, stack(0x000000018efd0000,0x000000018f0d0000)]
+  0x000000001defb800 JavaThread "J3D-InputDeviceScheduler-67" [_thread_blocked, id=720, stack(0x000000018edd0000,0x000000018eed0000)]
+  0x000000001defd000 JavaThread "J3D-SoundSchedulerUpdateThread-67" [_thread_blocked, id=5492, stack(0x000000018ecd0000,0x000000018edd0000)]
+  0x000000001def0800 JavaThread "J3D-RenderStructureUpdateThread-67" [_thread_blocked, id=7772, stack(0x000000018ebd0000,0x000000018ecd0000)]
+  0x000000001def2000 JavaThread "J3D-BehaviorScheduler-67" [_thread_blocked, id=3144, stack(0x000000018ead0000,0x000000018ebd0000)]
+  0x000000001def0000 JavaThread "J3D-TransformStructureUpdateThread-67" [_thread_blocked, id=14024, stack(0x000000018e9d0000,0x000000018ead0000)]
+  0x000000001def7000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-67" [_thread_blocked, id=15928, stack(0x000000018e8d0000,0x000000018e9d0000)]
+  0x000000001def6000 JavaThread "J3D-SoundStructureUpdateThread-67" [_thread_blocked, id=10128, stack(0x000000018e7d0000,0x000000018e8d0000)]
+  0x000000001def5000 JavaThread "J3D-GeometryStructureUpdateThread-67" [_thread_blocked, id=14776, stack(0x000000018e6d0000,0x000000018e7d0000)]
+  0x000000001def1800 JavaThread "J3D-BehaviorStructureUpdateThread-67" [_thread_blocked, id=12828, stack(0x000000018e5d0000,0x000000018e6d0000)]
+  0x000000001def4800 JavaThread "J3D-InputDeviceScheduler-66" [_thread_blocked, id=13268, stack(0x000000018e3d0000,0x000000018e4d0000)]
+  0x000000001def3000 JavaThread "J3D-SoundSchedulerUpdateThread-66" [_thread_blocked, id=14264, stack(0x000000018e2d0000,0x000000018e3d0000)]
+  0x000000001def3800 JavaThread "J3D-RenderStructureUpdateThread-66" [_thread_blocked, id=18380, stack(0x000000018e1d0000,0x000000018e2d0000)]
+  0x000000001d9fa800 JavaThread "J3D-BehaviorScheduler-66" [_thread_blocked, id=3688, stack(0x000000018e0d0000,0x000000018e1d0000)]
+  0x000000001d9f9800 JavaThread "J3D-TransformStructureUpdateThread-66" [_thread_blocked, id=944, stack(0x000000018dfd0000,0x000000018e0d0000)]
+  0x000000001d9fb000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-66" [_thread_blocked, id=588, stack(0x000000018ded0000,0x000000018dfd0000)]
+  0x000000001d9fc000 JavaThread "J3D-SoundStructureUpdateThread-66" [_thread_blocked, id=1412, stack(0x000000018ddd0000,0x000000018ded0000)]
+  0x000000001d9f9000 JavaThread "J3D-GeometryStructureUpdateThread-66" [_thread_blocked, id=6244, stack(0x000000018dcd0000,0x000000018ddd0000)]
+  0x000000001d9f8000 JavaThread "J3D-BehaviorStructureUpdateThread-66" [_thread_blocked, id=7516, stack(0x000000018dbd0000,0x000000018dcd0000)]
+  0x000000001d9fd800 JavaThread "J3D-InputDeviceScheduler-65" [_thread_blocked, id=14048, stack(0x000000018d9d0000,0x000000018dad0000)]
+  0x000000001d9fc800 JavaThread "J3D-SoundSchedulerUpdateThread-65" [_thread_blocked, id=10928, stack(0x000000018d8d0000,0x000000018d9d0000)]
+  0x000000001d9f6000 JavaThread "J3D-RenderStructureUpdateThread-65" [_thread_blocked, id=9288, stack(0x000000018d7d0000,0x000000018d8d0000)]
+  0x000000001d9f6800 JavaThread "J3D-BehaviorScheduler-65" [_thread_blocked, id=12476, stack(0x000000018d6d0000,0x000000018d7d0000)]
+  0x000000001d9ee800 JavaThread "J3D-TransformStructureUpdateThread-65" [_thread_blocked, id=13820, stack(0x000000018d5d0000,0x000000018d6d0000)]
+  0x000000001d9f5000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-65" [_thread_blocked, id=8344, stack(0x000000018d4d0000,0x000000018d5d0000)]
+  0x000000001d9f0800 JavaThread "J3D-SoundStructureUpdateThread-65" [_thread_blocked, id=5324, stack(0x000000018d3d0000,0x000000018d4d0000)]
+  0x000000001d9ed800 JavaThread "J3D-GeometryStructureUpdateThread-65" [_thread_blocked, id=14948, stack(0x000000018d2d0000,0x000000018d3d0000)]
+  0x000000001d9f4800 JavaThread "J3D-BehaviorStructureUpdateThread-65" [_thread_blocked, id=16352, stack(0x000000018d1d0000,0x000000018d2d0000)]
+  0x000000001d9f3800 JavaThread "J3D-InputDeviceScheduler-64" [_thread_blocked, id=17980, stack(0x000000018cfd0000,0x000000018d0d0000)]
+  0x000000001d9ef000 JavaThread "J3D-SoundSchedulerUpdateThread-64" [_thread_blocked, id=11732, stack(0x000000018ced0000,0x000000018cfd0000)]
+  0x000000001d9f3000 JavaThread "J3D-RenderStructureUpdateThread-64" [_thread_blocked, id=15616, stack(0x000000018cdd0000,0x000000018ced0000)]
+  0x000000001d9f2000 JavaThread "J3D-BehaviorScheduler-64" [_thread_blocked, id=10832, stack(0x000000018ccd0000,0x000000018cdd0000)]
+  0x000000001d9f1800 JavaThread "J3D-TransformStructureUpdateThread-64" [_thread_blocked, id=16208, stack(0x000000018cbd0000,0x000000018ccd0000)]
+  0x000000001d9f0000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-64" [_thread_blocked, id=15528, stack(0x000000018cad0000,0x000000018cbd0000)]
+  0x000000001d9ed000 JavaThread "J3D-SoundStructureUpdateThread-64" [_thread_blocked, id=15304, stack(0x000000018c9d0000,0x000000018cad0000)]
+  0x000000001d9ec000 JavaThread "J3D-GeometryStructureUpdateThread-64" [_thread_blocked, id=9228, stack(0x000000018c8d0000,0x000000018c9d0000)]
+  0x000000001d9eb800 JavaThread "J3D-BehaviorStructureUpdateThread-64" [_thread_blocked, id=9196, stack(0x000000018c7d0000,0x000000018c8d0000)]
+  0x000000001d9ea800 JavaThread "J3D-InputDeviceScheduler-63" [_thread_blocked, id=4232, stack(0x000000018c5d0000,0x000000018c6d0000)]
+  0x000000001d9e3000 JavaThread "J3D-SoundSchedulerUpdateThread-63" [_thread_blocked, id=15340, stack(0x000000018c4d0000,0x000000018c5d0000)]
+  0x000000001d9e9000 JavaThread "J3D-RenderStructureUpdateThread-63" [_thread_blocked, id=16140, stack(0x000000018c3d0000,0x000000018c4d0000)]
+  0x000000001d9e8800 JavaThread "J3D-BehaviorScheduler-63" [_thread_blocked, id=4380, stack(0x000000018c2d0000,0x000000018c3d0000)]
+  0x000000001d9e7000 JavaThread "J3D-TransformStructureUpdateThread-63" [_thread_blocked, id=9332, stack(0x000000018c1d0000,0x000000018c2d0000)]
+  0x000000001d9e6000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-63" [_thread_blocked, id=10112, stack(0x000000018c0d0000,0x000000018c1d0000)]
+  0x000000001d9e4000 JavaThread "J3D-SoundStructureUpdateThread-63" [_thread_blocked, id=11152, stack(0x000000018bfd0000,0x000000018c0d0000)]
+  0x000000001d9e4800 JavaThread "J3D-GeometryStructureUpdateThread-63" [_thread_blocked, id=16856, stack(0x000000018bed0000,0x000000018bfd0000)]
+  0x000000001d9ea000 JavaThread "J3D-BehaviorStructureUpdateThread-63" [_thread_blocked, id=13560, stack(0x000000018bdd0000,0x000000018bed0000)]
+  0x000000001d9e5800 JavaThread "J3D-InputDeviceScheduler-62" [_thread_blocked, id=10644, stack(0x000000018bbd0000,0x000000018bcd0000)]
+  0x000000001d9e1000 JavaThread "J3D-SoundSchedulerUpdateThread-62" [_thread_blocked, id=5696, stack(0x000000018bad0000,0x000000018bbd0000)]
+  0x000000001d9e7800 JavaThread "J3D-RenderStructureUpdateThread-62" [_thread_blocked, id=2008, stack(0x000000018b9d0000,0x000000018bad0000)]
+  0x000000001d9e2800 JavaThread "J3D-BehaviorScheduler-62" [_thread_blocked, id=9080, stack(0x000000018b8d0000,0x000000018b9d0000)]
+  0x000000001d9e1800 JavaThread "J3D-TransformStructureUpdateThread-62" [_thread_blocked, id=5732, stack(0x000000018b7d0000,0x000000018b8d0000)]
+  0x000000001d9d9800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-62" [_thread_blocked, id=17140, stack(0x000000018b6d0000,0x000000018b7d0000)]
+  0x000000001d9dc800 JavaThread "J3D-SoundStructureUpdateThread-62" [_thread_blocked, id=1292, stack(0x000000018b5d0000,0x000000018b6d0000)]
+  0x000000001d9e0000 JavaThread "J3D-GeometryStructureUpdateThread-62" [_thread_blocked, id=2780, stack(0x000000018b4d0000,0x000000018b5d0000)]
+  0x000000001d9db800 JavaThread "J3D-BehaviorStructureUpdateThread-62" [_thread_blocked, id=9040, stack(0x000000018b3d0000,0x000000018b4d0000)]
+  0x000000001d9de800 JavaThread "J3D-InputDeviceScheduler-61" [_thread_blocked, id=13980, stack(0x000000018b1d0000,0x000000018b2d0000)]
+  0x000000001d9de000 JavaThread "J3D-SoundSchedulerUpdateThread-61" [_thread_blocked, id=10032, stack(0x000000018b0d0000,0x000000018b1d0000)]
+  0x000000001d9da000 JavaThread "J3D-RenderStructureUpdateThread-61" [_thread_blocked, id=16044, stack(0x000000018afd0000,0x000000018b0d0000)]
+  0x000000001d9df800 JavaThread "J3D-BehaviorScheduler-61" [_thread_blocked, id=15936, stack(0x000000018aed0000,0x000000018afd0000)]
+  0x000000001d9d8800 JavaThread "J3D-TransformStructureUpdateThread-61" [_thread_blocked, id=5868, stack(0x000000018add0000,0x000000018aed0000)]
+  0x000000001d9db000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-61" [_thread_blocked, id=15544, stack(0x000000018acd0000,0x000000018add0000)]
+  0x000000001d9dd000 JavaThread "J3D-SoundStructureUpdateThread-61" [_thread_blocked, id=5460, stack(0x000000018abd0000,0x000000018acd0000)]
+  0x000000001d9d1000 JavaThread "J3D-GeometryStructureUpdateThread-61" [_thread_blocked, id=17440, stack(0x000000018aad0000,0x000000018abd0000)]
+  0x000000001d9d8000 JavaThread "J3D-BehaviorStructureUpdateThread-61" [_thread_blocked, id=9500, stack(0x000000018a9d0000,0x000000018aad0000)]
+  0x000000001d9d0800 JavaThread "J3D-InputDeviceScheduler-60" [_thread_blocked, id=8732, stack(0x000000018a7d0000,0x000000018a8d0000)]
+  0x000000001d9d6800 JavaThread "J3D-SoundSchedulerUpdateThread-60" [_thread_blocked, id=1724, stack(0x000000018a6d0000,0x000000018a7d0000)]
+  0x000000001d9d4000 JavaThread "J3D-RenderStructureUpdateThread-60" [_thread_blocked, id=7284, stack(0x000000018a5d0000,0x000000018a6d0000)]
+  0x000000001d9d5800 JavaThread "J3D-BehaviorScheduler-60" [_thread_blocked, id=7244, stack(0x000000018a4d0000,0x000000018a5d0000)]
+  0x000000001d9d2000 JavaThread "J3D-TransformStructureUpdateThread-60" [_thread_blocked, id=9932, stack(0x000000018a3d0000,0x000000018a4d0000)]
+  0x000000001d9d2800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-60" [_thread_blocked, id=4008, stack(0x000000018a2d0000,0x000000018a3d0000)]
+  0x000000001d9d3800 JavaThread "J3D-SoundStructureUpdateThread-60" [_thread_blocked, id=4016, stack(0x000000018a1d0000,0x000000018a2d0000)]
+  0x000000001d9d5000 JavaThread "J3D-GeometryStructureUpdateThread-60" [_thread_blocked, id=9252, stack(0x000000018a0d0000,0x000000018a1d0000)]
+  0x000000001d9d7000 JavaThread "J3D-BehaviorStructureUpdateThread-60" [_thread_blocked, id=14768, stack(0x0000000189fd0000,0x000000018a0d0000)]
+  0x000000001d9c8800 JavaThread "J3D-InputDeviceScheduler-59" [_thread_blocked, id=16476, stack(0x0000000189dd0000,0x0000000189ed0000)]
+  0x000000001d9cf800 JavaThread "J3D-SoundSchedulerUpdateThread-59" [_thread_blocked, id=4488, stack(0x0000000189cd0000,0x0000000189dd0000)]
+  0x000000001d9ca000 JavaThread "J3D-RenderStructureUpdateThread-59" [_thread_blocked, id=11748, stack(0x0000000189bd0000,0x0000000189cd0000)]
+  0x000000001d9cf000 JavaThread "J3D-BehaviorScheduler-59" [_thread_blocked, id=1280, stack(0x0000000189ad0000,0x0000000189bd0000)]
+  0x000000001d9cd000 JavaThread "J3D-TransformStructureUpdateThread-59" [_thread_blocked, id=8820, stack(0x00000001899d0000,0x0000000189ad0000)]
+  0x000000001d9ce000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-59" [_thread_blocked, id=7800, stack(0x00000001898d0000,0x00000001899d0000)]
+  0x000000001d9c8000 JavaThread "J3D-SoundStructureUpdateThread-59" [_thread_blocked, id=18056, stack(0x00000001897d0000,0x00000001898d0000)]
+  0x000000001d9cb800 JavaThread "J3D-GeometryStructureUpdateThread-59" [_thread_blocked, id=12208, stack(0x00000001896d0000,0x00000001897d0000)]
+  0x000000001d9c9800 JavaThread "J3D-BehaviorStructureUpdateThread-59" [_thread_blocked, id=6056, stack(0x00000001895d0000,0x00000001896d0000)]
+  0x000000001d9cb000 JavaThread "J3D-InputDeviceScheduler-58" [_thread_blocked, id=16276, stack(0x0000000188500000,0x0000000188600000)]
+  0x000000001d9cc800 JavaThread "J3D-SoundSchedulerUpdateThread-58" [_thread_blocked, id=8308, stack(0x0000000188400000,0x0000000188500000)]
+  0x000000001d9c0800 JavaThread "J3D-RenderStructureUpdateThread-58" [_thread_blocked, id=16588, stack(0x0000000188300000,0x0000000188400000)]
+  0x000000001d9c7000 JavaThread "J3D-BehaviorScheduler-58" [_thread_blocked, id=14272, stack(0x0000000188200000,0x0000000188300000)]
+  0x000000001d9bf800 JavaThread "J3D-TransformStructureUpdateThread-58" [_thread_blocked, id=15220, stack(0x0000000188100000,0x0000000188200000)]
+  0x000000001d9c6800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-58" [_thread_blocked, id=14364, stack(0x0000000188000000,0x0000000188100000)]
+  0x000000001d9c5800 JavaThread "J3D-SoundStructureUpdateThread-58" [_thread_blocked, id=17628, stack(0x0000000187f00000,0x0000000188000000)]
+  0x000000001d9c5000 JavaThread "J3D-GeometryStructureUpdateThread-58" [_thread_blocked, id=17012, stack(0x0000000187e00000,0x0000000187f00000)]
+  0x000000001d9c4000 JavaThread "J3D-BehaviorStructureUpdateThread-58" [_thread_blocked, id=10620, stack(0x0000000187d00000,0x0000000187e00000)]
+  0x000000001d9bf000 JavaThread "J3D-InputDeviceScheduler-57" [_thread_blocked, id=12176, stack(0x0000000187b00000,0x0000000187c00000)]
+  0x000000001d9c3800 JavaThread "J3D-SoundSchedulerUpdateThread-57" [_thread_blocked, id=10036, stack(0x0000000187a00000,0x0000000187b00000)]
+  0x000000001d9c1000 JavaThread "J3D-RenderStructureUpdateThread-57" [_thread_blocked, id=13084, stack(0x0000000187900000,0x0000000187a00000)]
+  0x000000001d9be000 JavaThread "J3D-BehaviorScheduler-57" [_thread_blocked, id=9580, stack(0x0000000187800000,0x0000000187900000)]
+  0x000000001d9c2800 JavaThread "J3D-TransformStructureUpdateThread-57" [_thread_blocked, id=1056, stack(0x0000000187700000,0x0000000187800000)]
+  0x000000001d9c2000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-57" [_thread_blocked, id=12692, stack(0x0000000187600000,0x0000000187700000)]
+  0x000000001d9bd800 JavaThread "J3D-SoundStructureUpdateThread-57" [_thread_blocked, id=13884, stack(0x0000000187500000,0x0000000187600000)]
+  0x000000001d739000 JavaThread "J3D-GeometryStructureUpdateThread-57" [_thread_blocked, id=8572, stack(0x0000000187400000,0x0000000187500000)]
+  0x000000001d73a800 JavaThread "J3D-BehaviorStructureUpdateThread-57" [_thread_blocked, id=11248, stack(0x0000000187300000,0x0000000187400000)]
+  0x000000001d73b800 JavaThread "J3D-InputDeviceScheduler-56" [_thread_blocked, id=3068, stack(0x0000000187100000,0x0000000187200000)]
+  0x000000001d738800 JavaThread "J3D-SoundSchedulerUpdateThread-56" [_thread_blocked, id=6832, stack(0x0000000187000000,0x0000000187100000)]
+  0x000000001d737800 JavaThread "J3D-RenderStructureUpdateThread-56" [_thread_blocked, id=11840, stack(0x0000000186f00000,0x0000000187000000)]
+  0x000000001d73a000 JavaThread "J3D-BehaviorScheduler-56" [_thread_blocked, id=8188, stack(0x0000000186e00000,0x0000000186f00000)]
+  0x000000001d730000 JavaThread "J3D-TransformStructureUpdateThread-56" [_thread_blocked, id=14792, stack(0x0000000186d00000,0x0000000186e00000)]
+  0x000000001d731800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-56" [_thread_blocked, id=1560, stack(0x0000000186c00000,0x0000000186d00000)]
+  0x000000001d731000 JavaThread "J3D-SoundStructureUpdateThread-56" [_thread_blocked, id=4972, stack(0x0000000186b00000,0x0000000186c00000)]
+  0x000000001d734000 JavaThread "J3D-GeometryStructureUpdateThread-56" [_thread_blocked, id=6844, stack(0x0000000186a00000,0x0000000186b00000)]
+  0x000000001d737000 JavaThread "J3D-BehaviorStructureUpdateThread-56" [_thread_blocked, id=4216, stack(0x0000000186900000,0x0000000186a00000)]
+  0x000000001d736000 JavaThread "J3D-InputDeviceScheduler-55" [_thread_blocked, id=7524, stack(0x0000000186800000,0x0000000186900000)]
+  0x000000001d735800 JavaThread "J3D-SoundSchedulerUpdateThread-55" [_thread_blocked, id=17428, stack(0x0000000186700000,0x0000000186800000)]
+  0x000000001d733000 JavaThread "J3D-RenderStructureUpdateThread-55" [_thread_blocked, id=9728, stack(0x0000000186600000,0x0000000186700000)]
+  0x000000001d72e000 JavaThread "J3D-BehaviorScheduler-55" [_thread_blocked, id=17044, stack(0x0000000186500000,0x0000000186600000)]
+  0x000000001d72e800 JavaThread "J3D-TransformStructureUpdateThread-55" [_thread_blocked, id=16040, stack(0x0000000186400000,0x0000000186500000)]
+  0x000000001d72f800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-55" [_thread_blocked, id=1268, stack(0x0000000186300000,0x0000000186400000)]
+  0x000000001d732800 JavaThread "J3D-SoundStructureUpdateThread-55" [_thread_blocked, id=8936, stack(0x0000000186200000,0x0000000186300000)]
+  0x000000001d734800 JavaThread "J3D-GeometryStructureUpdateThread-55" [_thread_blocked, id=15096, stack(0x0000000186100000,0x0000000186200000)]
+  0x000000001d72c800 JavaThread "J3D-BehaviorStructureUpdateThread-55" [_thread_blocked, id=8392, stack(0x0000000186000000,0x0000000186100000)]
+  0x000000001d72d000 JavaThread "J3D-InputDeviceScheduler-54" [_thread_blocked, id=18012, stack(0x0000000185e00000,0x0000000185f00000)]
+  0x000000001d72b000 JavaThread "J3D-SoundSchedulerUpdateThread-54" [_thread_blocked, id=7532, stack(0x0000000185d00000,0x0000000185e00000)]
+  0x000000001d72a000 JavaThread "J3D-RenderStructureUpdateThread-54" [_thread_blocked, id=6080, stack(0x0000000185c00000,0x0000000185d00000)]
+  0x000000001d729800 JavaThread "J3D-BehaviorScheduler-54" [_thread_blocked, id=13180, stack(0x0000000185b00000,0x0000000185c00000)]
+  0x000000001d728800 JavaThread "J3D-TransformStructureUpdateThread-54" [_thread_blocked, id=7476, stack(0x0000000185a00000,0x0000000185b00000)]
+  0x000000001d728000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-54" [_thread_blocked, id=16468, stack(0x0000000185900000,0x0000000185a00000)]
+  0x000000001d72b800 JavaThread "J3D-SoundStructureUpdateThread-54" [_thread_blocked, id=9936, stack(0x0000000185800000,0x0000000185900000)]
+  0x000000001d720800 JavaThread "J3D-GeometryStructureUpdateThread-54" [_thread_blocked, id=15448, stack(0x0000000185700000,0x0000000185800000)]
+  0x000000001d727000 JavaThread "J3D-BehaviorStructureUpdateThread-54" [_thread_blocked, id=10964, stack(0x0000000185600000,0x0000000185700000)]
+  0x000000001d726800 JavaThread "J3D-InputDeviceScheduler-53" [_thread_blocked, id=2336, stack(0x0000000185400000,0x0000000185500000)]
+  0x000000001d71f000 JavaThread "J3D-SoundSchedulerUpdateThread-53" [_thread_blocked, id=3232, stack(0x0000000185300000,0x0000000185400000)]
+  0x000000001d722000 JavaThread "J3D-RenderStructureUpdateThread-53" [_thread_blocked, id=3052, stack(0x0000000185200000,0x0000000185300000)]
+  0x000000001d71f800 JavaThread "J3D-BehaviorScheduler-53" [_thread_blocked, id=8152, stack(0x0000000185100000,0x0000000185200000)]
+  0x000000001d725800 JavaThread "J3D-TransformStructureUpdateThread-53" [_thread_blocked, id=2196, stack(0x0000000185000000,0x0000000185100000)]
+  0x000000001d723800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-53" [_thread_blocked, id=7912, stack(0x0000000184f00000,0x0000000185000000)]
+  0x000000001d721000 JavaThread "J3D-SoundStructureUpdateThread-53" [_thread_blocked, id=1564, stack(0x0000000184e00000,0x0000000184f00000)]
+  0x000000001d722800 JavaThread "J3D-GeometryStructureUpdateThread-53" [_thread_blocked, id=5948, stack(0x0000000184b00000,0x0000000184c00000)]
+  0x000000001d724000 JavaThread "J3D-BehaviorStructureUpdateThread-53" [_thread_blocked, id=18284, stack(0x0000000184a00000,0x0000000184b00000)]
+  0x000000001d725000 JavaThread "J3D-InputDeviceScheduler-52" [_thread_blocked, id=1224, stack(0x0000000184800000,0x0000000184900000)]
+  0x000000001d717000 JavaThread "J3D-SoundSchedulerUpdateThread-52" [_thread_blocked, id=17712, stack(0x0000000184700000,0x0000000184800000)]
+  0x000000001d71e000 JavaThread "J3D-RenderStructureUpdateThread-52" [_thread_blocked, id=17092, stack(0x0000000184600000,0x0000000184700000)]
+  0x000000001d718800 JavaThread "J3D-BehaviorScheduler-52" [_thread_blocked, id=7728, stack(0x0000000184500000,0x0000000184600000)]
+  0x000000001d71d800 JavaThread "J3D-TransformStructureUpdateThread-52" [_thread_blocked, id=7712, stack(0x0000000184400000,0x0000000184500000)]
+  0x000000001d71c800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-52" [_thread_blocked, id=7328, stack(0x0000000184300000,0x0000000184400000)]
+  0x000000001d71b000 JavaThread "J3D-SoundStructureUpdateThread-52" [_thread_blocked, id=14604, stack(0x0000000184200000,0x0000000184300000)]
+  0x000000001d718000 JavaThread "J3D-GeometryStructureUpdateThread-52" [_thread_blocked, id=10416, stack(0x0000000184100000,0x0000000184200000)]
+  0x000000001d719800 JavaThread "J3D-BehaviorStructureUpdateThread-52" [_thread_blocked, id=16392, stack(0x0000000184000000,0x0000000184100000)]
+  0x000000001d71b800 JavaThread "J3D-InputDeviceScheduler-51" [_thread_blocked, id=12904, stack(0x0000000183e00000,0x0000000183f00000)]
+  0x000000001d71a000 JavaThread "J3D-SoundSchedulerUpdateThread-51" [_thread_blocked, id=9696, stack(0x0000000183d00000,0x0000000183e00000)]
+  0x000000001d70f800 JavaThread "J3D-RenderStructureUpdateThread-51" [_thread_blocked, id=16024, stack(0x0000000183c00000,0x0000000183d00000)]
+  0x000000001d716800 JavaThread "J3D-BehaviorScheduler-51" [_thread_blocked, id=10552, stack(0x0000000183b00000,0x0000000183c00000)]
+  0x000000001d713800 JavaThread "J3D-TransformStructureUpdateThread-51" [_thread_blocked, id=11932, stack(0x0000000183a00000,0x0000000183b00000)]
+  0x000000001d712800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-51" [_thread_blocked, id=16740, stack(0x0000000183900000,0x0000000183a00000)]
+  0x000000001d712000 JavaThread "J3D-SoundStructureUpdateThread-51" [_thread_blocked, id=16564, stack(0x0000000183800000,0x0000000183900000)]
+  0x000000001d710800 JavaThread "J3D-GeometryStructureUpdateThread-51" [_thread_blocked, id=10752, stack(0x0000000183700000,0x0000000183800000)]
+  0x000000001d711000 JavaThread "J3D-BehaviorStructureUpdateThread-51" [_thread_blocked, id=10384, stack(0x0000000183600000,0x0000000183700000)]
+  0x000000001d715800 JavaThread "J3D-InputDeviceScheduler-50" [_thread_blocked, id=6716, stack(0x0000000183400000,0x0000000183500000)]
+  0x000000001d715000 JavaThread "J3D-SoundSchedulerUpdateThread-50" [_thread_blocked, id=5052, stack(0x0000000183300000,0x0000000183400000)]
+  0x000000001d714000 JavaThread "J3D-RenderStructureUpdateThread-50" [_thread_blocked, id=14284, stack(0x0000000183200000,0x0000000183300000)]
+  0x000000001d709000 JavaThread "J3D-BehaviorScheduler-50" [_thread_blocked, id=11064, stack(0x0000000183100000,0x0000000183200000)]
+  0x000000001d70f000 JavaThread "J3D-TransformStructureUpdateThread-50" [_thread_blocked, id=9708, stack(0x0000000183000000,0x0000000183100000)]
+  0x000000001d708000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-50" [_thread_blocked, id=16780, stack(0x0000000182f00000,0x0000000183000000)]
+  0x000000001d70c000 JavaThread "J3D-SoundStructureUpdateThread-50" [_thread_blocked, id=3556, stack(0x0000000182e00000,0x0000000182f00000)]
+  0x000000001d70a800 JavaThread "J3D-GeometryStructureUpdateThread-50" [_thread_blocked, id=2588, stack(0x0000000182d00000,0x0000000182e00000)]
+  0x000000001d70b000 JavaThread "J3D-BehaviorStructureUpdateThread-50" [_thread_blocked, id=7612, stack(0x0000000182c00000,0x0000000182d00000)]
+  0x000000001d70e000 JavaThread "J3D-InputDeviceScheduler-49" [_thread_blocked, id=4512, stack(0x0000000182a00000,0x0000000182b00000)]
+  0x000000001d70c800 JavaThread "J3D-SoundSchedulerUpdateThread-49" [_thread_blocked, id=9852, stack(0x0000000182900000,0x0000000182a00000)]
+  0x000000001d70d800 JavaThread "J3D-RenderStructureUpdateThread-49" [_thread_blocked, id=18332, stack(0x0000000182800000,0x0000000182900000)]
+  0x000000001d709800 JavaThread "J3D-BehaviorScheduler-49" [_thread_blocked, id=18244, stack(0x0000000182700000,0x0000000182800000)]
+  0x000000001d707800 JavaThread "J3D-TransformStructureUpdateThread-49" [_thread_blocked, id=12272, stack(0x0000000182600000,0x0000000182700000)]
+  0x000000001d706800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-49" [_thread_blocked, id=8236, stack(0x0000000182500000,0x0000000182600000)]
+  0x000000001d6ff000 JavaThread "J3D-SoundStructureUpdateThread-49" [_thread_blocked, id=2304, stack(0x0000000182400000,0x0000000182500000)]
+  0x000000001d700000 JavaThread "J3D-GeometryStructureUpdateThread-49" [_thread_blocked, id=18272, stack(0x0000000182300000,0x0000000182400000)]
+  0x000000001d706000 JavaThread "J3D-BehaviorStructureUpdateThread-49" [_thread_blocked, id=17456, stack(0x0000000182200000,0x0000000182300000)]
+  0x000000001d700800 JavaThread "J3D-InputDeviceScheduler-48" [_thread_blocked, id=9320, stack(0x0000000182000000,0x0000000182100000)]
+  0x000000001d705000 JavaThread "J3D-SoundSchedulerUpdateThread-48" [_thread_blocked, id=5704, stack(0x0000000181f00000,0x0000000182000000)]
+  0x000000001d6fd800 JavaThread "J3D-RenderStructureUpdateThread-48" [_thread_blocked, id=10824, stack(0x0000000181e00000,0x0000000181f00000)]
+  0x000000001d703800 JavaThread "J3D-BehaviorScheduler-48" [_thread_blocked, id=10420, stack(0x0000000181d00000,0x0000000181e00000)]
+  0x000000001d701800 JavaThread "J3D-TransformStructureUpdateThread-48" [_thread_blocked, id=14276, stack(0x0000000181c00000,0x0000000181d00000)]
+  0x000000001d6fe800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-48" [_thread_blocked, id=11124, stack(0x0000000181b00000,0x0000000181c00000)]
+  0x000000001d704800 JavaThread "J3D-SoundStructureUpdateThread-48" [_thread_blocked, id=9100, stack(0x0000000181a00000,0x0000000181b00000)]
+  0x000000001d6fd000 JavaThread "J3D-GeometryStructureUpdateThread-48" [_thread_blocked, id=14076, stack(0x0000000181900000,0x0000000181a00000)]
+  0x000000001d6fc000 JavaThread "J3D-BehaviorStructureUpdateThread-48" [_thread_blocked, id=9044, stack(0x0000000181800000,0x0000000181900000)]
+  0x000000001d703000 JavaThread "J3D-InputDeviceScheduler-47" [_thread_blocked, id=2756, stack(0x0000000181600000,0x0000000181700000)]
+  0x000000001d702000 JavaThread "J3D-SoundSchedulerUpdateThread-47" [_thread_blocked, id=1620, stack(0x0000000181500000,0x0000000181600000)]
+  0x000000001dea1800 JavaThread "J3D-RenderStructureUpdateThread-47" [_thread_blocked, id=15592, stack(0x0000000181400000,0x0000000181500000)]
+  0x000000001dea1000 JavaThread "J3D-BehaviorScheduler-47" [_thread_blocked, id=15128, stack(0x0000000181300000,0x0000000181400000)]
+  0x000000001de9f800 JavaThread "J3D-TransformStructureUpdateThread-47" [_thread_blocked, id=18180, stack(0x0000000181200000,0x0000000181300000)]
+  0x000000001de9e000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-47" [_thread_blocked, id=15032, stack(0x0000000181100000,0x0000000181200000)]
+  0x000000001dea0000 JavaThread "J3D-SoundStructureUpdateThread-47" [_thread_blocked, id=15112, stack(0x0000000181000000,0x0000000181100000)]
+  0x000000001de9d000 JavaThread "J3D-GeometryStructureUpdateThread-47" [_thread_blocked, id=16596, stack(0x0000000180f00000,0x0000000181000000)]
+  0x000000001de9e800 JavaThread "J3D-BehaviorStructureUpdateThread-47" [_thread_blocked, id=11772, stack(0x0000000180e00000,0x0000000180f00000)]
+  0x000000001de9c800 JavaThread "J3D-InputDeviceScheduler-46" [_thread_blocked, id=5440, stack(0x0000000180d00000,0x0000000180e00000)]
+  0x000000001de95000 JavaThread "J3D-SoundSchedulerUpdateThread-46" [_thread_blocked, id=17884, stack(0x0000000180c00000,0x0000000180d00000)]
+  0x000000001de9b000 JavaThread "J3D-RenderStructureUpdateThread-46" [_thread_blocked, id=7104, stack(0x0000000180b00000,0x0000000180c00000)]
+  0x000000001de95800 JavaThread "J3D-BehaviorScheduler-46" [_thread_blocked, id=1796, stack(0x0000000180a00000,0x0000000180b00000)]
+  0x000000001de9a000 JavaThread "J3D-TransformStructureUpdateThread-46" [_thread_blocked, id=5516, stack(0x0000000180900000,0x0000000180a00000)]
+  0x000000001de99800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-46" [_thread_blocked, id=16568, stack(0x0000000180800000,0x0000000180900000)]
+  0x000000001de9b800 JavaThread "J3D-SoundStructureUpdateThread-46" [_thread_blocked, id=11404, stack(0x0000000180700000,0x0000000180800000)]
+  0x000000001de98800 JavaThread "J3D-GeometryStructureUpdateThread-46" [_thread_blocked, id=424, stack(0x0000000180600000,0x0000000180700000)]
+  0x000000001de98000 JavaThread "J3D-BehaviorStructureUpdateThread-46" [_thread_blocked, id=6336, stack(0x0000000180500000,0x0000000180600000)]
+  0x000000001de94000 JavaThread "J3D-InputDeviceScheduler-45" [_thread_blocked, id=6024, stack(0x0000000180400000,0x0000000180500000)]
+  0x000000001de96800 JavaThread "J3D-SoundSchedulerUpdateThread-45" [_thread_blocked, id=15044, stack(0x0000000180300000,0x0000000180400000)]
+  0x000000001de97000 JavaThread "J3D-RenderStructureUpdateThread-45" [_thread_blocked, id=15264, stack(0x0000000180200000,0x0000000180300000)]
+  0x000000001de8c800 JavaThread "J3D-BehaviorScheduler-45" [_thread_blocked, id=16644, stack(0x0000000180100000,0x0000000180200000)]
+  0x000000001de93800 JavaThread "J3D-TransformStructureUpdateThread-45" [_thread_blocked, id=11232, stack(0x0000000180000000,0x0000000180100000)]
+  0x000000001de8c000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-45" [_thread_blocked, id=17664, stack(0x00000000815f0000,0x00000000816f0000)]
+  0x000000001de92800 JavaThread "J3D-SoundStructureUpdateThread-45" [_thread_blocked, id=972, stack(0x0000000080bf0000,0x0000000080cf0000)]
+  0x000000001de8b000 JavaThread "J3D-GeometryStructureUpdateThread-45" [_thread_blocked, id=8268, stack(0x00000000801f0000,0x00000000802f0000)]
+  0x000000001de8f000 JavaThread "J3D-BehaviorStructureUpdateThread-45" [_thread_blocked, id=17708, stack(0x00000000816f0000,0x00000000817f0000)]
+  0x000000001de92000 JavaThread "J3D-InputDeviceScheduler-44" [_thread_blocked, id=14120, stack(0x00000000814f0000,0x00000000815f0000)]
+  0x000000001de90800 JavaThread "J3D-SoundSchedulerUpdateThread-44" [_thread_blocked, id=11284, stack(0x00000000813f0000,0x00000000814f0000)]
+  0x000000001de8d800 JavaThread "J3D-RenderStructureUpdateThread-44" [_thread_blocked, id=10372, stack(0x00000000812f0000,0x00000000813f0000)]
+  0x000000001de8f800 JavaThread "J3D-BehaviorScheduler-44" [_thread_blocked, id=8920, stack(0x00000000811f0000,0x00000000812f0000)]
+  0x000000001de8e000 JavaThread "J3D-TransformStructureUpdateThread-44" [_thread_blocked, id=14188, stack(0x00000000810f0000,0x00000000811f0000)]
+  0x000000001de91000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-44" [_thread_blocked, id=16424, stack(0x0000000080ff0000,0x00000000810f0000)]
+  0x000000001de83800 JavaThread "J3D-SoundStructureUpdateThread-44" [_thread_blocked, id=18324, stack(0x0000000080ef0000,0x0000000080ff0000)]
+  0x000000001de8a800 JavaThread "J3D-GeometryStructureUpdateThread-44" [_thread_blocked, id=12080, stack(0x0000000080df0000,0x0000000080ef0000)]
+  0x000000001de89800 JavaThread "J3D-BehaviorStructureUpdateThread-44" [_thread_blocked, id=9648, stack(0x0000000080cf0000,0x0000000080df0000)]
+  0x000000001de89000 JavaThread "J3D-InputDeviceScheduler-43" [_thread_blocked, id=3824, stack(0x0000000080af0000,0x0000000080bf0000)]
+  0x000000001de83000 JavaThread "J3D-SoundSchedulerUpdateThread-43" [_thread_blocked, id=9776, stack(0x00000000809f0000,0x0000000080af0000)]
+  0x000000001de88000 JavaThread "J3D-RenderStructureUpdateThread-43" [_thread_blocked, id=15620, stack(0x00000000808f0000,0x00000000809f0000)]
+  0x000000001de85000 JavaThread "J3D-BehaviorScheduler-43" [_thread_blocked, id=2376, stack(0x00000000807f0000,0x00000000808f0000)]
+  0x000000001de86800 JavaThread "J3D-TransformStructureUpdateThread-43" [_thread_blocked, id=6644, stack(0x00000000806f0000,0x00000000807f0000)]
+  0x000000001de87800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-43" [_thread_blocked, id=1808, stack(0x00000000805f0000,0x00000000806f0000)]
+  0x000000001de84800 JavaThread "J3D-SoundStructureUpdateThread-43" [_thread_blocked, id=15000, stack(0x00000000804f0000,0x00000000805f0000)]
+  0x000000001de86000 JavaThread "J3D-GeometryStructureUpdateThread-43" [_thread_blocked, id=15180, stack(0x00000000803f0000,0x00000000804f0000)]
+  0x000000001de7b800 JavaThread "J3D-BehaviorStructureUpdateThread-43" [_thread_blocked, id=3244, stack(0x00000000802f0000,0x00000000803f0000)]
+  0x000000001de82000 JavaThread "J3D-InputDeviceScheduler-42" [_thread_blocked, id=7760, stack(0x00000000800f0000,0x00000000801f0000)]
+  0x000000001de81800 JavaThread "J3D-SoundSchedulerUpdateThread-42" [_thread_blocked, id=3340, stack(0x000000007fff0000,0x00000000800f0000)]
+  0x000000001de7a800 JavaThread "J3D-RenderStructureUpdateThread-42" [_thread_blocked, id=15792, stack(0x000000007d6d0000,0x000000007d7d0000)]
+  0x000000001de7a000 JavaThread "J3D-BehaviorScheduler-42" [_thread_blocked, id=2132, stack(0x0000000075740000,0x0000000075840000)]
+  0x000000001de80000 JavaThread "J3D-TransformStructureUpdateThread-42" [_thread_blocked, id=11372, stack(0x000000006d1c0000,0x000000006d2c0000)]
+  0x000000001de7f000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-42" [_thread_blocked, id=7668, stack(0x000000007fed0000,0x000000007ffd0000)]
+  0x000000001de7d800 JavaThread "J3D-SoundStructureUpdateThread-42" [_thread_blocked, id=5264, stack(0x000000007f4d0000,0x000000007f5d0000)]
+  0x000000001de7c000 JavaThread "J3D-GeometryStructureUpdateThread-42" [_thread_blocked, id=16952, stack(0x000000007ead0000,0x000000007ebd0000)]
+  0x000000001de80800 JavaThread "J3D-BehaviorStructureUpdateThread-42" [_thread_blocked, id=4144, stack(0x000000007e0d0000,0x000000007e1d0000)]
+  0x000000001de7e800 JavaThread "J3D-InputDeviceScheduler-41" [_thread_blocked, id=17200, stack(0x000000007ccd0000,0x000000007cdd0000)]
+  0x000000001de7d000 JavaThread "J3D-SoundSchedulerUpdateThread-41" [_thread_blocked, id=15712, stack(0x000000007c2d0000,0x000000007c3d0000)]
+  0x000000001de72000 JavaThread "J3D-RenderStructureUpdateThread-41" [_thread_blocked, id=17380, stack(0x000000007b8d0000,0x000000007b9d0000)]
+  0x000000001de78800 JavaThread "J3D-BehaviorScheduler-41" [_thread_blocked, id=4736, stack(0x000000007aed0000,0x000000007afd0000)]
+  0x000000001de77800 JavaThread "J3D-TransformStructureUpdateThread-41" [_thread_blocked, id=2180, stack(0x000000007a4d0000,0x000000007a5d0000)]
+  0x000000001de76000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-41" [_thread_blocked, id=9828, stack(0x0000000078200000,0x0000000078300000)]
+  0x000000001de75000 JavaThread "J3D-SoundStructureUpdateThread-41" [_thread_blocked, id=16380, stack(0x0000000077800000,0x0000000077900000)]
+  0x000000001de74800 JavaThread "J3D-GeometryStructureUpdateThread-41" [_thread_blocked, id=4560, stack(0x0000000076e00000,0x0000000076f00000)]
+  0x000000001de73800 JavaThread "J3D-BehaviorStructureUpdateThread-41" [_thread_blocked, id=10204, stack(0x0000000076400000,0x0000000076500000)]
+  0x000000001de77000 JavaThread "J3D-InputDeviceScheduler-40" [_thread_blocked, id=17504, stack(0x0000000074d40000,0x0000000074e40000)]
+  0x000000001de73000 JavaThread "J3D-SoundSchedulerUpdateThread-40" [_thread_blocked, id=6044, stack(0x0000000074340000,0x0000000074440000)]
+  0x000000001de79000 JavaThread "J3D-RenderStructureUpdateThread-40" [_thread_blocked, id=12840, stack(0x0000000073940000,0x0000000073a40000)]
+  0x000000001dead000 JavaThread "J3D-BehaviorScheduler-40" [_thread_blocked, id=7588, stack(0x0000000072f00000,0x0000000073000000)]
+  0x000000001deab000 JavaThread "J3D-TransformStructureUpdateThread-40" [_thread_blocked, id=1716, stack(0x00000000715c0000,0x00000000716c0000)]
+  0x000000001deaa000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-40" [_thread_blocked, id=12352, stack(0x0000000070bc0000,0x0000000070cc0000)]
+  0x000000001deab800 JavaThread "J3D-SoundStructureUpdateThread-40" [_thread_blocked, id=12748, stack(0x000000006f8c0000,0x000000006f9c0000)]
+  0x000000001deb1000 JavaThread "J3D-GeometryStructureUpdateThread-40" [_thread_blocked, id=1380, stack(0x000000006eec0000,0x000000006efc0000)]
+  0x000000001deb0000 JavaThread "J3D-BehaviorStructureUpdateThread-40" [_thread_blocked, id=15124, stack(0x000000006dbc0000,0x000000006dcc0000)]
+  0x000000001deaf800 JavaThread "J3D-InputDeviceScheduler-39" [_thread_blocked, id=15744, stack(0x000000006c7c0000,0x000000006c8c0000)]
+  0x000000001deae000 JavaThread "J3D-SoundSchedulerUpdateThread-39" [_thread_blocked, id=668, stack(0x000000006bdc0000,0x000000006bec0000)]
+  0x000000001deae800 JavaThread "J3D-RenderStructureUpdateThread-39" [_thread_blocked, id=12324, stack(0x000000006b3c0000,0x000000006b4c0000)]
+  0x000000001deac800 JavaThread "J3D-BehaviorScheduler-39" [_thread_blocked, id=14452, stack(0x0000000068fc0000,0x00000000690c0000)]
+  0x000000001dea8800 JavaThread "J3D-TransformStructureUpdateThread-39" [_thread_blocked, id=11472, stack(0x00000000685c0000,0x00000000686c0000)]
+  0x000000001dea3000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-39" [_thread_blocked, id=3564, stack(0x0000000067bc0000,0x0000000067cc0000)]
+  0x000000001dea7000 JavaThread "J3D-SoundStructureUpdateThread-39" [_thread_blocked, id=10660, stack(0x00000000662d0000,0x00000000663d0000)]
+  0x000000001dea2800 JavaThread "J3D-GeometryStructureUpdateThread-39" [_thread_blocked, id=11744, stack(0x0000000000110000,0x0000000000210000)]
+  0x000000001dea8000 JavaThread "J3D-BehaviorStructureUpdateThread-39" [_thread_blocked, id=15136, stack(0x0000000000010000,0x0000000000110000)]
+  0x000000001dea5800 JavaThread "J3D-InputDeviceScheduler-38" [_thread_blocked, id=17248, stack(0x000000007fdd0000,0x000000007fed0000)]
+  0x000000001dea4800 JavaThread "J3D-SoundSchedulerUpdateThread-38" [_thread_blocked, id=7192, stack(0x000000007fcd0000,0x000000007fdd0000)]
+  0x000000001dea4000 JavaThread "J3D-RenderStructureUpdateThread-38" [_thread_blocked, id=9260, stack(0x000000007fbd0000,0x000000007fcd0000)]
+  0x000000001dea9800 JavaThread "J3D-BehaviorScheduler-38" [_thread_blocked, id=340, stack(0x000000007fad0000,0x000000007fbd0000)]
+  0x000000001dea6000 JavaThread "J3D-TransformStructureUpdateThread-38" [_thread_blocked, id=5708, stack(0x000000007f9d0000,0x000000007fad0000)]
+  0x000000001e050800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-38" [_thread_blocked, id=9316, stack(0x000000007f8d0000,0x000000007f9d0000)]
+  0x000000001e04f800 JavaThread "J3D-SoundStructureUpdateThread-38" [_thread_blocked, id=8348, stack(0x000000007f7d0000,0x000000007f8d0000)]
+  0x000000001e051000 JavaThread "J3D-GeometryStructureUpdateThread-38" [_thread_blocked, id=18080, stack(0x000000007f6d0000,0x000000007f7d0000)]
+  0x000000001e04e000 JavaThread "J3D-BehaviorStructureUpdateThread-38" [_thread_blocked, id=11520, stack(0x000000007f5d0000,0x000000007f6d0000)]
+  0x000000001e04d800 JavaThread "J3D-InputDeviceScheduler-37" [_thread_blocked, id=11948, stack(0x000000007f3d0000,0x000000007f4d0000)]
+  0x000000001e04f000 JavaThread "J3D-SoundSchedulerUpdateThread-37" [_thread_blocked, id=8140, stack(0x000000007f2d0000,0x000000007f3d0000)]
+  0x000000001e04c800 JavaThread "J3D-RenderStructureUpdateThread-37" [_thread_blocked, id=16012, stack(0x000000007f1d0000,0x000000007f2d0000)]
+  0x000000001e04c000 JavaThread "J3D-BehaviorScheduler-37" [_thread_blocked, id=11296, stack(0x000000007f0d0000,0x000000007f1d0000)]
+  0x000000001e046000 JavaThread "J3D-TransformStructureUpdateThread-37" [_thread_blocked, id=1512, stack(0x000000007efd0000,0x000000007f0d0000)]
+  0x000000001e04b000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-37" [_thread_blocked, id=6748, stack(0x000000007eed0000,0x000000007efd0000)]
+  0x000000001e044800 JavaThread "J3D-SoundStructureUpdateThread-37" [_thread_blocked, id=13604, stack(0x000000007edd0000,0x000000007eed0000)]
+  0x000000001e04a800 JavaThread "J3D-GeometryStructureUpdateThread-37" [_thread_blocked, id=4572, stack(0x000000007ecd0000,0x000000007edd0000)]
+  0x000000001e045000 JavaThread "J3D-BehaviorStructureUpdateThread-37" [_thread_blocked, id=12332, stack(0x000000007ebd0000,0x000000007ecd0000)]
+  0x000000001e049800 JavaThread "J3D-InputDeviceScheduler-36" [_thread_blocked, id=17620, stack(0x000000007e9d0000,0x000000007ead0000)]
+  0x000000001e048000 JavaThread "J3D-SoundSchedulerUpdateThread-36" [_thread_blocked, id=4040, stack(0x000000007e8d0000,0x000000007e9d0000)]
+  0x000000001e047800 JavaThread "J3D-RenderStructureUpdateThread-36" [_thread_blocked, id=9488, stack(0x000000007e7d0000,0x000000007e8d0000)]
+  0x000000001e049000 JavaThread "J3D-BehaviorScheduler-36" [_thread_blocked, id=15668, stack(0x000000007e6d0000,0x000000007e7d0000)]
+  0x000000001e046800 JavaThread "J3D-TransformStructureUpdateThread-36" [_thread_blocked, id=11624, stack(0x000000007e5d0000,0x000000007e6d0000)]
+  0x000000001e03e800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-36" [_thread_blocked, id=15268, stack(0x000000007e4d0000,0x000000007e5d0000)]
+  0x000000001e03d000 JavaThread "J3D-SoundStructureUpdateThread-36" [_thread_blocked, id=16160, stack(0x000000007e3d0000,0x000000007e4d0000)]
+  0x000000001e043800 JavaThread "J3D-GeometryStructureUpdateThread-36" [_thread_blocked, id=11736, stack(0x000000007e2d0000,0x000000007e3d0000)]
+  0x000000001e03c000 JavaThread "J3D-BehaviorStructureUpdateThread-36" [_thread_blocked, id=5304, stack(0x000000007e1d0000,0x000000007e2d0000)]
+  0x000000001e03d800 JavaThread "J3D-InputDeviceScheduler-35" [_thread_blocked, id=17596, stack(0x000000007dfd0000,0x000000007e0d0000)]
+  0x000000001e043000 JavaThread "J3D-SoundSchedulerUpdateThread-35" [_thread_blocked, id=10472, stack(0x000000007ded0000,0x000000007dfd0000)]
+  0x000000001e042000 JavaThread "J3D-RenderStructureUpdateThread-35" [_thread_blocked, id=17528, stack(0x000000007ddd0000,0x000000007ded0000)]
+  0x000000001e03b800 JavaThread "J3D-BehaviorScheduler-35" [_thread_blocked, id=5780, stack(0x000000007dcd0000,0x000000007ddd0000)]
+  0x000000001e041800 JavaThread "J3D-TransformStructureUpdateThread-35" [_thread_blocked, id=13856, stack(0x000000007dbd0000,0x000000007dcd0000)]
+  0x000000001e03f000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-35" [_thread_blocked, id=13704, stack(0x000000007dad0000,0x000000007dbd0000)]
+  0x000000001e040800 JavaThread "J3D-SoundStructureUpdateThread-35" [_thread_blocked, id=16900, stack(0x000000007d9d0000,0x000000007dad0000)]
+  0x000000001e040000 JavaThread "J3D-GeometryStructureUpdateThread-35" [_thread_blocked, id=5032, stack(0x000000007d8d0000,0x000000007d9d0000)]
+  0x000000001e034800 JavaThread "J3D-BehaviorStructureUpdateThread-35" [_thread_blocked, id=12760, stack(0x000000007d7d0000,0x000000007d8d0000)]
+  0x000000001e034000 JavaThread "J3D-InputDeviceScheduler-34" [_thread_blocked, id=5668, stack(0x000000007d5d0000,0x000000007d6d0000)]
+  0x000000001e03a800 JavaThread "J3D-SoundSchedulerUpdateThread-34" [_thread_blocked, id=10328, stack(0x000000007d4d0000,0x000000007d5d0000)]
+  0x000000001e03a000 JavaThread "J3D-RenderStructureUpdateThread-34" [_thread_blocked, id=15420, stack(0x000000007d3d0000,0x000000007d4d0000)]
+  0x000000001e032800 JavaThread "J3D-BehaviorScheduler-34" [_thread_blocked, id=3264, stack(0x000000007d2d0000,0x000000007d3d0000)]
+  0x000000001e035800 JavaThread "J3D-TransformStructureUpdateThread-34" [_thread_blocked, id=15384, stack(0x000000007d1d0000,0x000000007d2d0000)]
+  0x000000001e039000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-34" [_thread_blocked, id=14488, stack(0x000000007d0d0000,0x000000007d1d0000)]
+  0x000000001e037000 JavaThread "J3D-SoundStructureUpdateThread-34" [_thread_blocked, id=6100, stack(0x000000007cfd0000,0x000000007d0d0000)]
+  0x000000001e033000 JavaThread "J3D-GeometryStructureUpdateThread-34" [_thread_blocked, id=13816, stack(0x000000007ced0000,0x000000007cfd0000)]
+  0x000000001e038800 JavaThread "J3D-BehaviorStructureUpdateThread-34" [_thread_blocked, id=6164, stack(0x000000007cdd0000,0x000000007ced0000)]
+  0x000000001e037800 JavaThread "J3D-InputDeviceScheduler-33" [_thread_blocked, id=3540, stack(0x000000007cbd0000,0x000000007ccd0000)]
+  0x000000001e036000 JavaThread "J3D-SoundSchedulerUpdateThread-33" [_thread_blocked, id=11996, stack(0x000000007cad0000,0x000000007cbd0000)]
+  0x000000001e19e000 JavaThread "J3D-RenderStructureUpdateThread-33" [_thread_blocked, id=17352, stack(0x000000007c9d0000,0x000000007cad0000)]
+  0x000000001e199800 JavaThread "J3D-BehaviorScheduler-33" [_thread_blocked, id=7796, stack(0x000000007c8d0000,0x000000007c9d0000)]
+  0x000000001e19d000 JavaThread "J3D-TransformStructureUpdateThread-33" [_thread_blocked, id=16320, stack(0x000000007c7d0000,0x000000007c8d0000)]
+  0x000000001e19b800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-33" [_thread_blocked, id=17356, stack(0x000000007c6d0000,0x000000007c7d0000)]
+  0x000000001e19a000 JavaThread "J3D-SoundStructureUpdateThread-33" [_thread_blocked, id=11116, stack(0x000000007c5d0000,0x000000007c6d0000)]
+  0x000000001e19c800 JavaThread "J3D-GeometryStructureUpdateThread-33" [_thread_blocked, id=16732, stack(0x000000007c4d0000,0x000000007c5d0000)]
+  0x000000001e198000 JavaThread "J3D-BehaviorStructureUpdateThread-33" [_thread_blocked, id=12292, stack(0x000000007c3d0000,0x000000007c4d0000)]
+  0x000000001e198800 JavaThread "J3D-InputDeviceScheduler-32" [_thread_blocked, id=17360, stack(0x000000007c1d0000,0x000000007c2d0000)]
+  0x000000001e19b000 JavaThread "J3D-SoundSchedulerUpdateThread-32" [_thread_blocked, id=11740, stack(0x000000007c0d0000,0x000000007c1d0000)]
+  0x000000001e190800 JavaThread "J3D-RenderStructureUpdateThread-32" [_thread_blocked, id=11432, stack(0x000000007bfd0000,0x000000007c0d0000)]
+  0x000000001e197000 JavaThread "J3D-BehaviorScheduler-32" [_thread_blocked, id=5728, stack(0x000000007bed0000,0x000000007bfd0000)]
+  0x000000001e18f800 JavaThread "J3D-TransformStructureUpdateThread-32" [_thread_blocked, id=10732, stack(0x000000007bdd0000,0x000000007bed0000)]
+  0x000000001e196800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-32" [_thread_blocked, id=14208, stack(0x000000007bcd0000,0x000000007bdd0000)]
+  0x000000001e18f000 JavaThread "J3D-SoundStructureUpdateThread-32" [_thread_blocked, id=16116, stack(0x000000007bbd0000,0x000000007bcd0000)]
+  0x000000001e195800 JavaThread "J3D-GeometryStructureUpdateThread-32" [_thread_blocked, id=17652, stack(0x000000007bad0000,0x000000007bbd0000)]
+  0x000000001e192800 JavaThread "J3D-BehaviorStructureUpdateThread-32" [_thread_blocked, id=10296, stack(0x000000007b9d0000,0x000000007bad0000)]
+  0x000000001e195000 JavaThread "J3D-InputDeviceScheduler-31" [_thread_blocked, id=1388, stack(0x000000007b7d0000,0x000000007b8d0000)]
+  0x000000001e191000 JavaThread "J3D-SoundSchedulerUpdateThread-31" [_thread_blocked, id=17260, stack(0x000000007b6d0000,0x000000007b7d0000)]
+  0x000000001e193800 JavaThread "J3D-RenderStructureUpdateThread-31" [_thread_blocked, id=328, stack(0x000000007b5d0000,0x000000007b6d0000)]
+  0x000000001e194000 JavaThread "J3D-BehaviorScheduler-31" [_thread_blocked, id=11684, stack(0x000000007b4d0000,0x000000007b5d0000)]
+  0x000000001e192000 JavaThread "J3D-TransformStructureUpdateThread-31" [_thread_blocked, id=14128, stack(0x000000007b3d0000,0x000000007b4d0000)]
+  0x000000001e187000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-31" [_thread_blocked, id=2644, stack(0x000000007b2d0000,0x000000007b3d0000)]
+  0x000000001e18e000 JavaThread "J3D-SoundStructureUpdateThread-31" [_thread_blocked, id=11688, stack(0x000000007b1d0000,0x000000007b2d0000)]
+  0x000000001e18d800 JavaThread "J3D-GeometryStructureUpdateThread-31" [_thread_blocked, id=17464, stack(0x000000007b0d0000,0x000000007b1d0000)]
+  0x000000001e18c800 JavaThread "J3D-BehaviorStructureUpdateThread-31" [_thread_blocked, id=15172, stack(0x000000007afd0000,0x000000007b0d0000)]
+  0x000000001e188000 JavaThread "J3D-InputDeviceScheduler-30" [_thread_blocked, id=9096, stack(0x000000007add0000,0x000000007aed0000)]
+  0x000000001e18a800 JavaThread "J3D-SoundSchedulerUpdateThread-30" [_thread_blocked, id=13316, stack(0x000000007acd0000,0x000000007add0000)]
+  0x000000001e18b000 JavaThread "J3D-RenderStructureUpdateThread-30" [_thread_blocked, id=18300, stack(0x000000007abd0000,0x000000007acd0000)]
+  0x000000001e189800 JavaThread "J3D-BehaviorScheduler-30" [_thread_blocked, id=17216, stack(0x000000007aad0000,0x000000007abd0000)]
+  0x000000001e18c000 JavaThread "J3D-TransformStructureUpdateThread-30" [_thread_blocked, id=16896, stack(0x000000007a9d0000,0x000000007aad0000)]
+  0x000000001e188800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-30" [_thread_blocked, id=10880, stack(0x000000007a8d0000,0x000000007a9d0000)]
+  0x000000001e180800 JavaThread "J3D-SoundStructureUpdateThread-30" [_thread_blocked, id=15600, stack(0x000000007a7d0000,0x000000007a8d0000)]
+  0x000000001e17f800 JavaThread "J3D-GeometryStructureUpdateThread-30" [_thread_blocked, id=17060, stack(0x000000007a6d0000,0x000000007a7d0000)]
+  0x000000001e186800 JavaThread "J3D-BehaviorStructureUpdateThread-30" [_thread_blocked, id=584, stack(0x000000007a5d0000,0x000000007a6d0000)]
+  0x000000001e17f000 JavaThread "J3D-InputDeviceScheduler-29" [_thread_blocked, id=10792, stack(0x000000007a3d0000,0x000000007a4d0000)]
+  0x000000001e185000 JavaThread "J3D-SoundSchedulerUpdateThread-29" [_thread_blocked, id=14420, stack(0x000000007a2d0000,0x000000007a3d0000)]
+  0x000000001e185800 JavaThread "J3D-RenderStructureUpdateThread-29" [_thread_blocked, id=10684, stack(0x000000007a1d0000,0x000000007a2d0000)]
+  0x000000001e184000 JavaThread "J3D-BehaviorScheduler-29" [_thread_blocked, id=9088, stack(0x000000007a0d0000,0x000000007a1d0000)]
+  0x000000001e183800 JavaThread "J3D-TransformStructureUpdateThread-29" [_thread_blocked, id=9432, stack(0x0000000079fd0000,0x000000007a0d0000)]
+  0x000000001e182800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-29" [_thread_blocked, id=17976, stack(0x0000000079ed0000,0x0000000079fd0000)]
+  0x000000001e182000 JavaThread "J3D-SoundStructureUpdateThread-29" [_thread_blocked, id=15548, stack(0x0000000079dd0000,0x0000000079ed0000)]
+  0x000000001e181000 JavaThread "J3D-GeometryStructureUpdateThread-29" [_thread_blocked, id=14184, stack(0x0000000079cd0000,0x0000000079dd0000)]
+  0x000000001d56f800 JavaThread "J3D-BehaviorStructureUpdateThread-29" [_thread_blocked, id=12448, stack(0x0000000079bd0000,0x0000000079cd0000)]
+  0x000000001d572800 JavaThread "J3D-InputDeviceScheduler-28" [_thread_blocked, id=18236, stack(0x0000000078b00000,0x0000000078c00000)]
+  0x000000001d571800 JavaThread "J3D-SoundSchedulerUpdateThread-28" [_thread_blocked, id=17308, stack(0x0000000078a00000,0x0000000078b00000)]
+  0x000000001d573000 JavaThread "J3D-RenderStructureUpdateThread-28" [_thread_blocked, id=9312, stack(0x0000000078900000,0x0000000078a00000)]
+  0x000000001d570000 JavaThread "J3D-BehaviorScheduler-28" [_thread_blocked, id=17196, stack(0x0000000078800000,0x0000000078900000)]
+  0x000000001d571000 JavaThread "J3D-TransformStructureUpdateThread-28" [_thread_blocked, id=17736, stack(0x0000000078700000,0x0000000078800000)]
+  0x000000001d56e800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-28" [_thread_blocked, id=3080, stack(0x0000000078600000,0x0000000078700000)]
+  0x000000001d567000 JavaThread "J3D-SoundStructureUpdateThread-28" [_thread_blocked, id=968, stack(0x0000000078500000,0x0000000078600000)]
+  0x000000001d56e000 JavaThread "J3D-GeometryStructureUpdateThread-28" [_thread_blocked, id=13808, stack(0x0000000078400000,0x0000000078500000)]
+  0x000000001d56b800 JavaThread "J3D-BehaviorStructureUpdateThread-28" [_thread_blocked, id=14476, stack(0x0000000078300000,0x0000000078400000)]
+  0x000000001d56b000 JavaThread "J3D-InputDeviceScheduler-27" [_thread_blocked, id=15380, stack(0x0000000078100000,0x0000000078200000)]
+  0x000000001d566000 JavaThread "J3D-SoundSchedulerUpdateThread-27" [_thread_blocked, id=18084, stack(0x0000000078000000,0x0000000078100000)]
+  0x000000001d56a000 JavaThread "J3D-RenderStructureUpdateThread-27" [_thread_blocked, id=10680, stack(0x0000000077f00000,0x0000000078000000)]
+  0x000000001d569800 JavaThread "J3D-BehaviorScheduler-27" [_thread_blocked, id=7020, stack(0x0000000077e00000,0x0000000077f00000)]
+  0x000000001d568800 JavaThread "J3D-TransformStructureUpdateThread-27" [_thread_blocked, id=13452, stack(0x0000000077d00000,0x0000000077e00000)]
+  0x000000001d56c800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-27" [_thread_blocked, id=16084, stack(0x0000000077c00000,0x0000000077d00000)]
+  0x000000001d567800 JavaThread "J3D-SoundStructureUpdateThread-27" [_thread_blocked, id=13152, stack(0x0000000077b00000,0x0000000077c00000)]
+  0x000000001d56d000 JavaThread "J3D-GeometryStructureUpdateThread-27" [_thread_blocked, id=10996, stack(0x0000000077a00000,0x0000000077b00000)]
+  0x000000001d55e800 JavaThread "J3D-BehaviorStructureUpdateThread-27" [_thread_blocked, id=496, stack(0x0000000077900000,0x0000000077a00000)]
+  0x000000001d565800 JavaThread "J3D-InputDeviceScheduler-26" [_thread_blocked, id=8824, stack(0x0000000077700000,0x0000000077800000)]
+  0x000000001d564800 JavaThread "J3D-SoundSchedulerUpdateThread-26" [_thread_blocked, id=7420, stack(0x0000000077600000,0x0000000077700000)]
+  0x000000001d561800 JavaThread "J3D-RenderStructureUpdateThread-26" [_thread_blocked, id=16456, stack(0x0000000077500000,0x0000000077600000)]
+  0x000000001d563000 JavaThread "J3D-BehaviorScheduler-26" [_thread_blocked, id=6668, stack(0x0000000077400000,0x0000000077500000)]
+  0x000000001d560000 JavaThread "J3D-TransformStructureUpdateThread-26" [_thread_blocked, id=8540, stack(0x0000000077300000,0x0000000077400000)]
+  0x000000001d562800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-26" [_thread_blocked, id=12704, stack(0x0000000077200000,0x0000000077300000)]
+  0x000000001d564000 JavaThread "J3D-SoundStructureUpdateThread-26" [_thread_blocked, id=17368, stack(0x0000000077100000,0x0000000077200000)]
+  0x000000001d55f800 JavaThread "J3D-GeometryStructureUpdateThread-26" [_thread_blocked, id=9956, stack(0x0000000077000000,0x0000000077100000)]
+  0x000000001d561000 JavaThread "J3D-BehaviorStructureUpdateThread-26" [_thread_blocked, id=18124, stack(0x0000000076f00000,0x0000000077000000)]
+  0x000000001d557000 JavaThread "J3D-InputDeviceScheduler-25" [_thread_blocked, id=14632, stack(0x0000000076d00000,0x0000000076e00000)]
+  0x000000001d55e000 JavaThread "J3D-SoundSchedulerUpdateThread-25" [_thread_blocked, id=5956, stack(0x0000000076c00000,0x0000000076d00000)]
+  0x000000001d55d000 JavaThread "J3D-RenderStructureUpdateThread-25" [_thread_blocked, id=9256, stack(0x0000000076b00000,0x0000000076c00000)]
+  0x000000001d55a000 JavaThread "J3D-BehaviorScheduler-25" [_thread_blocked, id=1636, stack(0x0000000076a00000,0x0000000076b00000)]
+  0x000000001d55c800 JavaThread "J3D-TransformStructureUpdateThread-25" [_thread_blocked, id=16696, stack(0x0000000076900000,0x0000000076a00000)]
+  0x000000001d559800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-25" [_thread_blocked, id=15168, stack(0x0000000076800000,0x0000000076900000)]
+  0x000000001d55b800 JavaThread "J3D-SoundStructureUpdateThread-25" [_thread_blocked, id=3368, stack(0x0000000076700000,0x0000000076800000)]
+  0x000000001d556800 JavaThread "J3D-GeometryStructureUpdateThread-25" [_thread_blocked, id=6272, stack(0x0000000076600000,0x0000000076700000)]
+  0x000000001d558800 JavaThread "J3D-BehaviorStructureUpdateThread-25" [_thread_blocked, id=15156, stack(0x0000000076500000,0x0000000076600000)]
+  0x000000001d555000 JavaThread "J3D-InputDeviceScheduler-24" [_thread_blocked, id=11220, stack(0x0000000076040000,0x0000000076140000)]
+  0x000000001d558000 JavaThread "J3D-SoundSchedulerUpdateThread-24" [_thread_blocked, id=16432, stack(0x0000000075f40000,0x0000000076040000)]
+  0x000000001d554000 JavaThread "J3D-RenderStructureUpdateThread-24" [_thread_blocked, id=14152, stack(0x0000000075e40000,0x0000000075f40000)]
+  0x000000001d55b000 JavaThread "J3D-BehaviorScheduler-24" [_thread_blocked, id=9128, stack(0x0000000075d40000,0x0000000075e40000)]
+  0x000000001d555800 JavaThread "J3D-TransformStructureUpdateThread-24" [_thread_blocked, id=11492, stack(0x0000000075c40000,0x0000000075d40000)]
+  0x0000000019475000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-24" [_thread_blocked, id=8100, stack(0x0000000075b40000,0x0000000075c40000)]
+  0x000000001946d800 JavaThread "J3D-SoundStructureUpdateThread-24" [_thread_blocked, id=7640, stack(0x0000000075a40000,0x0000000075b40000)]
+  0x0000000019473800 JavaThread "J3D-GeometryStructureUpdateThread-24" [_thread_blocked, id=13076, stack(0x0000000075940000,0x0000000075a40000)]
+  0x0000000019470800 JavaThread "J3D-BehaviorStructureUpdateThread-24" [_thread_blocked, id=17632, stack(0x0000000075840000,0x0000000075940000)]
+  0x0000000019474800 JavaThread "J3D-InputDeviceScheduler-23" [_thread_blocked, id=17524, stack(0x0000000075640000,0x0000000075740000)]
+  0x000000001946c000 JavaThread "J3D-SoundSchedulerUpdateThread-23" [_thread_blocked, id=9324, stack(0x0000000075540000,0x0000000075640000)]
+  0x0000000019471800 JavaThread "J3D-RenderStructureUpdateThread-23" [_thread_blocked, id=9220, stack(0x0000000075440000,0x0000000075540000)]
+  0x000000001946e800 JavaThread "J3D-BehaviorScheduler-23" [_thread_blocked, id=9768, stack(0x0000000075340000,0x0000000075440000)]
+  0x0000000019472000 JavaThread "J3D-TransformStructureUpdateThread-23" [_thread_blocked, id=7000, stack(0x0000000075240000,0x0000000075340000)]
+  0x0000000019473000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-23" [_thread_blocked, id=14740, stack(0x0000000075140000,0x0000000075240000)]
+  0x0000000019470000 JavaThread "J3D-SoundStructureUpdateThread-23" [_thread_blocked, id=16832, stack(0x0000000075040000,0x0000000075140000)]
+  0x0000000019468800 JavaThread "J3D-GeometryStructureUpdateThread-23" [_thread_blocked, id=1168, stack(0x0000000074f40000,0x0000000075040000)]
+  0x000000001946b800 JavaThread "J3D-BehaviorStructureUpdateThread-23" [_thread_blocked, id=11352, stack(0x0000000074e40000,0x0000000074f40000)]
+  0x000000001946f000 JavaThread "J3D-InputDeviceScheduler-22" [_thread_blocked, id=13416, stack(0x0000000074c40000,0x0000000074d40000)]
+  0x000000001946d000 JavaThread "J3D-SoundSchedulerUpdateThread-22" [_thread_blocked, id=12432, stack(0x0000000074b40000,0x0000000074c40000)]
+  0x0000000019464000 JavaThread "J3D-RenderStructureUpdateThread-22" [_thread_blocked, id=17768, stack(0x0000000074a40000,0x0000000074b40000)]
+  0x0000000019467000 JavaThread "J3D-BehaviorScheduler-22" [_thread_blocked, id=8896, stack(0x0000000074940000,0x0000000074a40000)]
+  0x0000000019467800 JavaThread "J3D-TransformStructureUpdateThread-22" [_thread_blocked, id=15780, stack(0x0000000074840000,0x0000000074940000)]
+  0x0000000019466000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-22" [_thread_blocked, id=12856, stack(0x0000000074740000,0x0000000074840000)]
+  0x0000000019464800 JavaThread "J3D-SoundStructureUpdateThread-22" [_thread_blocked, id=14068, stack(0x0000000074640000,0x0000000074740000)]
+  0x000000001946a800 JavaThread "J3D-GeometryStructureUpdateThread-22" [_thread_blocked, id=13156, stack(0x0000000074540000,0x0000000074640000)]
+  0x0000000019463000 JavaThread "J3D-BehaviorStructureUpdateThread-22" [_thread_blocked, id=18312, stack(0x0000000074440000,0x0000000074540000)]
+  0x0000000019469000 JavaThread "J3D-InputDeviceScheduler-21" [_thread_blocked, id=14508, stack(0x0000000074240000,0x0000000074340000)]
+  0x0000000019465800 JavaThread "J3D-SoundSchedulerUpdateThread-21" [_thread_blocked, id=12960, stack(0x0000000074140000,0x0000000074240000)]
+  0x000000001946a000 JavaThread "J3D-RenderStructureUpdateThread-21" [_thread_blocked, id=16704, stack(0x0000000074040000,0x0000000074140000)]
+  0x000000001945b800 JavaThread "J3D-BehaviorScheduler-21" [_thread_blocked, id=5388, stack(0x0000000073f40000,0x0000000074040000)]
+  0x0000000019462800 JavaThread "J3D-TransformStructureUpdateThread-21" [_thread_blocked, id=12424, stack(0x0000000073e40000,0x0000000073f40000)]
+  0x000000001945b000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-21" [_thread_blocked, id=9276, stack(0x0000000073d40000,0x0000000073e40000)]
+  0x0000000019461800 JavaThread "J3D-SoundStructureUpdateThread-21" [_thread_blocked, id=16448, stack(0x0000000073c40000,0x0000000073d40000)]
+  0x0000000019461000 JavaThread "J3D-GeometryStructureUpdateThread-21" [_thread_blocked, id=4236, stack(0x0000000073b40000,0x0000000073c40000)]
+  0x0000000019460000 JavaThread "J3D-BehaviorStructureUpdateThread-21" [_thread_blocked, id=17776, stack(0x0000000073a40000,0x0000000073b40000)]
+  0x000000001945e800 JavaThread "J3D-InputDeviceScheduler-20" [_thread_blocked, id=12648, stack(0x0000000073840000,0x0000000073940000)]
+  0x000000001945f800 JavaThread "J3D-SoundSchedulerUpdateThread-20" [_thread_blocked, id=8304, stack(0x0000000073740000,0x0000000073840000)]
+  0x0000000019457000 JavaThread "J3D-RenderStructureUpdateThread-20" [_thread_blocked, id=10556, stack(0x0000000073640000,0x0000000073740000)]
+  0x000000001945d000 JavaThread "J3D-BehaviorScheduler-20" [_thread_blocked, id=17592, stack(0x0000000073540000,0x0000000073640000)]
+  0x000000001945a000 JavaThread "J3D-TransformStructureUpdateThread-20" [_thread_blocked, id=1240, stack(0x0000000073440000,0x0000000073540000)]
+  0x0000000019459800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-20" [_thread_blocked, id=5892, stack(0x0000000073340000,0x0000000073440000)]
+  0x000000001945c800 JavaThread "J3D-SoundStructureUpdateThread-20" [_thread_blocked, id=15356, stack(0x0000000073240000,0x0000000073340000)]
+  0x000000001945e000 JavaThread "J3D-GeometryStructureUpdateThread-20" [_thread_blocked, id=1016, stack(0x0000000073140000,0x0000000073240000)]
+  0x0000000019456800 JavaThread "J3D-BehaviorStructureUpdateThread-20" [_thread_blocked, id=8360, stack(0x0000000073040000,0x0000000073140000)]
+  0x0000000019458000 JavaThread "J3D-InputDeviceScheduler-19" [_thread_blocked, id=5080, stack(0x0000000072e00000,0x0000000072f00000)]
+  0x0000000019458800 JavaThread "J3D-SoundSchedulerUpdateThread-19" [_thread_blocked, id=4988, stack(0x0000000072d00000,0x0000000072e00000)]
+  0x0000000019498000 JavaThread "J3D-RenderStructureUpdateThread-19" [_thread_blocked, id=5384, stack(0x0000000072c00000,0x0000000072d00000)]
+  0x0000000019497000 JavaThread "J3D-BehaviorScheduler-19" [_thread_blocked, id=13536, stack(0x0000000072b00000,0x0000000072c00000)]
+  0x000000001949d000 JavaThread "J3D-TransformStructureUpdateThread-19" [_thread_blocked, id=15956, stack(0x0000000071ac0000,0x0000000071bc0000)]
+  0x000000001949c800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-19" [_thread_blocked, id=2516, stack(0x00000000719c0000,0x0000000071ac0000)]
+  0x0000000019495000 JavaThread "J3D-SoundStructureUpdateThread-19" [_thread_blocked, id=15224, stack(0x00000000718c0000,0x00000000719c0000)]
+  0x0000000019496800 JavaThread "J3D-GeometryStructureUpdateThread-19" [_thread_blocked, id=16980, stack(0x00000000717c0000,0x00000000718c0000)]
+  0x000000001949b800 JavaThread "J3D-BehaviorStructureUpdateThread-19" [_thread_blocked, id=18264, stack(0x00000000716c0000,0x00000000717c0000)]
+  0x0000000019498800 JavaThread "J3D-InputDeviceScheduler-18" [_thread_blocked, id=4884, stack(0x00000000714c0000,0x00000000715c0000)]
+  0x000000001949a000 JavaThread "J3D-SoundSchedulerUpdateThread-18" [_thread_blocked, id=11704, stack(0x00000000713c0000,0x00000000714c0000)]
+  0x0000000019499800 JavaThread "J3D-RenderStructureUpdateThread-18" [_thread_blocked, id=10776, stack(0x00000000712c0000,0x00000000713c0000)]
+  0x000000001949b000 JavaThread "J3D-BehaviorScheduler-18" [_thread_blocked, id=13652, stack(0x00000000711c0000,0x00000000712c0000)]
+  0x000000001948f800 JavaThread "J3D-TransformStructureUpdateThread-18" [_thread_blocked, id=10396, stack(0x00000000710c0000,0x00000000711c0000)]
+  0x0000000019493800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-18" [_thread_blocked, id=3800, stack(0x0000000070fc0000,0x00000000710c0000)]
+  0x0000000019494000 JavaThread "J3D-SoundStructureUpdateThread-18" [_thread_blocked, id=4416, stack(0x0000000070ec0000,0x0000000070fc0000)]
+  0x0000000019492800 JavaThread "J3D-GeometryStructureUpdateThread-18" [_thread_blocked, id=16268, stack(0x0000000070dc0000,0x0000000070ec0000)]
+  0x0000000019491000 JavaThread "J3D-BehaviorStructureUpdateThread-18" [_thread_blocked, id=2660, stack(0x0000000070cc0000,0x0000000070dc0000)]
+  0x0000000019495800 JavaThread "J3D-InputDeviceScheduler-17" [_thread_blocked, id=3344, stack(0x0000000070ac0000,0x0000000070bc0000)]
+  0x000000001948e000 JavaThread "J3D-SoundSchedulerUpdateThread-17" [_thread_blocked, id=5664, stack(0x00000000709c0000,0x0000000070ac0000)]
+  0x0000000019492000 JavaThread "J3D-RenderStructureUpdateThread-17" [_thread_blocked, id=13296, stack(0x00000000708c0000,0x00000000709c0000)]
+  0x000000001948e800 JavaThread "J3D-BehaviorScheduler-17" [_thread_blocked, id=14252, stack(0x00000000707c0000,0x00000000708c0000)]
+  0x0000000019490000 JavaThread "J3D-TransformStructureUpdateThread-17" [_thread_blocked, id=1196, stack(0x00000000706c0000,0x00000000707c0000)]
+  0x000000001d6ca800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-17" [_thread_blocked, id=17936, stack(0x00000000705c0000,0x00000000706c0000)]
+  0x000000001d6cd000 JavaThread "J3D-SoundStructureUpdateThread-17" [_thread_blocked, id=18076, stack(0x00000000704c0000,0x00000000705c0000)]
+  0x000000001d6d0000 JavaThread "J3D-GeometryStructureUpdateThread-17" [_thread_blocked, id=18308, stack(0x00000000703c0000,0x00000000704c0000)]
+  0x000000001d6c9000 JavaThread "J3D-BehaviorStructureUpdateThread-17" [_thread_blocked, id=15944, stack(0x00000000702c0000,0x00000000703c0000)]
+  0x000000001d6cc000 JavaThread "J3D-InputDeviceScheduler-16" [_thread_blocked, id=7696, stack(0x00000000701c0000,0x00000000702c0000)]
+  0x000000001d6cd800 JavaThread "J3D-SoundSchedulerUpdateThread-16" [_thread_blocked, id=14212, stack(0x00000000700c0000,0x00000000701c0000)]
+  0x000000001d6ca000 JavaThread "J3D-RenderStructureUpdateThread-16" [_thread_blocked, id=11068, stack(0x000000006ffc0000,0x00000000700c0000)]
+  0x000000001d6cf000 JavaThread "J3D-BehaviorScheduler-16" [_thread_blocked, id=4976, stack(0x000000006fec0000,0x000000006ffc0000)]
+  0x000000001d6cb800 JavaThread "J3D-TransformStructureUpdateThread-16" [_thread_blocked, id=16584, stack(0x000000006fdc0000,0x000000006fec0000)]
+  0x000000001d6ce800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-16" [_thread_blocked, id=220, stack(0x000000006fcc0000,0x000000006fdc0000)]
+  0x000000001d6c1800 JavaThread "J3D-SoundStructureUpdateThread-16" [_thread_blocked, id=11364, stack(0x000000006fbc0000,0x000000006fcc0000)]
+  0x000000001d6c2800 JavaThread "J3D-GeometryStructureUpdateThread-16" [_thread_blocked, id=4688, stack(0x000000006fac0000,0x000000006fbc0000)]
+  0x000000001d6c8800 JavaThread "J3D-BehaviorStructureUpdateThread-16" [_thread_blocked, id=6916, stack(0x000000006f9c0000,0x000000006fac0000)]
+  0x000000001d6c1000 JavaThread "J3D-InputDeviceScheduler-15" [_thread_blocked, id=15912, stack(0x000000006f7c0000,0x000000006f8c0000)]
+  0x000000001d6c5800 JavaThread "J3D-SoundSchedulerUpdateThread-15" [_thread_blocked, id=1048, stack(0x000000006f6c0000,0x000000006f7c0000)]
+  0x000000001d6c7000 JavaThread "J3D-RenderStructureUpdateThread-15" [_thread_blocked, id=7844, stack(0x000000006f5c0000,0x000000006f6c0000)]
+  0x000000001d6c4800 JavaThread "J3D-BehaviorScheduler-15" [_thread_blocked, id=18100, stack(0x000000006f4c0000,0x000000006f5c0000)]
+  0x000000001d6c4000 JavaThread "J3D-TransformStructureUpdateThread-15" [_thread_blocked, id=8396, stack(0x000000006f3c0000,0x000000006f4c0000)]
+  0x000000001d6c6000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-15" [_thread_blocked, id=10564, stack(0x000000006f2c0000,0x000000006f3c0000)]
+  0x000000001d6c3000 JavaThread "J3D-SoundStructureUpdateThread-15" [_thread_blocked, id=12144, stack(0x000000006f1c0000,0x000000006f2c0000)]
+  0x000000001d6c7800 JavaThread "J3D-GeometryStructureUpdateThread-15" [_thread_blocked, id=18228, stack(0x000000006f0c0000,0x000000006f1c0000)]
+  0x00000000195ae800 JavaThread "J3D-BehaviorStructureUpdateThread-15" [_thread_blocked, id=10588, stack(0x000000006efc0000,0x000000006f0c0000)]
+  0x00000000195ad800 JavaThread "J3D-InputDeviceScheduler-14" [_thread_blocked, id=18208, stack(0x000000006edc0000,0x000000006eec0000)]
+  0x00000000195ad000 JavaThread "J3D-SoundSchedulerUpdateThread-14" [_thread_blocked, id=12040, stack(0x000000006ecc0000,0x000000006edc0000)]
+  0x00000000195af000 JavaThread "J3D-RenderStructureUpdateThread-14" [_thread_blocked, id=7412, stack(0x000000006ebc0000,0x000000006ecc0000)]
+  0x00000000195a5000 JavaThread "J3D-BehaviorScheduler-14" [_thread_blocked, id=9012, stack(0x000000006eac0000,0x000000006ebc0000)]
+  0x00000000195ab800 JavaThread "J3D-TransformStructureUpdateThread-14" [_thread_blocked, id=17032, stack(0x000000006e9c0000,0x000000006eac0000)]
+  0x00000000195ac000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-14" [_thread_blocked, id=7768, stack(0x000000006e8c0000,0x000000006e9c0000)]
+  0x00000000195a4800 JavaThread "J3D-SoundStructureUpdateThread-14" [_thread_blocked, id=6764, stack(0x000000006e7c0000,0x000000006e8c0000)]
+  0x00000000195aa800 JavaThread "J3D-GeometryStructureUpdateThread-14" [_thread_blocked, id=18048, stack(0x000000006e6c0000,0x000000006e7c0000)]
+  0x00000000195aa000 JavaThread "J3D-BehaviorStructureUpdateThread-14" [_thread_blocked, id=10604, stack(0x000000006e5c0000,0x000000006e6c0000)]
+  0x00000000195a3800 JavaThread "J3D-InputDeviceScheduler-13" [_thread_blocked, id=224, stack(0x000000006e4c0000,0x000000006e5c0000)]
+  0x00000000195a8000 JavaThread "J3D-SoundSchedulerUpdateThread-13" [_thread_blocked, id=13332, stack(0x000000006e3c0000,0x000000006e4c0000)]
+  0x00000000195a9000 JavaThread "J3D-RenderStructureUpdateThread-13" [_thread_blocked, id=12472, stack(0x000000006e2c0000,0x000000006e3c0000)]
+  0x00000000195a7800 JavaThread "J3D-BehaviorScheduler-13" [_thread_blocked, id=6852, stack(0x000000006e1c0000,0x000000006e2c0000)]
+  0x00000000195a6800 JavaThread "J3D-TransformStructureUpdateThread-13" [_thread_blocked, id=16376, stack(0x000000006e0c0000,0x000000006e1c0000)]
+  0x00000000195a6000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-13" [_thread_blocked, id=16396, stack(0x000000006dfc0000,0x000000006e0c0000)]
+  0x00000000195a0000 JavaThread "J3D-SoundStructureUpdateThread-13" [_thread_blocked, id=12212, stack(0x000000006dec0000,0x000000006dfc0000)]
+  0x00000000195a3000 JavaThread "J3D-GeometryStructureUpdateThread-13" [_thread_blocked, id=9084, stack(0x000000006ddc0000,0x000000006dec0000)]
+  0x00000000195a2000 JavaThread "J3D-BehaviorStructureUpdateThread-13" [_thread_blocked, id=15508, stack(0x000000006dcc0000,0x000000006ddc0000)]
+  0x00000000195a1800 JavaThread "J3D-InputDeviceScheduler-12" [_thread_blocked, id=13096, stack(0x000000006dac0000,0x000000006dbc0000)]
+  0x00000000195a0800 JavaThread "J3D-SoundSchedulerUpdateThread-12" [_thread_blocked, id=4396, stack(0x000000006d9c0000,0x000000006dac0000)]
+  0x000000001925f800 JavaThread "J3D-RenderStructureUpdateThread-12" [_thread_blocked, id=6120, stack(0x000000006d8c0000,0x000000006d9c0000)]
+  0x0000000019266800 JavaThread "J3D-BehaviorScheduler-12" [_thread_blocked, id=14992, stack(0x000000006d7c0000,0x000000006d8c0000)]
+  0x0000000019264000 JavaThread "J3D-TransformStructureUpdateThread-12" [_thread_blocked, id=8984, stack(0x000000006d6c0000,0x000000006d7c0000)]
+  0x0000000019265800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-12" [_thread_blocked, id=4868, stack(0x000000006d5c0000,0x000000006d6c0000)]
+  0x0000000019263800 JavaThread "J3D-SoundStructureUpdateThread-12" [_thread_blocked, id=5828, stack(0x000000006d4c0000,0x000000006d5c0000)]
+  0x0000000019262800 JavaThread "J3D-GeometryStructureUpdateThread-12" [_thread_blocked, id=5448, stack(0x000000006d3c0000,0x000000006d4c0000)]
+  0x0000000019265000 JavaThread "J3D-BehaviorStructureUpdateThread-12" [_thread_blocked, id=9396, stack(0x000000006d2c0000,0x000000006d3c0000)]
+  0x0000000019262000 JavaThread "J3D-InputDeviceScheduler-11" [_thread_blocked, id=5588, stack(0x000000006d0c0000,0x000000006d1c0000)]
+  0x0000000019261000 JavaThread "J3D-SoundSchedulerUpdateThread-11" [_thread_blocked, id=9508, stack(0x000000006cfc0000,0x000000006d0c0000)]
+  0x0000000019260800 JavaThread "J3D-RenderStructureUpdateThread-11" [_thread_blocked, id=14640, stack(0x000000006cec0000,0x000000006cfc0000)]
+  0x000000001925b000 JavaThread "J3D-BehaviorScheduler-11" [_thread_blocked, id=18304, stack(0x000000006cdc0000,0x000000006cec0000)]
+  0x000000001925f000 JavaThread "J3D-TransformStructureUpdateThread-11" [_thread_blocked, id=10840, stack(0x000000006ccc0000,0x000000006cdc0000)]
+  0x0000000019257800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-11" [_thread_blocked, id=17588, stack(0x000000006cbc0000,0x000000006ccc0000)]
+  0x000000001925e000 JavaThread "J3D-SoundStructureUpdateThread-11" [_thread_blocked, id=13632, stack(0x000000006cac0000,0x000000006cbc0000)]
+  0x000000001925a800 JavaThread "J3D-GeometryStructureUpdateThread-11" [_thread_blocked, id=12508, stack(0x000000006c9c0000,0x000000006cac0000)]
+  0x000000001925d800 JavaThread "J3D-BehaviorStructureUpdateThread-11" [_thread_blocked, id=17724, stack(0x000000006c8c0000,0x000000006c9c0000)]
+  0x0000000019259800 JavaThread "J3D-InputDeviceScheduler-10" [_thread_blocked, id=15084, stack(0x000000006c6c0000,0x000000006c7c0000)]
+  0x000000001925c000 JavaThread "J3D-SoundSchedulerUpdateThread-10" [_thread_blocked, id=7440, stack(0x000000006c5c0000,0x000000006c6c0000)]
+  0x000000001925c800 JavaThread "J3D-RenderStructureUpdateThread-10" [_thread_blocked, id=15428, stack(0x000000006c4c0000,0x000000006c5c0000)]
+  0x0000000019259000 JavaThread "J3D-BehaviorScheduler-10" [_thread_blocked, id=13128, stack(0x000000006c3c0000,0x000000006c4c0000)]
+  0x0000000019258000 JavaThread "J3D-TransformStructureUpdateThread-10" [_thread_blocked, id=6016, stack(0x000000006c2c0000,0x000000006c3c0000)]
+  0x0000000019391000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-10" [_thread_blocked, id=824, stack(0x000000006c1c0000,0x000000006c2c0000)]
+  0x0000000019390800 JavaThread "J3D-SoundStructureUpdateThread-10" [_thread_blocked, id=14688, stack(0x000000006c0c0000,0x000000006c1c0000)]
+  0x000000001938f800 JavaThread "J3D-GeometryStructureUpdateThread-10" [_thread_blocked, id=1052, stack(0x000000006bfc0000,0x000000006c0c0000)]
+  0x0000000019392000 JavaThread "J3D-BehaviorStructureUpdateThread-10" [_thread_blocked, id=7296, stack(0x000000006bec0000,0x000000006bfc0000)]
+  0x0000000019388000 JavaThread "J3D-InputDeviceScheduler-9" [_thread_blocked, id=9208, stack(0x000000006bcc0000,0x000000006bdc0000)]
+  0x000000001938e000 JavaThread "J3D-SoundSchedulerUpdateThread-9" [_thread_blocked, id=11544, stack(0x000000006bbc0000,0x000000006bcc0000)]
+  0x000000001938d800 JavaThread "J3D-RenderStructureUpdateThread-9" [_thread_blocked, id=3676, stack(0x000000006bac0000,0x000000006bbc0000)]
+  0x000000001938c800 JavaThread "J3D-BehaviorScheduler-9" [_thread_blocked, id=6660, stack(0x000000006b9c0000,0x000000006bac0000)]
+  0x000000001938c000 JavaThread "J3D-TransformStructureUpdateThread-9" [_thread_blocked, id=11800, stack(0x000000006b8c0000,0x000000006b9c0000)]
+  0x000000001938f000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-9" [_thread_blocked, id=16652, stack(0x000000006b7c0000,0x000000006b8c0000)]
+  0x000000001938b000 JavaThread "J3D-SoundStructureUpdateThread-9" [_thread_blocked, id=13848, stack(0x000000006b6c0000,0x000000006b7c0000)]
+  0x000000001938a800 JavaThread "J3D-GeometryStructureUpdateThread-9" [_thread_blocked, id=10196, stack(0x000000006b5c0000,0x000000006b6c0000)]
+  0x0000000019387800 JavaThread "J3D-BehaviorStructureUpdateThread-9" [_thread_blocked, id=17372, stack(0x000000006b4c0000,0x000000006b5c0000)]
+  0x0000000019383000 JavaThread "J3D-InputDeviceScheduler-8" [_thread_blocked, id=14636, stack(0x000000006b2c0000,0x000000006b3c0000)]
+  0x0000000019386000 JavaThread "J3D-SoundSchedulerUpdateThread-8" [_thread_blocked, id=1988, stack(0x000000006b1c0000,0x000000006b2c0000)]
+  0x0000000019389800 JavaThread "J3D-RenderStructureUpdateThread-8" [_thread_blocked, id=4068, stack(0x000000006b0c0000,0x000000006b1c0000)]
+  0x0000000019385000 JavaThread "J3D-BehaviorScheduler-8" [_thread_blocked, id=9688, stack(0x000000006afc0000,0x000000006b0c0000)]
+  0x0000000019384800 JavaThread "J3D-TransformStructureUpdateThread-8" [_thread_blocked, id=6240, stack(0x000000006aec0000,0x000000006afc0000)]
+  0x0000000019386800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-8" [_thread_blocked, id=2592, stack(0x000000006adc0000,0x000000006aec0000)]
+  0x0000000019389000 JavaThread "J3D-SoundStructureUpdateThread-8" [_thread_blocked, id=17820, stack(0x000000006acc0000,0x000000006adc0000)]
+  0x0000000019383800 JavaThread "J3D-GeometryStructureUpdateThread-8" [_thread_blocked, id=13888, stack(0x000000006abc0000,0x000000006acc0000)]
+  0x000000001923f800 JavaThread "J3D-BehaviorStructureUpdateThread-8" [_thread_blocked, id=1668, stack(0x000000006aac0000,0x000000006abc0000)]
+  0x0000000019246800 JavaThread "J3D-InputDeviceScheduler-7" [_thread_blocked, id=9556, stack(0x000000006a1c0000,0x000000006a2c0000)]
+  0x0000000019242000 JavaThread "J3D-SoundSchedulerUpdateThread-7" [_thread_blocked, id=4056, stack(0x000000006a0c0000,0x000000006a1c0000)]
+  0x0000000019242800 JavaThread "J3D-RenderStructureUpdateThread-7" [_thread_blocked, id=13868, stack(0x0000000069fc0000,0x000000006a0c0000)]
+  0x0000000019241000 JavaThread "J3D-BehaviorScheduler-7" [_thread_blocked, id=17084, stack(0x0000000069ec0000,0x0000000069fc0000)]
+  0x000000001923f000 JavaThread "J3D-TransformStructureUpdateThread-7" [_thread_blocked, id=1396, stack(0x0000000069dc0000,0x0000000069ec0000)]
+  0x0000000019243800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-7" [_thread_blocked, id=11528, stack(0x0000000069cc0000,0x0000000069dc0000)]
+  0x0000000019240800 JavaThread "J3D-SoundStructureUpdateThread-7" [_thread_blocked, id=17496, stack(0x0000000069bc0000,0x0000000069cc0000)]
+  0x0000000019245000 JavaThread "J3D-GeometryStructureUpdateThread-7" [_thread_blocked, id=13032, stack(0x0000000069ac0000,0x0000000069bc0000)]
+  0x0000000019245800 JavaThread "J3D-BehaviorStructureUpdateThread-7" [_thread_blocked, id=13460, stack(0x00000000699c0000,0x0000000069ac0000)]
+  0x0000000019244000 JavaThread "J3D-InputDeviceScheduler-6" [_thread_blocked, id=12804, stack(0x00000000698c0000,0x00000000699c0000)]
+  0x0000000019237800 JavaThread "J3D-SoundSchedulerUpdateThread-6" [_thread_blocked, id=1516, stack(0x00000000697c0000,0x00000000698c0000)]
+  0x000000001923e000 JavaThread "J3D-RenderStructureUpdateThread-6" [_thread_blocked, id=15212, stack(0x00000000696c0000,0x00000000697c0000)]
+  0x000000001923b000 JavaThread "J3D-BehaviorScheduler-6" [_thread_blocked, id=13948, stack(0x00000000695c0000,0x00000000696c0000)]
+  0x0000000019239800 JavaThread "J3D-TransformStructureUpdateThread-6" [_thread_blocked, id=12788, stack(0x00000000694c0000,0x00000000695c0000)]
+  0x0000000019238000 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-6" [_thread_blocked, id=9380, stack(0x00000000693c0000,0x00000000694c0000)]
+  0x000000001923d800 JavaThread "J3D-SoundStructureUpdateThread-6" [_thread_blocked, id=10864, stack(0x00000000692c0000,0x00000000693c0000)]
+  0x000000001923c800 JavaThread "J3D-GeometryStructureUpdateThread-6" [_thread_blocked, id=10672, stack(0x00000000691c0000,0x00000000692c0000)]
+  0x000000001923a800 JavaThread "J3D-BehaviorStructureUpdateThread-6" [_thread_blocked, id=10208, stack(0x00000000690c0000,0x00000000691c0000)]
+  0x0000000019239000 JavaThread "J3D-InputDeviceScheduler-5" [_thread_blocked, id=4212, stack(0x0000000068ec0000,0x0000000068fc0000)]
+  0x000000001923c000 JavaThread "J3D-SoundSchedulerUpdateThread-5" [_thread_blocked, id=11652, stack(0x0000000068dc0000,0x0000000068ec0000)]
+  0x000000001d675800 JavaThread "J3D-RenderStructureUpdateThread-5" [_thread_blocked, id=16924, stack(0x0000000068cc0000,0x0000000068dc0000)]
+  0x000000001d674000 JavaThread "J3D-BehaviorScheduler-5" [_thread_blocked, id=16968, stack(0x0000000068bc0000,0x0000000068cc0000)]
+  0x000000001d671800 JavaThread "J3D-TransformStructureUpdateThread-5" [_thread_blocked, id=10584, stack(0x0000000068ac0000,0x0000000068bc0000)]
+  0x000000001d672800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-5" [_thread_blocked, id=8260, stack(0x00000000689c0000,0x0000000068ac0000)]
+  0x000000001d677000 JavaThread "J3D-SoundStructureUpdateThread-5" [_thread_blocked, id=15308, stack(0x00000000688c0000,0x00000000689c0000)]
+  0x000000001d671000 JavaThread "J3D-GeometryStructureUpdateThread-5" [_thread_blocked, id=15888, stack(0x00000000687c0000,0x00000000688c0000)]
+  0x000000001d66f800 JavaThread "J3D-BehaviorStructureUpdateThread-5" [_thread_blocked, id=1220, stack(0x00000000686c0000,0x00000000687c0000)]
+  0x000000001d670000 JavaThread "J3D-InputDeviceScheduler-4" [_thread_blocked, id=7152, stack(0x00000000684c0000,0x00000000685c0000)]
+  0x000000001d673000 JavaThread "J3D-SoundSchedulerUpdateThread-4" [_thread_blocked, id=14808, stack(0x00000000683c0000,0x00000000684c0000)]
+  0x000000001d674800 JavaThread "J3D-RenderStructureUpdateThread-4" [_thread_blocked, id=376, stack(0x00000000682c0000,0x00000000683c0000)]
+  0x000000001d676000 JavaThread "J3D-BehaviorScheduler-4" [_thread_blocked, id=704, stack(0x00000000681c0000,0x00000000682c0000)]
+  0x000000001d668000 JavaThread "J3D-TransformStructureUpdateThread-4" [_thread_blocked, id=7900, stack(0x00000000680c0000,0x00000000681c0000)]
+  0x000000001d66e800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-4" [_thread_blocked, id=940, stack(0x0000000067fc0000,0x00000000680c0000)]
+  0x000000001d66e000 JavaThread "J3D-SoundStructureUpdateThread-4" [_thread_blocked, id=13616, stack(0x0000000067ec0000,0x0000000067fc0000)]
+  0x000000001d66d000 JavaThread "J3D-GeometryStructureUpdateThread-4" [_thread_blocked, id=13384, stack(0x0000000067dc0000,0x0000000067ec0000)]
+  0x000000001d66b800 JavaThread "J3D-BehaviorStructureUpdateThread-4" [_thread_blocked, id=16408, stack(0x0000000067cc0000,0x0000000067dc0000)]
+  0x000000001d66b000 JavaThread "J3D-InputDeviceScheduler-3" [_thread_blocked, id=17992, stack(0x0000000067ac0000,0x0000000067bc0000)]
+  0x000000001d669800 JavaThread "J3D-SoundSchedulerUpdateThread-3" [_thread_blocked, id=7432, stack(0x00000000679c0000,0x0000000067ac0000)]
+  0x000000001d668800 JavaThread "J3D-RenderStructureUpdateThread-3" [_thread_blocked, id=16144, stack(0x00000000678c0000,0x00000000679c0000)]
+  0x000000001d66c800 JavaThread "J3D-BehaviorScheduler-3" [_thread_blocked, id=7988, stack(0x00000000677c0000,0x00000000678c0000)]
+  0x000000001d66a000 JavaThread "J3D-TransformStructureUpdateThread-3" [_thread_blocked, id=18116, stack(0x00000000676c0000,0x00000000677c0000)]
+  0x000000001d6e9800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-3" [_thread_blocked, id=10988, stack(0x00000000666d0000,0x00000000667d0000)]
+  0x000000001d6e8000 JavaThread "J3D-SoundStructureUpdateThread-3" [_thread_blocked, id=8284, stack(0x00000000665d0000,0x00000000666d0000)]
+  0x000000001d6ea000 JavaThread "J3D-GeometryStructureUpdateThread-3" [_thread_blocked, id=11496, stack(0x00000000664d0000,0x00000000665d0000)]
+  0x000000001d6e6800 JavaThread "J3D-BehaviorStructureUpdateThread-3" [_thread_blocked, id=13244, stack(0x00000000663d0000,0x00000000664d0000)]
+  0x000000001d6ed000 JavaThread "J3D-InputDeviceScheduler-2" [_thread_blocked, id=10184, stack(0x00000000661d0000,0x00000000662d0000)]
+  0x000000001d6eb800 JavaThread "J3D-SoundSchedulerUpdateThread-2" [_thread_blocked, id=13668, stack(0x00000000660d0000,0x00000000661d0000)]
+  0x000000001d6e8800 JavaThread "J3D-RenderStructureUpdateThread-2" [_thread_blocked, id=5720, stack(0x0000000065fd0000,0x00000000660d0000)]
+  0x000000001d6e7000 JavaThread "J3D-BehaviorScheduler-2" [_thread_blocked, id=8616, stack(0x0000000065ed0000,0x0000000065fd0000)]
+  0x000000001d6ec800 JavaThread "J3D-TransformStructureUpdateThread-2" [_thread_blocked, id=8988, stack(0x0000000065cd0000,0x0000000065dd0000)]
+  0x000000001d6e5800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-2" [_thread_blocked, id=16804, stack(0x0000000065bd0000,0x0000000065cd0000)]
+  0x000000001d6eb000 JavaThread "J3D-SoundStructureUpdateThread-2" [_thread_blocked, id=13036, stack(0x0000000065ad0000,0x0000000065bd0000)]
+  0x000000001d6df000 JavaThread "J3D-GeometryStructureUpdateThread-2" [_thread_blocked, id=12428, stack(0x00000000659d0000,0x0000000065ad0000)]
+  0x000000001d6de000 JavaThread "J3D-BehaviorStructureUpdateThread-2" [_thread_blocked, id=16948, stack(0x00000000658d0000,0x00000000659d0000)]
+  0x000000001d6e1000 JavaThread "DestroyJavaVM" [_thread_blocked, id=24756, stack(0x0000000002270000,0x0000000002370000)]
+  0x000000001d6e0800 JavaThread "J3D-InputDeviceScheduler-1" [_thread_blocked, id=25260, stack(0x00000000649d0000,0x0000000064ad0000)]
+  0x000000001d6e5000 JavaThread "J3D-SoundSchedulerUpdateThread-1" [_thread_blocked, id=24908, stack(0x00000000648d0000,0x00000000649d0000)]
+  0x000000001d6e4000 JavaThread "J3D-RenderStructureUpdateThread-1" [_thread_blocked, id=25256, stack(0x00000000647d0000,0x00000000648d0000)]
+  0x000000001d6df800 JavaThread "J3D-BehaviorScheduler-1" [_thread_blocked, id=25268, stack(0x00000000645d0000,0x00000000646d0000)]
+  0x000000001d6e2800 JavaThread "J3D-TransformStructureUpdateThread-1" [_thread_blocked, id=25264, stack(0x00000000644d0000,0x00000000645d0000)]
+  0x000000001d6e3800 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-1" [_thread_blocked, id=13956, stack(0x00000000643d0000,0x00000000644d0000)]
+  0x000000001d6e2000 JavaThread "J3D-SoundStructureUpdateThread-1" [_thread_blocked, id=10316, stack(0x00000000642d0000,0x00000000643d0000)]
+  0x00000000192a8000 JavaThread "J3D-GeometryStructureUpdateThread-1" [_thread_blocked, id=1604, stack(0x00000000641d0000,0x00000000642d0000)]
+  0x00000000192aa800 JavaThread "J3D-BehaviorStructureUpdateThread-1" [_thread_blocked, id=25252, stack(0x00000000640d0000,0x00000000641d0000)]
+=>0x00000000192a7800 JavaThread "Thread-5" [_thread_in_native, id=17432, stack(0x0000000063fd0000,0x00000000640d0000)]
+  0x00000000192ae000 JavaThread "TimerQueue" daemon [_thread_blocked, id=9800, stack(0x0000000063dd0000,0x0000000063ed0000)]
+  0x00000000192ac000 JavaThread "J3D-Renderer-1" [_thread_blocked, id=21032, stack(0x000000001ecb0000,0x000000001edb0000)]
+  0x00000000195f2000 JavaThread "J3D-MasterControl-1" [_thread_blocked, id=12440, stack(0x000000001ebb0000,0x000000001ecb0000)]
+  0x00000000195f1000 JavaThread "J3D-NotificationThread" [_thread_blocked, id=21948, stack(0x000000001eab0000,0x000000001ebb0000)]
+  0x000000001d599800 JavaThread "J3D-TimerThread" [_thread_blocked, id=17392, stack(0x000000001e9b0000,0x000000001eab0000)]
+  0x000000001d6fb800 JavaThread "J3D-RenderingAttributesStructureUpdateThread" [_thread_blocked, id=21968, stack(0x000000001e7c0000,0x000000001e8c0000)]
+  0x0000000019512000 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=24960, stack(0x000000001d1f0000,0x000000001d2f0000)]
+  0x00000000191b0000 JavaThread "AWT-Shutdown" [_thread_blocked, id=18328, stack(0x000000001d0f0000,0x000000001d1f0000)]
+  0x00000000190c5000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=14956, stack(0x0000000019880000,0x0000000019980000)]
+  0x0000000018940800 JavaThread "Service Thread" daemon [_thread_blocked, id=20136, stack(0x0000000018d30000,0x0000000018e30000)]
+  0x0000000016fcc800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=20120, stack(0x0000000018830000,0x0000000018930000)]
+  0x0000000016fc5000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=20156, stack(0x0000000018730000,0x0000000018830000)]
+  0x0000000016fc2000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=13100, stack(0x0000000018630000,0x0000000018730000)]
+  0x0000000016fbe800 JavaThread "Attach Listener" daemon [_thread_blocked, id=24888, stack(0x0000000018530000,0x0000000018630000)]
+  0x0000000016fbd000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=9328, stack(0x0000000018430000,0x0000000018530000)]
+  0x000000000246d800 JavaThread "Finalizer" daemon [_thread_blocked, id=13728, stack(0x0000000018220000,0x0000000018320000)]
+  0x0000000016f89800 JavaThread "Reference Handler" daemon [_thread_blocked, id=24844, stack(0x0000000018120000,0x0000000018220000)]
+
+Other Threads:
+  0x0000000016f88000 VMThread [stack: 0x0000000018020000,0x0000000018120000] [id=20788]
+  0x0000000018942800 WatcherThread [stack: 0x0000000018e30000,0x0000000018f30000] [id=14204]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 413696K, used 128712K [0x00000000d5d80000, 0x00000000fff80000, 0x0000000100000000)
+  eden space 406016K, 29% used [0x00000000d5d80000,0x00000000dd42c2a0,0x00000000eea00000)
+  from space 7680K, 93% used [0x00000000ff800000,0x00000000fff06020,0x00000000fff80000)
+  to   space 8704K, 0% used [0x00000000fee80000,0x00000000fee80000,0x00000000ff700000)
+ ParOldGen       total 87552K, used 50742K [0x0000000081800000, 0x0000000086d80000, 0x00000000d5d80000)
+  object space 87552K, 57% used [0x0000000081800000,0x000000008498db50,0x0000000086d80000)
+ Metaspace       used 20440K, capacity 20738K, committed 21120K, reserved 1069056K
+  class space    used 2255K, capacity 2385K, committed 2432K, reserved 1048576K
+
+Card table byte_map: [0x0000000011830000,0x0000000011c30000] byte_map_base: 0x0000000011424000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000072a7f860
+ Begin Bits: [0x00000000122e0000, 0x0000000014280000)
+ End Bits:   [0x0000000014280000, 0x0000000016220000)
+
+Polling page: 0x00000000008a0000
+
+CodeCache: size=245760Kb used=12242Kb max_used=12244Kb free=233517Kb
+ bounds [0x0000000002470000, 0x0000000003080000, 0x0000000011470000]
+ total_blobs=3875 nmethods=3192 adapters=594
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 50.232 Thread 0x0000000016fcc800 3472       3       javax.swing.Timer::fireActionPerformed (46 bytes)
+Event: 50.233 Thread 0x0000000016fcc800 nmethod 3472 0x000000000303a0d0 code [0x000000000303a260, 0x000000000303a6e8]
+Event: 50.233 Thread 0x0000000016fcc800 3473       3       serial.JFMain$TimerToLabel::actionPerformed (52 bytes)
+Event: 50.235 Thread 0x0000000016fcc800 nmethod 3473 0x0000000002926610 code [0x0000000002926880, 0x0000000002927418]
+Event: 50.713 Thread 0x0000000016fcc800 3474       3       sun.util.locale.LocaleUtils::toLower (17 bytes)
+Event: 50.713 Thread 0x0000000016fcc800 nmethod 3474 0x00000000029bafd0 code [0x00000000029bb140, 0x00000000029bb3b0]
+Event: 50.838 Thread 0x0000000016fcc800 3475   !   3       javax.swing.JComponent::getClientProperty (56 bytes)
+Event: 50.838 Thread 0x0000000016fcc800 nmethod 3475 0x00000000030399d0 code [0x0000000003039b60, 0x0000000003039f88]
+Event: 50.884 Thread 0x0000000016fcc800 3476       1       java.util.concurrent.locks.AbstractQueuedSynchronizer::compareAndSetWaitStatus (13 bytes)
+Event: 50.884 Thread 0x0000000016fcc800 nmethod 3476 0x00000000029dddd0 code [0x00000000029ddf20, 0x00000000029de030]
+
+GC Heap History (10 events):
+Event: 18.076 GC heap before
+{Heap before GC invocations=8 (full 0):
+ PSYoungGen      total 140800K, used 136585K [0x00000000d5d80000, 0x00000000e7080000, 0x0000000100000000)
+  eden space 133120K, 99% used [0x00000000d5d80000,0x00000000dded4db0,0x00000000ddf80000)
+  from space 7680K, 54% used [0x00000000ddf80000,0x00000000de38d978,0x00000000de700000)
+  to   space 7680K, 0% used [0x00000000e6900000,0x00000000e6900000,0x00000000e7080000)
+ ParOldGen       total 87552K, used 19299K [0x0000000081800000, 0x0000000086d80000, 0x00000000d5d80000)
+  object space 87552K, 22% used [0x0000000081800000,0x0000000082ad8c88,0x0000000086d80000)
+ Metaspace       used 19257K, capacity 19482K, committed 19840K, reserved 1067008K
+  class space    used 2248K, capacity 2353K, committed 2432K, reserved 1048576K
+Event: 18.083 GC heap after
+Heap after GC invocations=8 (full 0):
+ PSYoungGen      total 273920K, used 5760K [0x00000000d5d80000, 0x00000000e7080000, 0x0000000100000000)
+  eden space 266240K, 0% used [0x00000000d5d80000,0x00000000d5d80000,0x00000000e6180000)
+  from space 7680K, 75% used [0x00000000e6900000,0x00000000e6ea02e0,0x00000000e7080000)
+  to   space 7680K, 0% used [0x00000000e6180000,0x00000000e6180000,0x00000000e6900000)
+ ParOldGen       total 87552K, used 24739K [0x0000000081800000, 0x0000000086d80000, 0x00000000d5d80000)
+  object space 87552K, 28% used [0x0000000081800000,0x0000000083028ca8,0x0000000086d80000)
+ Metaspace       used 19257K, capacity 19482K, committed 19840K, reserved 1067008K
+  class space    used 2248K, capacity 2353K, committed 2432K, reserved 1048576K
+}
+Event: 23.568 GC heap before
+{Heap before GC invocations=9 (full 0):
+ PSYoungGen      total 273920K, used 269863K [0x00000000d5d80000, 0x00000000e7080000, 0x0000000100000000)
+  eden space 266240K, 99% used [0x00000000d5d80000,0x00000000e5f69af8,0x00000000e6180000)
+  from space 7680K, 75% used [0x00000000e6900000,0x00000000e6ea02e0,0x00000000e7080000)
+  to   space 7680K, 0% used [0x00000000e6180000,0x00000000e6180000,0x00000000e6900000)
+ ParOldGen       total 87552K, used 24739K [0x0000000081800000, 0x0000000086d80000, 0x00000000d5d80000)
+  object space 87552K, 28% used [0x0000000081800000,0x0000000083028ca8,0x0000000086d80000)
+ Metaspace       used 19725K, capacity 20002K, committed 20352K, reserved 1067008K
+  class space    used 2250K, capacity 2353K, committed 2432K, reserved 1048576K
+Event: 23.582 GC heap after
+Heap after GC invocations=9 (full 0):
+ PSYoungGen      total 273920K, used 6550K [0x00000000d5d80000, 0x00000000f0c80000, 0x0000000100000000)
+  eden space 266240K, 0% used [0x00000000d5d80000,0x00000000d5d80000,0x00000000e6180000)
+  from space 7680K, 85% used [0x00000000e6180000,0x00000000e67e5978,0x00000000e6900000)
+  to   space 7680K, 0% used [0x00000000f0500000,0x00000000f0500000,0x00000000f0c80000)
+ ParOldGen       total 87552K, used 32751K [0x0000000081800000, 0x0000000086d80000, 0x00000000d5d80000)
+  object space 87552K, 37% used [0x0000000081800000,0x00000000837fbf98,0x0000000086d80000)
+ Metaspace       used 19725K, capacity 20002K, committed 20352K, reserved 1067008K
+  class space    used 2250K, capacity 2353K, committed 2432K, reserved 1048576K
+}
+Event: 28.789 GC heap before
+{Heap before GC invocations=10 (full 0):
+ PSYoungGen      total 273920K, used 272526K [0x00000000d5d80000, 0x00000000f0c80000, 0x0000000100000000)
+  eden space 266240K, 99% used [0x00000000d5d80000,0x00000000e613e1a0,0x00000000e6180000)
+  from space 7680K, 85% used [0x00000000e6180000,0x00000000e67e5978,0x00000000e6900000)
+  to   space 7680K, 0% used [0x00000000f0500000,0x00000000f0500000,0x00000000f0c80000)
+ ParOldGen       total 87552K, used 32751K [0x0000000081800000, 0x0000000086d80000, 0x00000000d5d80000)
+  object space 87552K, 37% used [0x0000000081800000,0x00000000837fbf98,0x0000000086d80000)
+ Metaspace       used 20001K, capacity 20258K, committed 20608K, reserved 1067008K
+  class space    used 2250K, capacity 2353K, committed 2432K, reserved 1048576K
+Event: 28.803 GC heap after
+Heap after GC invocations=10 (full 0):
+ PSYoungGen      total 433152K, used 7180K [0x00000000d5d80000, 0x00000000f0d80000, 0x0000000100000000)
+  eden space 425472K, 0% used [0x00000000d5d80000,0x00000000d5d80000,0x00000000efd00000)
+  from space 7680K, 93% used [0x00000000f0500000,0x00000000f0c03010,0x00000000f0c80000)
+  to   space 8192K, 0% used [0x00000000efd00000,0x00000000efd00000,0x00000000f0500000)
+ ParOldGen       total 87552K, used 34394K [0x0000000081800000, 0x0000000086d80000, 0x00000000d5d80000)
+  object space 87552K, 39% used [0x0000000081800000,0x0000000083996900,0x0000000086d80000)
+ Metaspace       used 20001K, capacity 20258K, committed 20608K, reserved 1067008K
+  class space    used 2250K, capacity 2353K, committed 2432K, reserved 1048576K
+}
+Event: 38.187 GC heap before
+{Heap before GC invocations=11 (full 0):
+ PSYoungGen      total 433152K, used 431530K [0x00000000d5d80000, 0x00000000f0d80000, 0x0000000100000000)
+  eden space 425472K, 99% used [0x00000000d5d80000,0x00000000efbe79e0,0x00000000efd00000)
+  from space 7680K, 93% used [0x00000000f0500000,0x00000000f0c03010,0x00000000f0c80000)
+  to   space 8192K, 0% used [0x00000000efd00000,0x00000000efd00000,0x00000000f0500000)
+ ParOldGen       total 87552K, used 34394K [0x0000000081800000, 0x0000000086d80000, 0x00000000d5d80000)
+  object space 87552K, 39% used [0x0000000081800000,0x0000000083996900,0x0000000086d80000)
+ Metaspace       used 20242K, capacity 20514K, committed 20864K, reserved 1067008K
+  class space    used 2251K, capacity 2353K, committed 2432K, reserved 1048576K
+Event: 38.227 GC heap after
+Heap after GC invocations=11 (full 0):
+ PSYoungGen      total 433664K, used 6668K [0x00000000d5d80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 425472K, 0% used [0x00000000d5d80000,0x00000000d5d80000,0x00000000efd00000)
+  from space 8192K, 81% used [0x00000000efd00000,0x00000000f0383010,0x00000000f0500000)
+  to   space 8192K, 0% used [0x00000000ff800000,0x00000000ff800000,0x0000000100000000)
+ ParOldGen       total 87552K, used 44170K [0x0000000081800000, 0x0000000086d80000, 0x00000000d5d80000)
+  object space 87552K, 50% used [0x0000000081800000,0x0000000084322a30,0x0000000086d80000)
+ Metaspace       used 20242K, capacity 20514K, committed 20864K, reserved 1067008K
+  class space    used 2251K, capacity 2353K, committed 2432K, reserved 1048576K
+}
+Event: 48.172 GC heap before
+{Heap before GC invocations=12 (full 0):
+ PSYoungGen      total 433664K, used 430718K [0x00000000d5d80000, 0x0000000100000000, 0x0000000100000000)
+  eden space 425472K, 99% used [0x00000000d5d80000,0x00000000efb9c860,0x00000000efd00000)
+  from space 8192K, 81% used [0x00000000efd00000,0x00000000f0383010,0x00000000f0500000)
+  to   space 8192K, 0% used [0x00000000ff800000,0x00000000ff800000,0x0000000100000000)
+ ParOldGen       total 87552K, used 44170K [0x0000000081800000, 0x0000000086d80000, 0x00000000d5d80000)
+  object space 87552K, 50% used [0x0000000081800000,0x0000000084322a30,0x0000000086d80000)
+ Metaspace       used 20390K, capacity 20642K, committed 20864K, reserved 1067008K
+  class space    used 2251K, capacity 2353K, committed 2432K, reserved 1048576K
+Event: 48.187 GC heap after
+Heap after GC invocations=12 (full 0):
+ PSYoungGen      total 413696K, used 7192K [0x00000000d5d80000, 0x00000000fff80000, 0x0000000100000000)
+  eden space 406016K, 0% used [0x00000000d5d80000,0x00000000d5d80000,0x00000000eea00000)
+  from space 7680K, 93% used [0x00000000ff800000,0x00000000fff06020,0x00000000fff80000)
+  to   space 8704K, 0% used [0x00000000fee80000,0x00000000fee80000,0x00000000ff700000)
+ ParOldGen       total 87552K, used 50742K [0x0000000081800000, 0x0000000086d80000, 0x00000000d5d80000)
+  object space 87552K, 57% used [0x0000000081800000,0x000000008498db50,0x0000000086d80000)
+ Metaspace       used 20390K, capacity 20642K, committed 20864K, reserved 1067008K
+  class space    used 2251K, capacity 2353K, committed 2432K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 28.905 Thread 0x00000000195f2000 Uncommon trap: reason=array_check action=maybe_recompile pc=0x0000000002ded6f8 method=javax.media.j3d.UnorderList.add(Ljava/lang/Object;)V @ 70
+Event: 34.689 Thread 0x00000000195f2000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002cc3d80 method=javax.media.j3d.MasterControl.runMonitor(ILjavax/media/j3d/UnorderList;Ljavax/media/j3d/UnorderList;Ljavax/media/j3d/UnorderList;Ljavax/media/j3d/J3dThread;)V @ 667
+Event: 35.938 Thread 0x00000000192a9000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002a71748 method=java.util.concurrent.ConcurrentLinkedQueue.poll()Ljava/lang/Object; @ 25
+Event: 42.311 Thread 0x00000000195f2000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002f15b48 method=javax.media.j3d.MasterControl.updateTimeValues()V @ 537
+Event: 42.389 Thread 0x0000000019512000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002d0c528 method=javax.swing.DefaultButtonModel.isRollover()Z @ 7
+Event: 42.389 Thread 0x0000000019512000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002f23e14 method=javax.swing.plaf.nimbus.NimbusStyle.getNextState([Ljavax/swing/plaf/nimbus/NimbusStyle$RuntimeState;[II)Ljavax/swing/plaf/nimbus/NimbusStyle$RuntimeState; @ 208
+Event: 42.390 Thread 0x0000000019512000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002bd8b3c method=javax.swing.plaf.synth.SynthStyle.getFont(Ljavax/swing/plaf/synth/SynthContext;)Ljava/awt/Font; @ 10
+Event: 50.711 Thread 0x0000000019512000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000303dec8 method=javax.swing.DefaultButtonModel.isPressed()Z @ 6
+Event: 50.712 Thread 0x0000000019512000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002975a40 method=javax.swing.JComponent.getClientProperty(Ljava/lang/Object;)Ljava/lang/Object; @ 16
+Event: 50.714 Thread 0x0000000019512000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002f12d48 method=sun.java2d.SurfaceData.validatePipe(Lsun/java2d/SunGraphics2D;)V @ 420
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 22.157 Thread 0x0000000019512000 Exception <a 'java/lang/NullPointerException'> (0x00000000e36c2818) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u161\10277\hotspot\src\share\vm\prims\jvm.cpp, line 1394]
+Event: 22.157 Thread 0x0000000019512000 Exception <a 'java/lang/NullPointerException'> (0x00000000e36c2818) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u161\10277\hotspot\src\share\vm\prims\jvm.cpp, line 1394]
+Event: 25.969 Thread 0x0000000019512000 Implicit null exception at 0x0000000002d3919a to 0x0000000002d3a7b5
+Event: 27.718 Thread 0x0000000019512000 Implicit null exception at 0x0000000002a8af49 to 0x0000000002a8b06a
+Event: 27.718 Thread 0x0000000019512000 Exception <a 'java/lang/NullPointerException'> (0x00000000e2e5be48) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u161\10277\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 27.718 Thread 0x0000000019512000 Exception <a 'java/lang/NullPointerException'> (0x00000000e2e5be48) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u161\10277\hotspot\src\share\vm\prims\jvm.cpp, line 1394]
+Event: 27.718 Thread 0x0000000019512000 Exception <a 'java/lang/NullPointerException'> (0x00000000e2e5be48) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u161\10277\hotspot\src\share\vm\prims\jvm.cpp, line 1394]
+Event: 50.870 Thread 0x00000000192a9000 Exception <a 'java/lang/InterruptedException'> (0x00000000dccf6368) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u161\10277\hotspot\src\share\vm\runtime\objectMonitor.cpp, line 1684]
+Event: 50.871 Thread 0x000000001d890800 Exception <a 'java/net/SocketException': Socket closed> (0x00000000dcca9ab0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u161\10277\hotspot\src\share\vm\prims\jni.cpp, line 735]
+Event: 50.871 Thread 0x00000000192ad800 Exception <a 'java/lang/InterruptedException'> (0x00000000dc0c5e10) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u161\10277\hotspot\src\share\vm\runtime\objectMonitor.cpp, line 1684]
+
+Events (10 events):
+Event: 50.886 Executing VM operation: RevokeBias
+Event: 50.886 Thread 0x00000000192ad800 Thread exited: 0x00000000192ad800
+Event: 50.888 Executing VM operation: RevokeBias done
+Event: 50.888 Executing VM operation: RevokeBias
+Event: 50.890 Executing VM operation: RevokeBias done
+Event: 50.890 Thread 0x00000000192ab000 Thread exited: 0x00000000192ab000
+Event: 50.890 Executing VM operation: RevokeBias
+Event: 50.890 Thread 0x00000000192a9000 Thread exited: 0x00000000192a9000
+Event: 50.894 Executing VM operation: RevokeBias done
+Event: 50.894 Thread 0x0000000078d01800 Thread exited: 0x0000000078d01800
+
+
+Dynamic libraries:
+0x00007ff7e58c0000 - 0x00007ff7e58f7000 	C:\Program Files\Java\jdk1.8.0_161\bin\java.exe
+0x00007fff148b0000 - 0x00007fff14a91000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fff0cf90000 - 0x00007fff0cfa2000 	C:\Program Files\AVAST Software\Avast\aswhook.dll
+0x00007fff12240000 - 0x00007fff122f1000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fff11240000 - 0x00007fff114b3000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fff11de0000 - 0x00007fff11e81000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fff12370000 - 0x00007fff1240e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fff147c0000 - 0x00007fff1481b000 	C:\WINDOWS\System32\sechost.dll
+0x00007fff13bc0000 - 0x00007fff13ce4000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fff13cf0000 - 0x00007fff13e80000 	C:\WINDOWS\System32\USER32.dll
+0x00007fff10c80000 - 0x00007fff10ca0000 	C:\WINDOWS\System32\win32u.dll
+0x00007fff12210000 - 0x00007fff12238000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fff110a0000 - 0x00007fff11231000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fff11590000 - 0x00007fff1162f000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fff10ca0000 - 0x00007fff10d98000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fff088a0000 - 0x00007fff08b09000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17134.885_none_fb42a3473065565f\COMCTL32.dll
+0x00007fff14490000 - 0x00007fff147b2000 	C:\WINDOWS\System32\combase.dll
+0x00007fff11510000 - 0x00007fff11589000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007fff12590000 - 0x00007fff125bd000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000000072180000 - 0x0000000072252000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\msvcr100.dll
+0x0000000072260000 - 0x0000000072aff000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\server\jvm.dll
+0x00007fff125c0000 - 0x00007fff125c8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007fff07a70000 - 0x00007fff07a79000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007fff125d0000 - 0x00007fff1263c000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fff0e910000 - 0x00007fff0e933000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fff092a0000 - 0x00007fff092aa000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fff0e8e0000 - 0x00007fff0e90a000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007fff114c0000 - 0x00007fff11509000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x0000000073030000 - 0x000000007303f000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\verify.dll
+0x0000000072150000 - 0x0000000072179000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\java.dll
+0x0000000072130000 - 0x0000000072146000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\zip.dll
+0x00007fff126a0000 - 0x00007fff13ae0000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007fff13e80000 - 0x00007fff13f29000 	C:\WINDOWS\System32\shcore.dll
+0x00007fff11630000 - 0x00007fff11d3d000 	C:\WINDOWS\System32\windows.storage.dll
+0x00007fff12310000 - 0x00007fff12361000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007fff10c40000 - 0x00007fff10c51000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007fff10c60000 - 0x00007fff10c7f000 	C:\WINDOWS\System32\profapi.dll
+0x00007fff10bf0000 - 0x00007fff10c3c000 	C:\WINDOWS\System32\powrprof.dll
+0x00007fff10be0000 - 0x00007fff10bea000 	C:\WINDOWS\System32\FLTLIB.DLL
+0x0000000071f50000 - 0x00000000720e8000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\awt.dll
+0x00007fff13ae0000 - 0x00007fff13ba2000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007fff0ef50000 - 0x00007fff0efdb000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x00007fff0f280000 - 0x00007fff0f318000 	C:\WINDOWS\system32\uxtheme.dll
+0x00007fff12410000 - 0x00007fff12583000 	C:\WINDOWS\System32\MSCTF.dll
+0x00007fff0f350000 - 0x00007fff0f379000 	C:\WINDOWS\system32\dwmapi.dll
+0x00007fff11e90000 - 0x00007fff11fe1000 	C:\WINDOWS\System32\ole32.dll
+0x0000000071f00000 - 0x0000000071f47000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\fontmanager.dll
+0x0000000071d30000 - 0x0000000071e01000 	C:\Users\joaoq\AppData\Local\Temp\javacpp616846817606941\msvcr100.dll
+0x0000000071c90000 - 0x0000000071d28000 	C:\Users\joaoq\AppData\Local\Temp\javacpp616846817606941\msvcp100.dll
+0x0000000066840000 - 0x00000000676b4000 	C:\Users\joaoq\AppData\Local\Temp\javacpp616846817606941\opencv_ffmpeg248_64.dll
+0x00007ffee5320000 - 0x00007ffee5592000 	C:\Users\joaoq\AppData\Local\Temp\javacpp616846817606941\opencv_core248.dll
+0x00007ffeda5f0000 - 0x00007ffeda8a2000 	C:\Users\joaoq\AppData\Local\Temp\javacpp616846817606941\opencv_imgproc248.dll
+0x00007ffed5420000 - 0x00007ffed566d000 	C:\Users\joaoq\AppData\Local\Temp\javacpp616846817606941\opencv_highgui248.dll
+0x00007fff0d810000 - 0x00007fff0d82f000 	C:\WINDOWS\SYSTEM32\AVIFIL32.dll
+0x00007fff03d20000 - 0x00007fff03d49000 	C:\WINDOWS\SYSTEM32\MSVFW32.dll
+0x00007fff09540000 - 0x00007fff09558000 	C:\WINDOWS\SYSTEM32\AVICAP32.dll
+0x00007fff0c100000 - 0x00007fff0c11c000 	C:\WINDOWS\SYSTEM32\MSACM32.dll
+0x00007fff04df0000 - 0x00007fff04e03000 	C:\Users\joaoq\AppData\Local\Temp\javacpp616846817606941\jniopencv_highgui.dll
+0x00007fff103e0000 - 0x00007fff10446000 	C:\WINDOWS\system32\mswsock.dll
+0x00007fff10590000 - 0x00007fff105a7000 	C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+0x00007fff0ffd0000 - 0x00007fff10003000 	C:\WINDOWS\system32\rsaenh.dll
+0x00007fff106c0000 - 0x00007fff106e5000 	C:\WINDOWS\SYSTEM32\bcrypt.dll
+0x00007fff105b0000 - 0x00007fff105bb000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x00007fff0c2b0000 - 0x00007fff0c2c6000 	C:\WINDOWS\system32\napinsp.dll
+0x00007fff0bc00000 - 0x00007fff0bc1a000 	C:\WINDOWS\system32\pnrpnsp.dll
+0x00007fff0d770000 - 0x00007fff0d789000 	C:\WINDOWS\system32\NLAapi.dll
+0x00007fff101b0000 - 0x00007fff1026e000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x00007fff13bb0000 - 0x00007fff13bb8000 	C:\WINDOWS\System32\NSI.dll
+0x00007fff10170000 - 0x00007fff101a8000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007fff0c480000 - 0x00007fff0c48e000 	C:\WINDOWS\System32\winrnr.dll
+0x00007fff04f90000 - 0x00007fff04fa5000 	C:\WINDOWS\System32\wshbth.dll
+0x00007ffef5460000 - 0x00007ffef54fa000 	C:\Users\joaoq\AppData\Local\Temp\javacpp616846817606941\jniopencv_core.dll
+0x00007ffef5300000 - 0x00007ffef5420000 	C:\WINDOWS\system32\opengl32.dll
+0x00007ffeff170000 - 0x00007ffeff19c000 	C:\WINDOWS\SYSTEM32\GLU32.dll
+0x0000000072110000 - 0x000000007212a000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\net.dll
+0x00000000720f0000 - 0x0000000072101000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\nio.dll
+0x00007fff0a280000 - 0x00007fff0a28a000 	C:\Windows\System32\rasadhlp.dll
+0x0000000071c20000 - 0x0000000071c27000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\jawt.dll
+0x00000000199b0000 - 0x00000000199ee000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\j3dcore-ogl.dll
+0x00007fff0a640000 - 0x00007fff0a6b2000 	C:\WINDOWS\System32\fwpuclnt.dll
+0x00007ffecf0b0000 - 0x00007ffecfbf7000 	C:\WINDOWS\SYSTEM32\ig75icd64.dll
+0x00007ffeeca80000 - 0x00007ffeed4bf000 	C:\WINDOWS\SYSTEM32\igdusc64.dll
+0x00007fff0ceb0000 - 0x00007fff0cec3000 	C:\WINDOWS\SYSTEM32\WTSAPI32.dll
+0x0000000071eb0000 - 0x0000000071ef2000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\t2k.dll
+0x00007ffefc090000 - 0x00007ffefc126000 	C:\WINDOWS\System32\TextInputFramework.dll
+0x00007ffefbd70000 - 0x00007ffefc08e000 	C:\WINDOWS\System32\CoreUIComponents.dll
+0x00007fff0ed40000 - 0x00007fff0ee1a000 	C:\WINDOWS\System32\CoreMessaging.dll
+0x00007fff0fcc0000 - 0x00007fff0fcf1000 	C:\WINDOWS\SYSTEM32\ntmarta.dll
+0x00007fff0c9e0000 - 0x00007fff0cb2d000 	C:\WINDOWS\SYSTEM32\wintypes.dll
+0x0000000071e70000 - 0x0000000071e9a000 	C:\Program Files\Java\jdk1.8.0_161\jre\bin\dcpr.dll
+0x00007fff0fa50000 - 0x00007fff0fb0b000 	C:\WINDOWS\SYSTEM32\dxgi.dll
+0x00007fff0da30000 - 0x00007fff0dd3b000 	C:\WINDOWS\SYSTEM32\d3d11.dll
+0x00007fff04bf0000 - 0x00007fff04db9000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: serial.JFMain
+java_class_path (initial): C:\Program Files\Java\jre1.8.0_191\lib\ext\RXTXcomm.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\AbsoluteLayout.jar;C:\Users\joaoq\Downloads\opencv\build\java\opencv-347.jar;C:\Users\joaoq\Downloads\IP-Camera-Java-CV-Libraries-master\javacv.jar;C:\Users\joaoq\Downloads\IP-Camera-Java-CV-Libraries-master\javacpp.jar;C:\Users\joaoq\Downloads\IP-Camera-Java-CV-Libraries-master\javacv-windows-x86.jar;C:\Users\joaoq\Downloads\IP-Camera-Java-CV-Libraries-master\javacv-windows-x86_64.jar;C:\Users\joaoq\Downloads\IP-Camera-Java-CV-Libraries-master\opencv-2.4.8-windows-x86.jar;C:\Users\joaoq\Downloads\IP-Camera-Java-CV-Libraries-master\opencv-2.4.8-windows-x86_64.jar;C:\Users\joaoq\Downloads\org.eclipse.paho.client.mqttv3-1.2.0.jar;C:\Users\joaoq\Google Drive\TCC João Pedro Quintino\TCC2\Software PC\ReadWriteSerial\build\classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_161
+CLASSPATH=C:\Program Files\Java\jdk1.8.0_161\lib;C:\jflex-1.6.1\lib\jflex-1.6.1.jar
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_161\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MATLAB\R2018a\runtime\win64;C:\Program Files\MATLAB\R2018a\bin;D:\Program Files\nodejs\;D:\Program Files\Microsoft VS Code\bin;D:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\joaoq\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\joaoq\AppData\Local\Programs\Python\Python37-32\;C:\Users\joaoq\AppData\Local\Microsoft\WindowsApps;C:\Users\joaoq\AppData\Roaming\npm;C:\Users\joaoq\AppData\Local\Yarn\bin;D:\Program Files\Docker Toolbox
+USERNAME=joaoq
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17134 (10.0.17134.753)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 8289792k(1679388k free), swap 12140992k(1500824k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.161-b12) for windows-amd64 JRE (1.8.0_161-b12), built on Dec 19 2017 17:52:25 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Thu Aug 01 20:18:30 2019
+elapsed time: 51 seconds (0d 0h 0m 51s)
+
